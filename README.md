@@ -30,7 +30,7 @@ diag_comp = [-1, 1, coord_sys[1]**2, coord_sys[1]**2 * sin(coord_sys[2])**2] # D
 
 ## Starting Calculations
 
-1. After defining the diagonal components of the metric tensor, we can calculate/obtain the tensors by just assigning them into a variable and using the get_tensorname() method.
+1. After defining the diagonal components of the metric tensor, we can calculate/obtain the tensors by just assigning them into a variable and using the `get_tensorname()` method.
 
 For instance, to obtain the Christoffel Symbol, it is sufficient to write this line of code in Jupyter Notebook.
 
