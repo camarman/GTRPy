@@ -48,7 +48,7 @@ chris_symbol
 
 `cs.vary_type(chris_symbol, 'ddd')`
 
-The code above will convert the `(1,2)` tensor into `(0,3)`
+The code above will convert the type `(1,2)` Christoffel Symbol into type `(0,3)`
 
 4. In order to obtain the non-zero components of the Christoffel Symbols, one can write.
 
