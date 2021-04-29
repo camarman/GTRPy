@@ -10,7 +10,7 @@ sympy, numpy, itertools
 1. Define the coordinate system (cartesian, spherical, etc.) 
 2. Define the diagonal components of the metric tensor by using `symbols`
 
-The first lines of the code should look like this.
+The first few lines of the code should look like this.
 
 ```
 from GR_full_curv import *
