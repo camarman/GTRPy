@@ -2,7 +2,6 @@
 
 Calculating the Christoffel Symbol, Riemann Curvature Tensor, Ricci Tensor, Ricci Scalar, Traceless Ricci Tensor, and Einstein Tensor from the given metric
 
-
 ### Required packages
 sympy, numpy, itertools
 
@@ -21,7 +20,6 @@ from sympy import *
 init_printing()
 
 coord_sys = symbols("t r theta phi") # Coordinate system that we will work on 
-
 
 G, m, c, a = symbols("G, m, c, a") # Defining some extra symbols
 
