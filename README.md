@@ -28,7 +28,7 @@ diag_comp = [-1, 1, coord_sys[1]**2, coord_sys[1]**2 * sin(coord_sys[2])**2] # D
 
 3. To add a different symbol, use [symbols](https://docs.sympy.org/latest/tutorial/basic_operations.html)
 
-## Starting Calculations
+## Getting Tensors and Index Lowering/Raising
 
 1. After defining the diagonal components of the metric tensor, we can calculate/obtain the tensors by just assigning them into a variable and using the `get_tensorname()` method.
 
@@ -40,21 +40,19 @@ chris_symbol = cs.get_christoffelsymbol()
 chris_symbol
 ```
 
-In order to access the type of the `chris_symbol,` one can write,
+2. In order to access the type of the `chris_symbol,` one can write,
 
 `cs.get_type()`
 
-The (1,0) - Contravariant type tensor will be denoted by a string `"u"` and (0,1) covariant type tensor will be denoted by `"d"`
-
-In order to change the type of the Christoffel Symbol from (1,2) - `"udd"` to (0,3) - `"ddd"`, type
+3. (1,0) (Contravariant) type tensor will be denoted by a string `"u"` and (0,1) covariant type tensor will be denoted by `"d"`. In order to change the type of the Christoffel Symbol from (1,2) - `"udd"` to (0,3) - `"ddd"`, type
 
 `cs.vary_type(chris_symbol, 'ddd')`
 
-For the non-zero components of the Christoffel Symbols, one can write.
+4. In order to obtain the non-zero components of the Christoffel Symbols, one can write.
 
 `cs.nonzero_christoffelsymbol(chris_symbol)`
 
-These examples and output can be further studied on `example1.ipynb` and `example2.ipynb`.
+These examples can be further studied on `example1.ipynb` and `example2.ipynb` files.
 
-Note: It is recommended to use Jupyter Notebook to see a better output
+Note: It is recommended to use Jupyter Notebook to see a better output.
  
