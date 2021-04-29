@@ -44,7 +44,9 @@ In order to access the type of the `chris_symbol,` one can write,
 
 `cs.get_type()`
 
-In order to change the type of the Christoffel Symbol from (1,2) to (0,3), type
+The (1,0) - Contravariant type tensor will be denoted by a string `"u"` and (0,1) covariant type tensor will be denoted by `"d"`
+
+In order to change the type of the Christoffel Symbol from (1,2) - `"udd"` to (0,3) - `"ddd"`, type
 
 `cs.vary_type(chris_symbol, 'ddd')`
 
