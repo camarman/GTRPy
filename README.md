@@ -7,7 +7,7 @@ sympy, numpy, itertools
 
 ## Getting Started
 
-0. Download the GR Tensor Folder (.ipynb files should from that directory)
+0. Download the GR Tensor Folder (.ipynb files should run from that directory)
 1. Define the coordinate system (cartesian, spherical, etc.) 
 2. Define the diagonal components of the metric tensor
 
