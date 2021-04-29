@@ -40,7 +40,7 @@ chris_symbol = cs.get_christoffelsymbol()
 chris_symbol
 ```
 
-2. In order to access the type of the `chris_symbol,` one can write,
+2. In order to access the type of the Christoffel Symbol one can write,
 
 `cs.get_type()`
 
