@@ -8,7 +8,7 @@ sympy, numpy, itertools
 ## Getting Started
 
 1. Define the coordinate system (cartesian, spherical, etc.) 
-2. Define the diagonal components of the metric tensor by using `symbols`
+2. Define the diagonal components of the metric tensor
 
 The first few lines of the code should look like this.
 
