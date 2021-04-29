@@ -44,7 +44,7 @@ chris_symbol
 
 `cs.get_type()`
 
-3. `(1,0)` (Contravariant) type tensor will be denoted by a string `"u"` and `(0,1)`ncovariant type tensor will be denoted by `"d"`. In order to change the type of the Christoffel Symbol, just type the desired tensor in terms of `"u"``and `"d"`.
+3. `(1,0)` (Contravariant) type tensor will be denoted by a string `"u"` and `(0,1)`ncovariant type tensor will be denoted by `"d"`. In order to change the type of the Christoffel Symbol, just type the desired tensor in terms of `"u"` and `"d"`.
 
 `cs.vary_type(chris_symbol, 'ddd')`
 
