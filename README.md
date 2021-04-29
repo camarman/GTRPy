@@ -26,7 +26,7 @@ G, m, c, a = symbols("G, m, c, a") # Defining some extra symbols
 diag_comp = [-1, 1, coord_sys[1]**2, coord_sys[1]**2 * sin(coord_sys[2])**2] # Defining the diagonal components of the metric tensor
 ```
 
-3. To add a different symbol, use the [sympy.symbols] (https://docs.sympy.org/latest/tutorial/basic_operations.html)
+3. To add a different symbol, use [symbols](https://docs.sympy.org/latest/tutorial/basic_operations.html)
 
 ## Starting Calculations
 
