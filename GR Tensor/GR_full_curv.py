@@ -592,8 +592,8 @@ class TracelessRicciTensor(RicciScalar):
             self.trclss_riccitensor_obj [ndim-array]: The Traceless Ricci Tensor, Z_ij
             self.trclss_riccitensor_type [string]: The type of the Traceless Ricci Tensor. The default type is 'dd'            
         """
-        self.trclss_riccitensor_type = 'dd'
         RicciScalar.__init__(self, diag_comp, coord_sys)
+        self.trclss_riccitensor_type = 'dd'
         trclss_ricci_tensor = MutableSparseNDimArray(zeros((self.ndim,)*2))
         for i, k in product(range(self.ndim), repeat=2):
             trclss_ricci_tensor[i, k] = self.riccitensor_obj[i, k] - \
