@@ -33,14 +33,6 @@ diag_comp = [-1, 1, coord_sys[1]**2, coord_sys[1]**2 * sin(coord_sys[2])**2] # D
 
 #### 1. After defining the diagonal components of the metric tensor, we can calculate/obtain the tensors by just assigning them into a variable and using the `get_tensorname()` method.
 
-For instance, to obtain the Christoffel Symbol, it is sufficient to write this line of code in Jupyter Notebook.
-
-```
-cs = ChristoffelSymbol(diag_comp, coord_sys)
-chris_symbol = cs.get_christoffelsymbol()
-chris_symbol
-```
-
 Avaliable tensors can be listed as;
 ```
 get_metrictensor()
@@ -52,20 +44,28 @@ get_trclss_riccitensor()
 get_einsteintensor()
 ```
 
-#### 2. In order to access the type of the Christoffel Symbol one can write,
+For instance, to obtain the Christoffel Symbol, it is sufficient to write this line of code in Jupyter Notebook.
 
-`cs.get_type()`
+```
+cs = ChristoffelSymbol(diag_comp, coord_sys)
+chris_symbol = cs.get_christoffelsymbol()
+chris_symbol
+```
 
-#### 3. `(1,0)` (Contravariant) type tensor will be denoted by a string `"u"` and `(0,1)`ncovariant type tensor will be denoted by `"d"`. In order to change the type of the Christoffel Symbol, just type the desired tensor in terms of `"u"` and `"d"`.
+#### 2. In order to access the type of a given tensor one can use
+
+`cs.get_type()`  method
+
+#### 3. `(1,0)` (Contravariant) type tensor will be denoted by a string `"u"` and `(0,1)`ncovariant type tensor will be denoted by `"d"`. In order to change the type of the tensor, just type the desired form in terms of `"u"` and `"d"`.
 
 `cs.vary_type(chris_symbol, 'ddd')`
 
-The code above will convert the type `(1,2)` Christoffel Symbol into type `(0,3)`
+For instance, the code above will convert the type `(1,2)` Christoffel Symbol into type `(0,3)`
+
 
 #### 4. In order to obtain the non-zero components of the Christoffel Symbols, one can write.
 
 `cs.nonzero_christoffelsymbol(chris_symbol)`
-
 
 #### Note: These examples can be further studied on `example1.ipynb` and `example2.ipynb` files.
 #### It is recommended to use Jupyter Notebook to see a better output.
