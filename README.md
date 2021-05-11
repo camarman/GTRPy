@@ -63,7 +63,7 @@ For instance, the code above will convert the type `(1,2)` Christoffel Symbol in
 
 ## Some Extra Features 
 
-#### 1. In order to obtain the non-zero components of the Christoffel Symbols just type
+#### In order to obtain the non-zero components of the Christoffel Symbols just type
 
 `cs.nonzero_christoffelsymbol(chris_symbol)`
 
