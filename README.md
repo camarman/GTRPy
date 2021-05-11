@@ -45,7 +45,7 @@ chris_symbol
 
 ##  Tensor Types and Index Lowering/Raising
 
-#### 1.`(1,0)` (Contravariant) type tensor will be denoted by a string `'u'` and `(0,1)` (covariant) type tensor will be denoted by `'d'`. 
+#### 1.`(1,0)` (contravariant) type tensor will be denoted by a string `'u'` and `(0,1)` (covariant) type tensor will be denoted by `'d'`. 
 
 #### 2. To access the type of a given tensor one can use the `get_tensorname_type()` method.
 
