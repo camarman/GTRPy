@@ -1,7 +1,8 @@
-#### General Relativity Tensorial Calculations ####
+#### General Relativity Tensorial Calculations V1 ####
+
 
 from IPython.display import Latex, display
-from sympy import MutableSparseNDimArray, nsimplify, diff, latex
+from sympy import MutableSparseNDimArray, simplify, nsimplify, diff, latex
 from numpy import zeros
 from itertools import product, permutations
 
@@ -37,8 +38,8 @@ def Simplify(xtensor):
     """
     try:
         return nsimplify(xtensor)
-    except:
-        print('Something went wrong during the simplifying process. Remove the nsimplify from the Simplify function at the source code.')
+    except: # at some points the nsimplify method does not work properly
+        return xtensor
 
 
 def derivative_of_metric(coord_sys, xmetric, i, j, k):
@@ -80,7 +81,7 @@ def derivative_of_chris(coord_sys, xchris_symb, i, j, k, l):
 class MetricTensor(object):
     def __init__(self, diag_comp, coord_sys):
         """
-        Creating the metric tensor
+        Calculating the metric tensor
 
         Args:
             coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
@@ -175,13 +176,13 @@ class MetricTensor(object):
             return self.raise_index(self.raise_index(xmetric_tensor))
         else:
             raise TypeError(
-                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant')
+                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant with 2 indices')
 
 
 class ChristoffelSymbol(MetricTensor):
     def __init__(self, diag_comp, coord_sys):
         """
-        Creating the Christoffel Symbol 
+        Calculating the Christoffel Symbol for a given metric 
 
         Args:
             coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
@@ -304,23 +305,29 @@ class ChristoffelSymbol(MetricTensor):
             self.chris_type = new_type
             return self.raise_index1(self.raise_index(xchris_symbol))
         else:
-            raise TypeError(
-                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant')
+            raise TypeError('Please enter a valid tensor type in terms of "u": contravariant and "d": covariant with 3 indices')
 
     def nonzero_christoffelsymbol(self, xchris_symbol):
         """
-        Printing the nonzero components of the Christoffel Symbol
+        Printing the nonzero components of the Christoffel Symbol for each type
         """
         for i, j, k in product(range(self.ndim), repeat=3):
             if xchris_symbol[i, j, k] != 0:
-                display(Latex('$\\Gamma^{{{0}}}{{}}_{{{1} {2}}} = {3}$'.format(latex(self.coord_sys[i]), latex(
+                if self.chris_type == 'uuu':
+                    display(Latex('$\\Gamma^{{{0} {1} {2}}} = {3}$'.format(latex(self.coord_sys[i]), latex(
                     self.coord_sys[j]), latex(self.coord_sys[k]), latex(xchris_symbol[i, j, k]))))
-
-
+                elif self.chris_type in permutation_finder('udd'):
+                    display(Latex('$\\Gamma^{{{0}}}{{}}_{{{1} {2}}} = {3}$'.format(latex(self.coord_sys[i]), latex(
+                    self.coord_sys[j]), latex(self.coord_sys[k]), latex(xchris_symbol[i, j, k]))))
+                elif self.chris_type == 'ddd':
+                    display(Latex('$\\Gamma_{{{0} {1} {2}}} = {3}$'.format(latex(self.coord_sys[i]), latex(
+                        self.coord_sys[j]), latex(self.coord_sys[k]), latex(xchris_symbol[i, j, k]))))
+                    
+                    
 class RiemannTensor(ChristoffelSymbol):
     def __init__(self, diag_comp, coord_sys):
         """ 
-        Creating a Riemann Tensor 
+       Calculating the Riemann Tensor for a given metric 
 
         Args:
             coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
@@ -465,14 +472,35 @@ class RiemannTensor(ChristoffelSymbol):
             self.riemann_type = new_type
             return self.raise_index2(self.raise_index1(self.raise_index(xriemann_tensor)))
         else:
-            raise TypeError(
-                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant')
+            raise TypeError('Please enter a valid tensor type in terms of "u": contravariant and "d": covariant with 4 indices')
 
+    def nonzero_riemanntensor(self, xriemann_tensor):
+        """
+        Printing the nonzero components of the Riemann Tensor for each type
+        """
+        for i, j, k, l in product(range(self.ndim), repeat=4):
+            if xriemann_tensor[i, j, k, l] != 0:
+                if self.riemann_type  == 'uuuu':
+                    display(Latex('$R^{{{0} {1} {2} {3}}}= {4}$'.format(latex(self.coord_sys[i]), latex(
+                    self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xriemann_tensor[i, j, k, l]))))
+                elif self.riemann_type in permutation_finder('uuud'):
+                    display(Latex('$R^{{{0} {1} {2}}}{{}}_{{{3}}}= {4}$'.format(latex(self.coord_sys[i]), latex(
+                    self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xriemann_tensor[i, j, k, l]))))
+                elif self.riemann_type in permutation_finder('uudd'):
+                    display(Latex('$R^{{{0} {1}}}{{}}_{{{2} {3}}}= {4}$'.format(latex(self.coord_sys[i]), latex(
+                        self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xriemann_tensor[i, j, k, l]))))
+                elif self.riemann_type in permutation_finder('uddd'):
+                    display(Latex('$R^{{{0}}}{{}}_{{{1} {2} {3}}} = {4}$'.format(latex(self.coord_sys[i]), latex(
+                    self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xriemann_tensor[i, j, k, l]))))
+                elif self.riemann_type == 'dddd':
+                    display(Latex('$R_{{{0} {1} {2} {3}}} = {4}$'.format(latex(self.coord_sys[i]), latex(
+                        self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xriemann_tensor[i, j, k, l]))))
+                    
 
 class RicciTensor(RiemannTensor):
     def __init__(self, diag_comp, coord_sys):
         """ 
-        Creating a Ricci Tensor 
+        Calculating the Ricci Tensor for a given metric 
 
         Args:
             coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
@@ -549,13 +577,13 @@ class RicciTensor(RiemannTensor):
             return self.raise_index(self.raise_index(xricci_tensor))
         else:
             raise TypeError(
-                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant')
+                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant with 2 indices')
 
 
 class RicciScalar(RicciTensor):
     def __init__(self, diag_comp, coord_sys):
         """ 
-        Creating a Ricci Scalar 
+        Calculating the Ricci Scalar for a given metric
 
         Args:
             coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
@@ -581,7 +609,7 @@ class RicciScalar(RicciTensor):
 class WeylTensor(RicciScalar):
     def __init__(self, diag_comp, coord_sys):
         """
-        Creating the Weyl Tensor
+        Calculating the Weyl Tensor for a given metric
 
         Args:
             coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
@@ -727,13 +755,35 @@ class WeylTensor(RicciScalar):
             return self.raise_index3(self.raise_index2(self.raise_index1(self.raise_index(xweyl_tensor))))
         else:
             raise TypeError(
-                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant')
+                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant with 4 indices')
+        
+    def nonzero_weyltensor(self, xweyl_tensor):
+        """
+        Printing the nonzero components of the Weyl Tensor for each type
+        """
+        for i, j, k, l in product(range(self.ndim), repeat=4):
+            if xweyl_tensor[i, j, k, l] != 0:
+                if self.weyltensor_type == 'uuuu':
+                    display(Latex('$C^{{{0} {1} {2} {3}}}= {4}$'.format(latex(self.coord_sys[i]), latex(
+                        self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xweyl_tensor[i, j, k, l]))))
+                elif self.weyltensor_type in permutation_finder('uuud'):
+                    display(Latex('$C^{{{0} {1} {2}}}{{}}_{{{3}}}= {4}$'.format(latex(self.coord_sys[i]), latex(
+                        self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xweyl_tensor[i, j, k, l]))))
+                elif self.weyltensor_type in permutation_finder('uudd'):
+                    display(Latex('$C^{{{0} {1}}}{{}}_{{{2} {3}}}= {4}$'.format(latex(self.coord_sys[i]), latex(
+                        self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xweyl_tensor[i, j, k, l]))))
+                elif self.weyltensor_type in permutation_finder('uddd'):
+                    display(Latex('$C^{{{0}}}{{}}_{{{1} {2} {3}}} = {4}$'.format(latex(self.coord_sys[i]), latex(
+                        self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xweyl_tensor[i, j, k, l]))))
+                elif self.weyltensor_type == 'dddd':
+                    display(Latex('$C_{{{0} {1} {2} {3}}} = {4}$'.format(latex(self.coord_sys[i]), latex(
+                        self.coord_sys[j]), latex(self.coord_sys[k]), latex(self.coord_sys[l]), latex(xweyl_tensor[i, j, k, l]))))
 
 
 class TracelessRicciTensor(RicciScalar):
     def __init__(self, diag_comp, coord_sys):
         """ 
-        Creating a Traceless Ricci Tensor
+        Calculating the Traceless Ricci Tensor for a given metric
 
         Args:
             coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
@@ -808,13 +858,13 @@ class TracelessRicciTensor(RicciScalar):
             return self.raise_index(self.raise_index(xtrclss_riccitensor))
         else:
             raise TypeError(
-                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant')
+                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant with 4 indices')
 
 
 class EinsteinTensor(RicciScalar):
     def __init__(self, diag_comp, coord_sys):
         """
-        Creating an Einstein Tensor
+        Calculating the Einstein Tensor for a given metric
 
         Args:
             coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
@@ -889,4 +939,34 @@ class EinsteinTensor(RicciScalar):
             return self.raise_index(self.raise_index(xeinstein_tensor))
         else:
             raise TypeError(
-                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant')
+                'Please enter a valid tensor type in terms of "u": contravariant and "d": covariant with 4 indices')
+
+
+class KretschmannScalar(RiemannTensor):
+    def __init__(self, diag_comp, coord_sys):
+        """
+        Calculating the Kretschmann Scalar for a given metric
+
+        Args:
+            coord_sys [symbol]: The chosen coordinate system (cartesian, spherical, etc.)
+            diag_comp [list]: Diagonal components of the metric tensor
+
+        Returns:
+            self.kretschmannscalar_obj [int/symbol]: The Kretschmann Scalar, K
+        """
+        RiemannTensor.__init__(self, diag_comp, coord_sys)
+        riemanntensor_13 = self.get_riemanntensor()
+        riemanntensor_04 = self.vary_riemanntensor_type(
+            riemanntensor_13, 'dddd')
+        riemanntensor_40 = self.vary_riemanntensor_type(
+            riemanntensor_13, 'uuuu')
+        kretschmann_scalar =  0
+        for a, b, c, d in product(range(self.ndim), repeat=4):
+            kretschmann_scalar += riemanntensor_04[a, b, c, d] * riemanntensor_40[a, b, c, d]
+        self.kretschmannscalar_obj = simplify(kretschmann_scalar) 
+
+    def get_kretschmannscalar(self):
+        """
+        Returns the KretschmannScalar w.r.t the given diagonal components
+        """
+        return self.kretschmannscalar_obj
