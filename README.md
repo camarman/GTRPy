@@ -57,13 +57,13 @@ For the case above it becomes,
 
 In this case, just type the desired form in terms of `'u'` and `'d'`.
 
-`cs.vary_christoffelsymbol_type(chris_symbol, 'ddd')`
+`chris_symbol03 = cs.vary_christoffelsymbol_type(chris_symbol, 'ddd')`
 
-For instance, the code above will convert the type `(1,2)` Christoffel Symbol into type `(0,3)`
+For instance, the code above will convert the type `(1,2)` Christoffel Symbol into type `(0,3)` 
 
 ## Some Extra Features 
 
-#### In order to obtain the non-zero components of the Christoffel Symbols, Riemann Tensor or the Weyl Tensor just type `nonzero_tensorname(xtensor)`
+#### In order to obtain the non-zero components of the Christoffel Symbol, Riemann Tensor or the Weyl Tensor just type `nonzero_tensorname(xtensor)`
 
 For instance,
 
