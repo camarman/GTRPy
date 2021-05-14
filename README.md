@@ -1,6 +1,6 @@
 # General-Relativity-Tensor-Calculations
 
-Calculating the Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, and Einstein Tensor from the given metric
+Calculating the Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from the given metric
 
 ### Required packages
 sympy, numpy, itertools
@@ -57,18 +57,26 @@ For the case above it becomes,
 
 In this case, just type the desired form in terms of `'u'` and `'d'`.
 
-`cs.vary_type(chris_symbol, 'ddd')`
+`cs.vary_christoffelsymbol_type(chris_symbol, 'ddd')`
 
 For instance, the code above will convert the type `(1,2)` Christoffel Symbol into type `(0,3)`
 
 ## Some Extra Features 
 
-#### In order to obtain the non-zero components of the Christoffel Symbols just type
+#### In order to obtain the non-zero components of the Christoffel Symbols, Riemann Tensor or the Weyl Tensor just type `nonzero_tensorname(xtensor)`
 
-`cs.nonzero_christoffelsymbol(chris_symbol)`
+For instance,
+
+`cs.nonzero_christoffelsymbol(chris_symbol)` 
+
+or 
+
+`rt.nonzero_riemanntensor(riemann_tensor)`
+
+will show the desired output
 
 ## Notes 
 
 #### 1. These examples can be further studied on `example.ipynb`
 #### 2. It is recommended to use Jupyter Notebook to see a better output.
-#### 3. For some metrics the [`nsimplify`](https://docs.sympy.org/latest/modules/simplify/simplify.html#nsimplify) method may not be working properly. In this case remove that function from the the source code.
+#### 3. For some metrics the [`nsimplify`](https://docs.sympy.org/latest/modules/simplify/simplify.html#nsimplify) method may not be working properly. In this case you may try to adjust the Simplify function.
