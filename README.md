@@ -8,52 +8,56 @@ Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci
 ## Getting Started
 
 ### 0. Download the GRTC Main Folder
-### 1. Run the GRTC_GUI.py file
+### 1. Run the `GRTC_GUI.py` file
 ### 2. Chose a suitable dimension from the given page. You'll have two options.
 
-![Intro_dim](https://user-images.githubusercontent.com/45866787/118868040-66b71800-b8ec-11eb-98a2-69ad0918c1fd.png)
+![main_page](https://user-images.githubusercontent.com/45866787/122600966-3e504400-d079-11eb-82f0-102a3743db5b.png)
 
-If you chose four dimensions, you'd see a page in this form.
+#### If you chose four dimensions, you'll see a page in this form.
 
-![Intro_dim](https://user-images.githubusercontent.com/45866787/118868107-76cef780-b8ec-11eb-9f52-8b0490b1dc2e.png)
+![welcoming page](https://user-images.githubusercontent.com/45866787/122601117-7e172b80-d079-11eb-876e-276e483f7884.png)
 
-### 2. Define the coordinate system (cartesian, spherical, etc.)
+### 3. Define the coordinate system (cartesian, spherical, etc.)
 
-![Intro_dim](https://user-images.githubusercontent.com/45866787/118868153-85b5aa00-b8ec-11eb-9dd2-3d3ae734b646.png)
+![choosing_coordinate](https://user-images.githubusercontent.com/45866787/122601160-8ff8ce80-d079-11eb-92cb-b4634f1feb14.png)
 
-These are the available/most commonly used coordinate system components. If you want to add another element, go to line 42-43 
+#### These are the available/most commonly used coordinate system components. If you want to add another element, go to line `39-40`
 located in the `GRTC_GUI.py` file.
 
-![image](https://user-images.githubusercontent.com/45866787/118860344-f1474980-b8e3-11eb-8114-cc9e9a1d6d24.png)
+![coord_names](https://user-images.githubusercontent.com/45866787/122601717-642a1880-d07a-11eb-8c44-0808c6984b62.png)
 
+### 4. Define the diagonal components of the metric tensor
 
-### 3. Define the diagonal components of the metric tensor
+#### While defining the components of the tensor, write the expressions as you are writing them in python (i.e., use `**`, not `^`). I have also defined most of the most common physics symbols, but if you think I am missing something, you can add it through `12-15` from the `GRTC_GUI.py`.
 
-While defining the components of the tensor, write the expressions as you are writing them in python (i.e., use **, not ^). I have also defined most of the most common physics symbols, but if you think I am missing something, you can add it through 15-17 from the GRTC_GUI.py.
+![variable_names](https://user-images.githubusercontent.com/45866787/122601959-bc611a80-d07a-11eb-898f-1809cdf101eb.png)
 
-Here is an example of the `Schwarzschild Metric` where `r_s = 2GM/c^2`
+#### Here is an example 
 
-![Intro_dim](https://user-images.githubusercontent.com/45866787/118871096-ea263880-b8ef-11eb-936e-461a229c4761.png)
+![choosing_components](https://user-images.githubusercontent.com/45866787/122602136-fb8f6b80-d07a-11eb-9b7c-ac7a7ebd9336.png)
 
-
-### 4. Chose a tensor that you want to calculate.
+### 5. Chose a tensor that you want to calculate.
 
 Chose a tensor from the `Available Tensors` segment and click `Submit.`
 
 ## Getting Tensors / Tensor Types and Index Lowering/Raising
 
-For instance, when you chose the `Christoffel Symbols,` you'll see a page like this.
+For instance, when you chose the `Metric Tensor`, you'll see a page like this.
 
-![Intro_dim](https://user-images.githubusercontent.com/45866787/118871537-5739ce00-b8f0-11eb-810f-b3abf166db13.png)
+![metric_tensor](https://user-images.githubusercontent.com/45866787/122602173-0d710e80-d07b-11eb-9839-cf0ef32932a6.png)
+
+And later on you can choose the `Christoffel Symbol` option to see
+
+![chris_symbol](https://user-images.githubusercontent.com/45866787/122602231-2679bf80-d07b-11eb-9c4e-8a0f859661cb.png)
 
 You can change the type of the tensor and get any component from the given page.
 
-![Intro_dim](https://user-images.githubusercontent.com/45866787/118871697-79335080-b8f0-11eb-9b42-0cbae91cac34.png)
+![chris_symbol_upper](https://user-images.githubusercontent.com/45866787/122602251-2ed1fa80-d07b-11eb-89e7-c1582633524c.png)
 
 
 # Non - GUI Version
 
-### *Those who want to run the code from the .ipynb file, and don't want to use GUI, can follow the steps given below.*
+### *Those who want to run the code from the `.ipynb` le, and don't want to use GUI, can follow the steps given below.*
 
 ### Required packages
 sympy, numpy, itertools
