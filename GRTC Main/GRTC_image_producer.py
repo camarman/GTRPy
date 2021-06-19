@@ -1,4 +1,4 @@
-# Some important function for image processing
+# Some important functions for image processing
 
 
 from PIL import Image
