@@ -1,4 +1,5 @@
-# Two important functions that will be used to produce equations of the tensors and their components
+# Two important functions that will be used to produce equations 
+# of the tensors and their components
 
 
 from sympy import latex
