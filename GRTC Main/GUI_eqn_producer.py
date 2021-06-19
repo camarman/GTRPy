@@ -1,7 +1,8 @@
 # Two important functions that will be used to produce equations of the tensors and their components
 
-from GRTC import *
+
 from sympy import latex
+from GRTC import *
 
 
 def tensor_producer(diag_comp, coord_sys, xtensor_name, xtensor_type=''):
@@ -206,7 +207,6 @@ def tensor_component_producer(diag_comp, coord_sys, xtensor_name, component='', 
             else:
                 return '$$Z^{{{0} {1}}} = {2}$$'.format(latex(component[0]), latex(component[1]), latex(new_traceless_ricci_tensor[i,j]))
                 
-    
     if xtensor_name == 'Einstein Tensor':
         et = EinsteinTensor(diag_comp, coord_sys)
         einstein_tensor = et.get_einsteintensor()
@@ -223,7 +223,6 @@ def tensor_component_producer(diag_comp, coord_sys, xtensor_name, component='', 
             else:
                 return '$$G^{{{0} {1}}} = {2}$$'.format(latex(component[0]), latex(component[1]), latex(new_einstein_tensor[i,j]))
             
-        
     if xtensor_name == 'Weyl Tensor':
         wyl = WeylTensor(diag_comp, coord_sys)
         weyl_tensor = wyl.get_weyltensor()
@@ -245,4 +244,3 @@ def tensor_component_producer(diag_comp, coord_sys, xtensor_name, component='', 
                 return '$$C^{{{0} {1} {2}}}{{}}_{{{3}}}= {4}$$'.format(latex(component[0]), latex(component[1]), latex(component[2]), latex(component[3]), latex(new_weyl_tensor[i,j,k,l]))
             else:
                 return '$$C^{{{0} {1} {2} {3}}}= {4}$$'.format(latex(component[0]), latex(component[1]), latex(component[2]), latex(component[3]), latex(new_weyl_tensor[i,j,k,l]))
-            
