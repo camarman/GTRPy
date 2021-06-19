@@ -22,16 +22,15 @@ If you choose four dimensions, you'll see a page in this form.
 
 ![choosing_coordinate](https://user-images.githubusercontent.com/45866787/122601160-8ff8ce80-d079-11eb-92cb-b4634f1feb14.png)
 
-These are the available/most commonly used coordinate system components. If you want to add another element, go to line `39-40` located in the `GRTC_GUI.py`.
+These are the available/most commonly used coordinate system components. If you want to add another element, go to line `34-35` located in the `GRTC_GUI.py`.
 
-![coord_names](https://user-images.githubusercontent.com/45866787/122601717-642a1880-d07a-11eb-8c44-0808c6984b62.png)
+![coordinates](https://user-images.githubusercontent.com/45866787/122633667-6a53df80-d0e2-11eb-9ac0-419a45095ec4.png)
 
 #### 4. Define the diagonal components of the metric tensor
 
 Here is an example 
 
 ![choosing_components](https://user-images.githubusercontent.com/45866787/122602136-fb8f6b80-d07a-11eb-9b7c-ac7a7ebd9336.png)
-
 
 #### 5. Choose a tensor that you want to calculate.
 
