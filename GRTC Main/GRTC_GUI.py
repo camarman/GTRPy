@@ -1,27 +1,23 @@
 #### General Relativity Tensorial Calculations - Graphical User Interface (GUI) ###
 
+
 import PySimpleGUI as sg
 from PIL import Image
 from sympy import *
 from GUI_eqn_producer import *
+from GRTC_image_producer import *
 
 
-# Color option of the GUI
+# Color theme option provided by the PySimpleGUI
 sg.ChangeLookAndFeel('Material1')
-
-# Defining some of the most common symbols in physics
-G, M, m, c, a, k, r_s = symbols('G, M, m, c, a, k, r_s')
-alpha, beta, gamma, delta, eta, epsilon, kappa = symbols('alpha, beta, gamma, delta, eta, epsilon, kappa')
-mu, nu, sigma, tau, chi, psi, omega = symbols('mu, nu, sigma, tau, chi, psi, omega')
 
 
 # Defining the used tensors in the GRTC
-tensor = [
-    'Metric Tensor', 'Inverse Metric Tensor', 'Christoffel Symbol',
-    'Riemann Tensor', 'Ricci Tensor', 'Ricci Scalar',
-    'Weyl Tensor', 'Traceless Ricci Tensor', 'Einstein Tensor',
-    'Kretschmann Scalar'
-        ]
+tensor_name = ['Metric Tensor', 'Inverse Metric Tensor', 'Christoffel Symbol',
+               'Riemann Tensor', 'Ricci Tensor', 'Ricci Scalar', 
+               'Traceless Ricci Tensor', 'Weyl Tensor', 'Einstein Tensor',
+               'Kretschmann Scalar'
+               ]
 
 
 # Defining the tensor types
@@ -31,58 +27,17 @@ tensor_type4 = ['dddd', 'uddd', 'uudd', 'uuud', 'uuuu']
 
 
 # Classifying some of the tensors that will be used with the tensor types
-tensor2d = ['Metric Tensor', 'Ricci Tensor',
-            'Traceless Ricci Tensor', 'Einstein Tensor']
+tensor2d = ['Metric Tensor', 'Ricci Tensor', 'Traceless Ricci Tensor', 'Einstein Tensor']
 scalars = ['Ricci Scalar', 'Kretschmann Scalar']
 
 
-# Defining the most common coordinate system symbols
+# Defining the most commonly used coordinate system symbols
 coordinates = ['t', 'x', 'y', 'z', 'r', 'theta', 'phi', 'rho']
-
-
-def re_size(xtensor_name, xtensor_type = ''):
-    """
-    Re-sizing the image of a tensor
-
-    Args:
-        xtensor_name [str]: The name of the desired tensor given as a string
-        xtensor_type [str]: Type of the tensor. Given in terms of 'u': contravariant
-        and 'd': covariant
-    """
-    im = Image.open('tensor.png')
-    if xtensor_name == 'Metric Tensor' and xtensor_type == 'ud': # for some reason this tensor looks bigger
-        size = (300, 300)
-    elif xtensor_name in tensor2d or xtensor_name == 'Inverse Metric Tensor':
-        size = (500, 500)
-    elif xtensor_name == 'Christoffel Symbol':
-        size = (1200, 600)
-    elif xtensor_name == 'Riemann Tensor' or xtensor_name == 'Weyl Tensor':
-        size = (600, 600)
-    elif xtensor_name in scalars:
-        size = (500, 500)
-    im.thumbnail(size, Image.ANTIALIAS)
-    out_dim = im.size
-    out_name = 'tensor.png'
-    im.save(out_name, "PNG")
-    im.close()
-
-
-def re_size_component():
-    """
-    Re-sizing the image of the tensor components
-    """
-    im = Image.open('tensor_component.png')
-    size = (200, 200)
-    im.thumbnail(size, Image.ANTIALIAS)
-    out_dim = im.size
-    out_name = 'tensor_component.png'
-    im.save(out_name, "PNG")
-    im.close()
 
 
 def gui_main_process(diag_comp, coord_sys, desired_tensor):
     """
-    The main process of the GUI that processes the images for given metric, and coordinate system
+    The main process of the GUI that produces the images for a given metric and coordinate system
 
     Args:
         diag_comp [list]: Diagonal components of the metric tensor
@@ -91,14 +46,9 @@ def gui_main_process(diag_comp, coord_sys, desired_tensor):
     """
     tensor_equation = tensor_producer(diag_comp, coord_sys, desired_tensor)
     tensor_component_equation = tensor_component_producer(diag_comp, coord_sys, desired_tensor)
-    preview(tensor_equation, viewer='file', filename='tensor.png', euler=False,
-            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-    preview(tensor_component_equation, viewer='file', filename='tensor_component.png', euler=False,
-            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-    re_size(desired_tensor)
-    re_size_component()
-    
-    if desired_tensor in tensor2d:  # tensors with 2-dimension and has various types
+    produce_image(tensor_equation, tensor_component_equation, desired_tensor)
+    # tensors with 2-dimension and has various types
+    if desired_tensor in tensor2d:  
         layout_tensor_type = [
                                 [sg.Text(desired_tensor, size=(35, 1), justification='center', font=('Inconsolota', 20), relief=sg.RELIEF_RIDGE)],
                                 [sg.Text('Tensor Type:',), sg.InputCombo(tensor_type2, size=(20, 1), default_value='dd')],
@@ -113,16 +63,11 @@ def gui_main_process(diag_comp, coord_sys, desired_tensor):
             if event == sg.WIN_CLOSED:
                 break
             if event == 'Submit':
-                desired_tensor_type = values[0] # the desired new type of the tensor
-                components = [values[1], values[2]] # the components of the tensor
+                desired_tensor_type = values[0] # new type of the tensor
+                components = [values[1], values[2]] # the components of new tensor
                 tensor_equation = tensor_producer(diag_comp, coord_sys, desired_tensor, desired_tensor_type)
                 tensor_component_equation = tensor_component_producer(diag_comp, coord_sys, desired_tensor, components, desired_tensor_type)
-                preview(tensor_equation, viewer='file', filename='tensor.png', euler=False,
-                        dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-                preview(tensor_component_equation, viewer='file', filename='tensor_component.png', euler=False,
-                        dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-                re_size(desired_tensor, desired_tensor_type)
-                re_size_component()
+                produce_image(tensor_equation, tensor_component_equation, desired_tensor, desired_tensor_type)
                 # updating the images with the new ones
                 window_tensor_type.Element('-TENSOR-').Update('tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update('tensor_component.png')
@@ -167,12 +112,7 @@ def gui_main_process(diag_comp, coord_sys, desired_tensor):
                 components = [values[1], values[2], values[3]]
                 tensor_equation = tensor_producer(diag_comp, coord_sys, desired_tensor, desired_tensor_type)
                 tensor_component_equation = tensor_component_producer(diag_comp, coord_sys, desired_tensor, components, desired_tensor_type)
-                preview(tensor_equation, viewer='file', filename='tensor.png', euler=False,
-                        dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-                preview(tensor_component_equation, viewer='file', filename='tensor_component.png', euler=False,
-                        dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-                re_size(desired_tensor)
-                re_size_component()
+                produce_image(tensor_equation, tensor_component_equation, desired_tensor)
                 window_tensor_type.Element('-TENSOR-').Update('tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update('tensor_component.png') 
     
@@ -195,12 +135,7 @@ def gui_main_process(diag_comp, coord_sys, desired_tensor):
                 components = [values[1], values[2], values[3], values[4]]
                 tensor_equation = tensor_producer(diag_comp, coord_sys, desired_tensor, desired_tensor_type)
                 tensor_component_equation = tensor_component_producer(diag_comp, coord_sys, desired_tensor, components, desired_tensor_type)
-                preview(tensor_equation, viewer='file', filename='tensor.png', euler=False,
-                        dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-                preview(tensor_component_equation, viewer='file', filename='tensor_component.png', euler=False,
-                        dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-                re_size(desired_tensor)
-                re_size_component()
+                produce_image(tensor_equation, tensor_component_equation, desired_tensor)
                 window_tensor_type.Element('-TENSOR-').Update('tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update('tensor_component.png')
     
@@ -223,12 +158,7 @@ def gui_main_process(diag_comp, coord_sys, desired_tensor):
                 components = [values[1], values[2], values[3], values[4]]
                 tensor_equation = tensor_producer(diag_comp, coord_sys, desired_tensor, desired_tensor_type)
                 tensor_component_equation = tensor_component_producer(diag_comp, coord_sys, desired_tensor, components, desired_tensor_type)
-                preview(tensor_equation, viewer='file', filename='tensor.png', euler=False,
-                        dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-                preview(tensor_component_equation, viewer='file', filename='tensor_component.png', euler=False,
-                        dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 600', '-bg', 'Transparent'])
-                re_size(desired_tensor)
-                re_size_component()
+                produce_image(tensor_equation, tensor_component_equation, desired_tensor)
                 window_tensor_type.Element('-TENSOR-').Update('tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update('tensor_component.png')
     
@@ -243,8 +173,7 @@ def gui_main_process(diag_comp, coord_sys, desired_tensor):
             if event == sg.WIN_CLOSED:
                 break    
 
-
-    
+ 
 # The first page of the GUI
 layout_dimension = [
     [sg.Text('General Relativity Tensorial Calculations', size=(35, 1), justification='center', font=('Inconsolota', 20), relief=sg.RELIEF_RIDGE)],
@@ -274,7 +203,7 @@ if event == 'Submit':
             [sg.Image(r'GUI Images\g22.png'), sg.InputText(default_text='r**2')],
             [sg.Image(r'GUI Images\g33.png'), sg.InputText(default_text='r**2*sin(theta)**2')],
             [sg.Text('Available Tensors')], 
-            [sg.InputCombo(tensor, size=(20, 1), default_value='Metric Tensor')],
+            [sg.InputCombo(tensor_name, size=(20, 1), default_value='Metric Tensor')],
             [sg.Submit(), sg.Exit()]
             ]
         window_4dim = sg.Window('GRTC', layout_4dim)
@@ -300,7 +229,7 @@ if event == 'Submit':
         [sg.Image(r'GUI Images\g11.png'), sg.InputText(default_text='r**2')],
         [sg.Image(r'GUI Images\g22.png'), sg.InputText(default_text='r**2*sin(theta)**2')],
         [sg.Text('Available Tensors')], 
-        [sg.InputCombo(tensor, size=(20, 1), default_value='Metric Tensor')],
+        [sg.InputCombo(tensor_name, size=(20, 1), default_value='Metric Tensor')],
         [sg.Submit(), sg.Exit()]
         ]
         window_3dim = sg.Window('GRTC', layout_3dim)
