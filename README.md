@@ -46,7 +46,7 @@ These are the available/most commonly used coordinate system components. If you 
 
 Here is an example 
 
-![choosing_components](https://user-images.githubusercontent.com/45866787/122602136-fb8f6b80-d07a-11eb-9b7c-ac7a7ebd9336.png)
+![diag](https://user-images.githubusercontent.com/45866787/123517480-dff31900-d6a9-11eb-9616-828eed6c8896.png)
 
 #### 5. Choose a tensor that you want to calculate.
 
@@ -56,15 +56,42 @@ Choose a tensor from the `Available Tensors` segment and click `Submit.`
 
 For instance, when you choose the `Metric Tensor`, you'll see a page like this.
 
-![metric_tensor](https://user-images.githubusercontent.com/45866787/122602173-0d710e80-d07b-11eb-9839-cf0ef32932a6.png)
+![metric_tensor](https://user-images.githubusercontent.com/45866787/123517493-f8fbca00-d6a9-11eb-9e3b-71780a4b7eac.png)
 
 And later on you can choose the `Christoffel Symbol` option to see
 
-![chris_symbol](https://user-images.githubusercontent.com/45866787/122602231-2679bf80-d07b-11eb-9c4e-8a0f859661cb.png)
+![chris_symbol](https://user-images.githubusercontent.com/45866787/123517511-1335a800-d6aa-11eb-9caa-98dcd5124a57.png)
 
 You can change the type of the tensor and get any component from the given page.
 
-![chris_symbol_upper](https://user-images.githubusercontent.com/45866787/122602251-2ed1fa80-d07b-11eb-89e7-c1582633524c.png)
+![chris_symbol1](https://user-images.githubusercontent.com/45866787/123517557-542dbc80-d6aa-11eb-82c3-693ce8535454.png)
+
+![chris_symbol2](https://user-images.githubusercontent.com/45866787/123517576-6c054080-d6aa-11eb-8ef1-e6ddd69def96.png)
+
+## Covariant Derivative
+
+There are 6 different options that you can choose to calculate the Covariant Derivative of a field. These are;
+
+1. `Scalar Field` 
+2. `Type (1,0) Vector Field` 
+3. `Type (0,1) Vector Field`
+4. `Type (2,0) Tensor Field`
+5. `Type (1,1) Tensor Field`
+6. `Type (0,2) Tensor Field`
+
+For example, when you choose `Type (1,0) Vector Field`, you'll see a page in the form of
+
+![cov_der](https://user-images.githubusercontent.com/45866787/123517695-22692580-d6ab-11eb-9946-88bb2629c34a.png)
+
+From here you can form your vector field and choose the covariant derivative component that you want to calculate. 
+
+Such as for
+
+![cov_der](https://user-images.githubusercontent.com/45866787/123517744-62300d00-d6ab-11eb-8a6f-958dbb8f3277.png)
+
+You'll see a page in this form
+
+![cov_der_result](https://user-images.githubusercontent.com/45866787/123517767-84298f80-d6ab-11eb-8064-8e50acc98552.png)
 
 ## Non - GUI Version
 
