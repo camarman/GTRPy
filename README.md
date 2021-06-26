@@ -1,9 +1,20 @@
 ## General-Relativity-Tensor-Calculations (GRTC) by Graphical User Interface (GUI)
 
-Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from the given metric by using GUI.
+#### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from the given metric 
 
-#### Required packages
-`IPython.display`, `itertools`, `numpy`, `PIL`, `PySimpleGUI`, `sympy`
+#### 2. [Covariant Derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for Scalar, Vector and Tensor Fields (only in 4D)
+
+> ## Upcoming Features
+> #### **1. Covariant Derivative for Scalar, Vector and Tensor Fields in 3D**
+> 
+> #### **2. [Lie Derivative](https://en.wikipedia.org/wiki/Lie_derivative)**
+>
+> #### **3. Hawking Radiation Calculator**
+
+#### Requirements
+1. `IPython.display`, `itertools`, `numpy`, `PIL`, `PySimpleGUI`, `sympy`
+2. `Latex` (To produce images)
+3. You'll also need fonts such as  `Tahoma`, `Bookman`, and `Georgia.` (These are the standard fonts for Windows, but if they are missing, you can download it online or change the font manually from the `GRTC_GUI.py`.
 
 ### Getting Started
 
@@ -12,19 +23,24 @@ Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci
 
 You'll have two options. 
 
-![main_page](https://user-images.githubusercontent.com/45866787/122600966-3e504400-d079-11eb-82f0-102a3743db5b.png)
+![main_page](https://user-images.githubusercontent.com/45866787/123514014-078db580-d699-11eb-82a3-4b675d5a0620.png)
 
 If you choose four dimensions, you'll see a page in this form.
 
-![welcoming page](https://user-images.githubusercontent.com/45866787/122601117-7e172b80-d079-11eb-876e-276e483f7884.png)
+![4d](https://user-images.githubusercontent.com/45866787/123513907-7cacbb00-d698-11eb-94d9-0c639209287d.png)
+
+and for three dimensions,
+
+![3d](https://user-images.githubusercontent.com/45866787/123514034-29873800-d699-11eb-9f5a-3d4d124cf408.png)
+
 
 #### 3. Define the coordinate system (cartesian, spherical, etc.)
 
-![choosing_coordinate](https://user-images.githubusercontent.com/45866787/122601160-8ff8ce80-d079-11eb-92cb-b4634f1feb14.png)
+![coord_sys](https://user-images.githubusercontent.com/45866787/123513964-c695a100-d698-11eb-905f-e9473cfad125.png)
 
-These are the available/most commonly used coordinate system components. If you want to add another element, go to line `34-35` located in the `GRTC_GUI.py`.
+These are the available/most commonly used coordinate system components. If you want to add another element, go to line `52-53` located in the `GRTC_GUI.py`.
 
-![coordinates](https://user-images.githubusercontent.com/45866787/122633667-6a53df80-d0e2-11eb-9ac0-419a45095ec4.png)
+![coordinates](https://user-images.githubusercontent.com/45866787/123514068-694e1f80-d699-11eb-8b16-3d4840b1d0b8.png)
 
 #### 4. Define the diagonal components of the metric tensor
 
