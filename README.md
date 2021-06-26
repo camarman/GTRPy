@@ -2,21 +2,21 @@
 
 > ##  Current Features
 >
-> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from a given metric and coordinate system.
+> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from a given metric and coordinate system
 >
->#### 2. Calculating [covariant derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor field (only available in four dimensions).
+>#### 2. Calculating [covariant derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor field (only available in four dimensions)
 
 > ## Upcoming Features
-> #### 1. Calculating covariant derivative for a given scalar, vector, and tensor field in three dimensions.
+> #### 1. Calculating covariant derivative for a given scalar, vector, and tensor field in three dimensions
 > 
 > #### 2. [Lie Derivative](https://en.wikipedia.org/wiki/Lie_derivative) Calculator
 >
-> #### 3. [Hawking Radiation Calculator.](https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator)
+> #### 3. [Hawking Radiation Calculator](https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator)
 
 #### Requirements
 1. `IPython.display`, `itertools`, `numpy`, `PIL`, `PySimpleGUI`, `sympy`
 2. [`Latex`](https://www.latex-project.org/get/) (To produce images and equations)
-3. You'll also need three fonts; `Tahoma`, `Bookman`, and `Georgia`. (These are the standard fonts for Windows, but if they are missing, you can download them online or change the font manually from the `GRTC_GUI.py`, to prevent any errors.)
+3. You'll also need three fonts; `Tahoma`, `Bookman`, and `Georgia`(These are the standard fonts for Windows, but if they are missing, you can download them online or change the font manually from the `GRTC_GUI.py`, to prevent any errors).
 
 ### Getting Started
 
@@ -31,10 +31,9 @@ If you choose four dimensions, you'll see a page in this form
 
 ![4d](https://user-images.githubusercontent.com/45866787/123513907-7cacbb00-d698-11eb-94d9-0c639209287d.png)
 
-and for three dimensions,
+similarly, for three dimensions
 
 ![3d](https://user-images.githubusercontent.com/45866787/123514034-29873800-d699-11eb-9f5a-3d4d124cf408.png)
-
 
 #### 3. Define the coordinate system (cartesian, spherical, etc.)
 
