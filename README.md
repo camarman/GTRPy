@@ -1,4 +1,4 @@
-## General-Relativity-Tensor-Calculations (GRTC) by Graphical User Interface (GUI)
+## General-Relativity-Tensorial-Calculations (GRTC) by Graphical User Interface (GUI)
 
 > ##  Current Features
 >
