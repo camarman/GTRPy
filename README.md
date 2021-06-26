@@ -2,21 +2,21 @@
 
 > ##  Current Features
 >
-> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from the given metric.
+> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from the given metric and coordinate system.
 >
->#### 2. Calculating [Covariant Derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for scalar, vector and tensor fields. (only in 4D)
+>#### 2. Calculating [Covariant Derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor fields (only in 4D).
 
 > ## Upcoming Features
-> #### **1. Covariant Derivative for Scalar, Vector and Tensor Fields in 3D**
+> #### **1. Calculating Covariant Derivative for a given scalar, vector, and tensor fields in 3D.**
 > 
-> #### **2. [Lie Derivative](https://en.wikipedia.org/wiki/Lie_derivative)**
+> #### **2. Calculating the [Lie Derivative.](https://en.wikipedia.org/wiki/Lie_derivative)**
 >
-> #### **3. Hawking Radiation Calculator**
-> 
+> #### **3. [Hawking Radiation Calculator.](https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator)**
+
 #### Requirements
 1. `IPython.display`, `itertools`, `numpy`, `PIL`, `PySimpleGUI`, `sympy`
-2. `Latex` (To produce images)
-3. You'll also need fonts such as  `Tahoma`, `Bookman`, and `Georgia`. (These are the standard fonts for Windows, but if they are missing, you can download it online or change the font manually from the `GRTC_GUI.py`.
+2. [`Latex`](https://www.latex-project.org/get/) (To produce images and equations)
+3. You'll also need three fonts; `Tahoma`, `Bookman`, and `Georgia`. (These are the standard fonts for Windows, but if they are missing, you can download it online or change the font manually from the `GRTC_GUI.py` to prevent any errors.
 
 ### Getting Started
 
@@ -25,9 +25,9 @@
 
 You'll have two options. 
 
+![main_page](https://user-images.githubusercontent.com/45866787/123518687-b1783c80-d6af-11eb-898d-09d40c5369cf.png)
 
-
-If you choose four dimensions, you'll see a page in this form.
+If you choose four dimensions, you'll see a page in this form
 
 ![4d](https://user-images.githubusercontent.com/45866787/123513907-7cacbb00-d698-11eb-94d9-0c639209287d.png)
 
@@ -52,7 +52,7 @@ Here is an example
 
 #### 5. Choose a tensor that you want to calculate.
 
-Choose a tensor from the `Available Tensors` segment and click `Submit.`
+Choose a tensor from the `Tensors` segment and click `Submit`
 
 ### Getting Tensors / Tensor Types and Index Lowering/Raising
 
@@ -70,7 +70,7 @@ You can change the type of the tensor and get any component from the given page.
 
 ![chris_symbol2](https://user-images.githubusercontent.com/45866787/123517576-6c054080-d6aa-11eb-8ef1-e6ddd69def96.png)
 
-## Covariant Derivative
+## Covariant Derivative by Field Type
 
 There are 6 different options that you can choose to calculate the Covariant Derivative of a field. These are;
 
@@ -83,13 +83,21 @@ There are 6 different options that you can choose to calculate the Covariant Der
 
 ### Scalar Fields
 
+When you choose `Scalar Field`, you'll see a page in this form
 
+![scalar_field](https://user-images.githubusercontent.com/45866787/123519081-d5d51880-d6b1-11eb-887a-7ffbf18f4479.png)
 
+From here you can type your scalar field and choose the covariant derivative component that you want to calculate. 
 
+![scalar_field1](https://user-images.githubusercontent.com/45866787/123519090-e5ecf800-d6b1-11eb-93c0-e624d7f9d61f.png)
+
+For this type of field, we obtain
+
+![scalar_field_result](https://user-images.githubusercontent.com/45866787/123519099-ec7b6f80-d6b1-11eb-9849-aa61c51ef091.png)
 
 ### Vector Fields
 
-For example, when you choose `Type (1,0) Vector Field`, you'll see a page in the form of
+For example, when you choose `Type (1,0) Vector Field`, you'll see a page in this form
 
 ![cov_der](https://user-images.githubusercontent.com/45866787/123517695-22692580-d6ab-11eb-9946-88bb2629c34a.png)
 
@@ -99,23 +107,24 @@ Such as for
 
 ![cov_der](https://user-images.githubusercontent.com/45866787/123517744-62300d00-d6ab-11eb-8a6f-958dbb8f3277.png)
 
-You'll see a page in this form
+You'll obtain
 
 ![cov_der_result](https://user-images.githubusercontent.com/45866787/123517767-84298f80-d6ab-11eb-8064-8e50acc98552.png)
 
 ### Tensor Fields
 
-For `Type (0,2) Tensor Field` you'll see a page in the form of
+For example, when you choose `Type (0,2) Tensor Field` you'll see a page in this form
 
-![tensor_field](https://user-images.githubusercontent.com/45866787/123518073-01a1cf80-d6ad-11eb-8ec4-7f005891dab7.png)
+![type02_tensor](https://user-images.githubusercontent.com/45866787/123518927-edf86800-d6b0-11eb-9aff-9692468f839c.png)
+
+From here you can form your tensor field and choose the covariant derivative component that you want to calculate. 
+
+![tensor02](https://user-images.githubusercontent.com/45866787/123519232-a96dcc00-d6b2-11eb-84f5-8ae9209bb045.png)
 
 and the theta component of the covariant derivative tensor will be
 
-![tensor_field_result](https://user-images.githubusercontent.com/45866787/123518114-1d0cda80-d6ad-11eb-8f53-9625a68913e3.png)
+![tensor02_result](https://user-images.githubusercontent.com/45866787/123519235-abd02600-d6b2-11eb-8829-3093b485c073.png)
 
 ## Non - GUI Version
 
 Those who want to run the code from the `.ipynb` file, and don't want to use GUI, can follow the steps given in the `example.ipynb`.
-
-
-
