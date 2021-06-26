@@ -1,4 +1,4 @@
-#### General Relativity Tensorial Calculations ####
+################### GRTC - TENSORS ###################
 
 
 from IPython.display import display, Latex
@@ -828,3 +828,5 @@ class KretschmannScalar(RiemannTensor):
         Returns the KretschmannScalar with respect to the given diagonal components
         """
         return self.kretschmannscalar_obj
+
+############################################################################
