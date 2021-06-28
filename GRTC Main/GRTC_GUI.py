@@ -218,13 +218,13 @@ def gui_tensor(diag_comp, coord_sys, desired_tensor):
                 break    
 
 
-################### COVARIANT DERIVATIVE OPERATIONS ###################
+################### COVARIANT DERIVATIVE OPERATIONS - 4D ###################
 
 
-def gui_cd(diag_comp, coord_sys, desired_cd_object):
+def gui_cd_4D(diag_comp, coord_sys, desired_cd_object):
     """
     The main process of the GUI that produces the images of covariant derivatives 
-    for a given metric and coordinate system.
+    for a given metric and coordinate system in 4D.
 
     Args:
         diag_comp [list]: Diagonal components of the metric tensor.
@@ -478,6 +478,238 @@ def gui_cd(diag_comp, coord_sys, desired_cd_object):
                         break
         
 
+################### COVARIANT DERIVATIVE OPERATIONS - 3D ###################
+
+
+def gui_cd_3D(diag_comp, coord_sys, desired_cd_object):
+    """
+    The main process of the GUI that produces the images of covariant derivatives 
+    for a given metric and coordinate system in 3D.
+
+    Args:
+        diag_comp [list]: Diagonal components of the metric tensor.
+        coord_sys [list]: The coordinate system (cartesian, spherical, etc.).
+        desired_cd_object [str]: The type of the field (scalar, vector, tensorial) choosen by the user.
+    """
+    if desired_cd_object == 'Scalar Field':
+        layout_cd_scalar_field = [
+                                    [sg.Frame(layout=[
+                                        [sg.Image(r'GUI Input Images\scalar_field.png'), 
+                                         sg.InputText(default_text='', font=('Tahoma', 11))]], title='Scalar Field', font=('Bookman', 14))],
+                                    [sg.Text('Covariant Derivative Tensor Component:', font=('Tahoma', 11)), 
+                                     sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
+                                    [sg.Submit(button_color='blue')]
+                                ]
+        window_cd_scalar_field = sg.Window('GRTC', layout_cd_scalar_field)
+        while True:
+            event, values = window_cd_scalar_field.read()
+            if event == sg.WIN_CLOSED:
+                break
+            if event == 'Submit':
+                scalar_field = values[1]
+                index_symbol = values[2]
+                scalar_field_eqn = cd_scalar_field_eqn_producer(coord_sys, scalar_field, index_symbol)
+                preview(scalar_field_eqn, viewer='file', filename=r'GUI Tensor Images\cd_scalar_field.png', euler=False,
+                dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                re_size_cd(desired_cd_object)
+                layout_cd_scalar_field_result = [
+                                                [sg.Image(r'GUI Tensor Images\cd_scalar_field.png')],
+                                                ]
+                window_cd_scalar_field_result = sg.Window('GRTC', layout_cd_scalar_field_result)
+                while True:
+                    event, values = window_cd_scalar_field_result.read()
+                    if event == sg.WIN_CLOSED:
+                        break
+                    
+    if desired_cd_object == 'Type (1,0) Vector Field':
+        layout_cd_vector_field = [
+                                    [sg.Frame(layout=[
+                                        [sg.Image(r'GUI Input Images\vector_field_10_0.png'), 
+                                         sg.InputText(default_text='', font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\vector_field_10_1.png'), 
+                                         sg.InputText(default_text='', font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\vector_field_10_2.png'), 
+                                         sg.InputText(default_text='', font=('Tahoma', 11))]], title='Type (1,0) Vector Field', font=('Bookman', 14))],
+                                    [sg.Text('Covariant Derivative Tensor Component:', font=('Tahoma', 11)), 
+                                     sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
+                                    [sg.Submit(button_color='blue')]
+                                ]
+        window_cd_vector_field = sg.Window('GRTC', layout_cd_vector_field)
+        while True:
+            event, values = window_cd_vector_field.read()
+            if event == sg.WIN_CLOSED:
+                break
+            if event == 'Submit':
+                vector_field = [sympify(values[i]) for i in range(1, 7, 2)]
+                index_symbol = values[6] 
+                vector_field_10_eqn = cd_vector_field_eqn_producer(diag_comp, coord_sys, vector_field, 'u', index_symbol) 
+                preview(vector_field_10_eqn, viewer='file', filename=r'GUI Tensor Images\cd_vector_field_10.png', euler=False,
+                dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                re_size_cd(desired_cd_object)
+                layout_cd_vector_field_result = [
+                                                [sg.Image(r'GUI Tensor Images\cd_vector_field_10.png')],
+                                                ]
+                window_cd_vector_field_result = sg.Window('GRTC', layout_cd_vector_field_result)
+                while True:
+                    event, values = window_cd_vector_field_result.read()
+                    if event == sg.WIN_CLOSED:
+                        break
+                    
+    if desired_cd_object == 'Type (0,1) Vector Field':
+        layout_cd_vector_field = [
+                                    [sg.Frame(layout=[
+                                        [sg.Image(r'GUI Input Images\vector_field_01_0.png'), 
+                                         sg.InputText(default_text='', font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\vector_field_01_1.png'), 
+                                         sg.InputText(default_text='', font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\vector_field_01_2.png'), 
+                                         sg.InputText(default_text='', font=('Tahoma', 11))]], title='Type (0,1) Vector Field', font=('Bookman', 14))],
+                                    [sg.Text('Covariant Derivative Tensor Component:', font=('Tahoma', 11)), 
+                                     sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
+                                    [sg.Submit(button_color='blue')]
+                                ]
+        window_cd_vector_field = sg.Window('GRTC', layout_cd_vector_field)
+        while True:
+            event, values = window_cd_vector_field.read()
+            if event == sg.WIN_CLOSED:
+                break
+            if event == 'Submit':
+                vector_field = [sympify(values[i]) for i in range(1, 7, 2)]
+                index_symbol = values[6] 
+                vector_field_01_eqn = cd_vector_field_eqn_producer(diag_comp, coord_sys, vector_field, 'd', index_symbol) 
+                preview(vector_field_01_eqn, viewer='file', filename=r'GUI Tensor Images\cd_vector_field_01.png', euler=False,
+                dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                re_size_cd(desired_cd_object)
+                layout_cd_vector_field_result = [
+                                                [sg.Image(r'GUI Tensor Images\cd_vector_field_01.png')],
+                                                ]
+                window_cd_vector_field_result = sg.Window('GRTC', layout_cd_vector_field_result)
+                while True:
+                    event, values = window_cd_vector_field_result.read()
+                    if event == sg.WIN_CLOSED:
+                        break
+                    
+    if desired_cd_object == 'Type (2,0) Tensor Field':
+        layout_cd_tensor_field = [
+                                    [sg.Frame(layout=[
+                                        [sg.Image(r'GUI Input Images\tensor_field_20_0.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1), font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\tensor_field_20_1.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15 , 1), font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\tensor_field_20_2.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1), font=('Tahoma', 11))]], title='Type (2,0) Tensor Field', font=('Bookman', 14))],
+                                    [sg.Text('Covariant Derivative Tensor Component:', font=('Tahoma', 11)), 
+                                     sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
+                                    [sg.Submit(button_color='blue')]
+                                ]
+        window_cd_tensor_field = sg.Window('GRTC', layout_cd_tensor_field)
+        while True:
+            event, values = window_cd_tensor_field.read()
+            if event == sg.WIN_CLOSED:
+                break
+            if event == 'Submit':
+                tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 12, 4)]
+                index_symbol = values[12]
+                tensor_field_20_eqn = cd_tensor_field_eqn_producer(diag_comp, coord_sys, tensor_field, 'uu', index_symbol)
+                preview(tensor_field_20_eqn, viewer='file', filename=r'GUI Tensor Images\cd_tensor_field_20.png', euler=False,
+                dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                re_size_cd(desired_cd_object)
+                layout_cd_tensor_field_result = [
+                                                [sg.Image(r'GUI Tensor Images\cd_tensor_field_20.png')],
+                                                ]
+                window_cd_tensor_field_result = sg.Window('GRTC', layout_cd_tensor_field_result)
+                while True:
+                    event, values = window_cd_tensor_field_result.read()
+                    if event == sg.WIN_CLOSED:
+                        break
+        
+    if desired_cd_object == 'Type (1,1) Tensor Field':
+        layout_cd_tensor_field = [
+                                    [sg.Frame(layout=[
+                                        [sg.Image(r'GUI Input Images\tensor_field_11_0.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1), font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\tensor_field_11_1.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15 , 1), font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\tensor_field_11_2.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1), font=('Tahoma', 11))]], title='Type (1,1) Tensor Field', font=('Bookman', 14))],
+                                    [sg.Text('Covariant Derivative Tensor Component:', font=('Tahoma', 11)), 
+                                     sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
+                                    [sg.Submit(button_color='blue')]
+                                ]
+        window_cd_tensor_field = sg.Window('GRTC', layout_cd_tensor_field)
+        while True:
+            event, values = window_cd_tensor_field.read()
+            if event == sg.WIN_CLOSED:
+                break
+            if event == 'Submit':
+                tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 12, 4)]
+                index_symbol = values[12]
+                tensor_field_11_eqn = cd_tensor_field_eqn_producer(diag_comp, coord_sys, tensor_field, 'ud', index_symbol)
+                preview(tensor_field_11_eqn, viewer='file', filename=r'GUI Tensor Images\cd_tensor_field_11.png', euler=False,
+                dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                re_size_cd(desired_cd_object)
+                layout_cd_tensor_field_result = [
+                                                [sg.Image(r'GUI Tensor Images\cd_tensor_field_11.png')],
+                                                ]
+                window_cd_tensor_field_result = sg.Window('GRTC', layout_cd_tensor_field_result)
+                while True:
+                    event, values = window_cd_tensor_field_result.read()
+                    if event == sg.WIN_CLOSED:
+                        break
+                    
+    if desired_cd_object == 'Type (0,2) Tensor Field':
+        layout_cd_tensor_field = [
+                                    [sg.Frame(layout=[
+                                        [sg.Image(r'GUI Input Images\tensor_field_02_0.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1), font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\tensor_field_02_1.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15 , 1), font=('Tahoma', 11))],
+                                        [sg.Image(r'GUI Input Images\tensor_field_02_2.png'), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1),  font=('Tahoma', 11)), 
+                                         sg.InputText(default_text='', size=(15, 1), font=('Tahoma', 11))]], title='Type (0,2) Tensor Field', font=('Bookman', 14))],
+                                    [sg.Text('Covariant Derivative Tensor Component:', font=('Tahoma', 11)), 
+                                     sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
+                                    [sg.Submit(button_color='blue')]
+                                ]
+        window_cd_tensor_field = sg.Window('GRTC', layout_cd_tensor_field)
+        while True:
+            event, values = window_cd_tensor_field.read()
+            if event == sg.WIN_CLOSED:
+                break
+            if event == 'Submit':
+                tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 12, 4)]
+                index_symbol = values[12]
+                tensor_field_02_eqn = cd_tensor_field_eqn_producer(diag_comp, coord_sys, tensor_field, 'dd', index_symbol)
+                preview(tensor_field_02_eqn, viewer='file', filename=r'GUI Tensor Images\cd_tensor_field_02.png', euler=False,
+                dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                re_size_cd(desired_cd_object)
+                layout_cd_tensor_field_result = [
+                                                [sg.Image(r'GUI Tensor Images\cd_tensor_field_02.png')],
+                                                ]
+                window_cd_tensor_field_result = sg.Window('GRTC', layout_cd_tensor_field_result)
+                while True:
+                    event, values = window_cd_tensor_field_result.read()
+                    if event == sg.WIN_CLOSED:
+                        break
+
+
 ################### GUI MAIN PAGE ###################
 
 
@@ -540,7 +772,7 @@ if event == 'Submit':
                 diag_comp = [sympify(values[i]) for i in range(9, 17, 2)] # getting the diagonal components
                 coord_sys = symbols(values[1] + ' ' + values[3] + ' ' + values[5] + ' ' + values[7]) # getting the coordinate system
                 desired_cd_object = values[17]
-                gui_cd(diag_comp, coord_sys, desired_cd_object)
+                gui_cd_4D(diag_comp, coord_sys, desired_cd_object)
     
     elif ndim == 3:  # if the dimesion is 3
         layout_3dim = [
@@ -561,6 +793,9 @@ if event == 'Submit':
                         [sg.Frame(layout=[
                             [sg.Text('Tensors:', font=('Tahoma', 11)), 
                             sg.InputCombo(tensor_name, size=(20, 1), default_value='Metric Tensor', font=('Tahoma', 11)), 
+                            sg.Submit(button_color='blue')],
+                            [sg.Text('Covariant Derivative:', font=('Tahoma', 11)), 
+                            sg.InputCombo(cd_objects, size=(20, 1), default_value='Scalar Field', font=('Tahoma', 11)), 
                             sg.Submit(button_color='blue')]], title='Operations', font=('Georgia', 14))],
                         [sg.Exit(button_color='red')]
                         ]
@@ -575,5 +810,11 @@ if event == 'Submit':
                 coord_sys = symbols(values[1] + ' ' + values[3] + ' ' + values[5]) # getting the coordinate system
                 desired_tensor = values[12] # getting the desired tensor type
                 gui_tensor(diag_comp, coord_sys, desired_tensor)
+            
+            if event == 'Submit0':   # Calculating the Covariant Derivative
+                diag_comp = [sympify(values[i]) for i in range(7, 13, 2)] # getting the diagonal components
+                coord_sys = symbols(values[1] + ' ' + values[3] + ' ' + values[5]) # getting the coordinate system
+                desired_cd_object = values[13]
+                gui_cd_3D(diag_comp, coord_sys, desired_cd_object)
 
 ############################################################################
