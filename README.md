@@ -16,7 +16,7 @@
 #### Requirements
 1. `IPython.display`, `itertools`, `numpy`, `PIL`, `PySimpleGUI`, `sympy`
 2. [`Latex`](https://www.latex-project.org/get/) (To produce images and equations)
-3. You'll also need three fonts; `Tahoma`, `Bookman`, and `Georgia`(These are the standard fonts for Windows, but if they are missing, you can download them online or change the font manually from the `GRTC_GUI.py`, to prevent any errors).
+3. You'll also need three fonts; `Tahoma`, `Bookman`, and `Georgia`(These are the standard fonts for Windows, but if they are missing, you can download them online or change the font manually from the `GRTC_GUI.py`.
 
 ### Getting Started
 
