@@ -1,11 +1,12 @@
 ## General-Relativity-Tensorial-Calculations (GRTC) by Graphical User Interface (GUI)
 
-> ##  Current Features
+> ## Current Features
 >
-> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from a given metric and coordinate system (available in 3 and 4 dimensions).
+> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from a given metric and coordinate system (available in 3D and 4D).
 >
->#### 2. Calculating [covariant derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor field (available in 3 and 4 dimensions).
->
+> #### 2. Calculating [covariant derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor field (available in 3D and 4D).
+
+
 > ## Upcoming Features
 > 
 > #### 1. [Lie Derivative](https://en.wikipedia.org/wiki/Lie_derivative) Calculator
@@ -22,7 +23,7 @@
 #### 1. Run the `GRTC_GUI.py` file
 #### 2. Choose a suitable dimension from the given page 
 
-You'll have two options. 
+You'll have two options
 
 ![main_page](https://user-images.githubusercontent.com/45866787/123518687-b1783c80-d6af-11eb-898d-09d40c5369cf.png)
 
@@ -32,7 +33,7 @@ If you choose four dimensions, you'll see a page in this form
 
 similarly, for three dimensions
 
-![3d](https://user-images.githubusercontent.com/45866787/123514034-29873800-d699-11eb-9f5a-3d4d124cf408.png)
+![3d](https://user-images.githubusercontent.com/45866787/123635659-97139f80-d824-11eb-936f-87297f51bc46.png)
 
 #### 3. Define the coordinate system (cartesian, spherical, etc.)
 
@@ -48,29 +49,29 @@ Here is an example
 
 ![diag](https://user-images.githubusercontent.com/45866787/123517480-dff31900-d6a9-11eb-9616-828eed6c8896.png)
 
-#### 5. Choose a tensor that you want to calculate.
+## Tensors, Tensor Types, and Index Lowering/Raising
 
-Choose a tensor from the `Tensors` segment and click `Submit`
+#### 1. Choose a tensor that you want to calculate.
 
-### Getting Tensors / Tensor Types and Index Lowering/Raising
-
-For instance, when you choose the `Metric Tensor`, you'll see a page like this.
+Choose a tensor from the `Tensors` segment and click `Submit`. For instance, when you choose the `Metric Tensor`, you'll see a page like this.
 
 ![metric_tensor](https://user-images.githubusercontent.com/45866787/123517493-f8fbca00-d6a9-11eb-9e3b-71780a4b7eac.png)
 
-And later on you can choose the `Christoffel Symbol` option to see
+Later on, you can choose the `Christoffel Symbol` (or any other available tensor) from the `Tensors` segment.
 
 ![chris_symbol](https://user-images.githubusercontent.com/45866787/123517511-1335a800-d6aa-11eb-9caa-98dcd5124a57.png)
 
-You can change the type of the tensor and get any component from the given page.
+You can change the type of the tensor
 
-![chris_symbol1](https://user-images.githubusercontent.com/45866787/123517557-542dbc80-d6aa-11eb-82c3-693ce8535454.png)
+![chris_new](https://user-images.githubusercontent.com/45866787/123637827-1e621280-d827-11eb-90dd-3695fab8168f.png)
+
+and get any component from the given page.
 
 ![chris_symbol2](https://user-images.githubusercontent.com/45866787/123517576-6c054080-d6aa-11eb-8ef1-e6ddd69def96.png)
 
 ## Covariant Derivative by Field Type
 
-There are 6 different options that you can choose to calculate the Covariant Derivative of a field. These are;
+There are 6 different options that you can choose to calculate the covariant derivative of a field. These are;
 
 1. `Scalar Field` 
 2. `Type (1,0) Vector Field` 
@@ -91,7 +92,8 @@ From here, you can form a scalar field and choose the covariant derivative compo
 
 For this type of field, we obtain
 
-![scalar_field_result](https://user-images.githubusercontent.com/45866787/123519099-ec7b6f80-d6b1-11eb-9849-aa61c51ef091.png)
+![scalar](https://user-images.githubusercontent.com/45866787/123640662-10fa5780-d82a-11eb-8bdd-8e4ea056b132.png)
+
 
 ### Vector Fields
 
@@ -99,9 +101,7 @@ For example, when you choose `Type (1,0) Vector Field`, you'll see a page in thi
 
 ![cov_der](https://user-images.githubusercontent.com/45866787/123517695-22692580-d6ab-11eb-9946-88bb2629c34a.png)
 
-From here, you can form a vector field and choose the covariant derivative component that you want to calculate. 
-
-Such as for
+From here, you can form a vector field and choose the covariant derivative component that you want to calculate. Such as for
 
 ![cov_der](https://user-images.githubusercontent.com/45866787/123517744-62300d00-d6ab-11eb-8a6f-958dbb8f3277.png)
 
