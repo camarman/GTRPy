@@ -51,8 +51,6 @@ Here is an example
 
 ## Tensors, Tensor Types, and Index Lowering/Raising
 
-#### 1. Choose a tensor that you want to calculate.
-
 Choose a tensor from the `Tensors` segment and click `Submit`. For instance, when you choose the `Metric Tensor`, you'll see a page like this.
 
 ![metric_tensor](https://user-images.githubusercontent.com/45866787/123517493-f8fbca00-d6a9-11eb-9e3b-71780a4b7eac.png)
