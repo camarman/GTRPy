@@ -2,16 +2,15 @@
 
 > ##  Current Features
 >
-> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from a given metric and coordinate system
+> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from a given metric and coordinate system (available in 3 and 4 dimensions).
 >
->#### 2. Calculating [covariant derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor field (only available in four dimensions)
-
+>#### 2. Calculating [covariant derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor field (available in 3 and 4 dimensions).
+>
 > ## Upcoming Features
-> #### 1. Calculating covariant derivative for a given scalar, vector, and tensor field in three dimensions
 > 
-> #### 2. [Lie Derivative](https://en.wikipedia.org/wiki/Lie_derivative) Calculator
+> #### 1. [Lie Derivative](https://en.wikipedia.org/wiki/Lie_derivative) Calculator
 >
-> #### 3. [Hawking Radiation Calculator](https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator)
+> #### 2. [Hawking Radiation Calculator](https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator)
 
 #### Requirements
 1. `IPython.display`, `itertools`, `numpy`, `PIL`, `PySimpleGUI`, `sympy`
