@@ -21,7 +21,7 @@
 >
 > #### 6. Displaying Geodesic Equations
 >
-> #### 7. Raising and lowering of a given tensor
+> #### 7. Raising and lowering indices of a given tensor
 
 
 #### Requirements
