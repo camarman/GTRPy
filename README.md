@@ -22,7 +22,10 @@
 > #### 6. Displaying Geodesic Equations
 >
 > #### 7. Raising and lowering indices of a given tensor
-
+>
+> #### 8. Improving simplifications
+>
+> #### 9. Adjusting GUI page size for better visuals
 
 #### Requirements
 1. `IPython.display`, `itertools`, `numpy`, `PIL`, `PySimpleGUI`, `sympy`
