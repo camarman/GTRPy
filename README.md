@@ -1,40 +1,42 @@
-## General Relativity Tensorial Calculations by Graphical User Interface (GRTC-GUI)
+# General Relativity Tensorial Calculations by Graphical User Interface (GRTC-GUI)
 
 > ## Current Features
 >
-> #### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from a given metric and coordinate system (available in 3D and 4D).
+> ### 1. Calculating the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and, Kretschmann Scalar from a given metric and coordinate system (available in 3D and 4D)
 >
-> #### 2. Calculating [covariant derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor fields (available in 3D and 4D).
+> ### 2. Calculating [covariant derivative](https://en.wikipedia.org/wiki/Covariant_derivative#Covariant_derivative_by_field_type) for a given scalar, vector, and tensor fields (available in 3D and 4D)
 >
-> #### 3. Calculating [Lie Derivative](https://en.wikipedia.org/wiki/Lie_derivative) for a given scalar, vector, and tensor fields (available in 3D and 4D).
+> ### 3. Calculating [Lie Derivative](https://en.wikipedia.org/wiki/Lie_derivative) for a given scalar, vector, and tensor fields (available in 3D and 4D)
 
-#### In this update, I have improved the simplification process and adjusted GUI page size for better visuals 
+In this update, I have improved the simplification process and adjusted GUI page size for better visuals
 
 > ## Upcoming Features
 >
-> #### 1. [Hawking Radiation Calculator](https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator)
+> ### 1. [Hawking Radiation Calculator](https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator)
 >
-> #### 2. Calculating [Unruh temperature](https://en.wikipedia.org/wiki/Unruh_effect#Temperature_equation)
+> ### 2. Calculating [Unruh temperature](https://en.wikipedia.org/wiki/Unruh_effect#Temperature_equation)
 >
-> #### 3. Checking if a vector field X is a killing field
+> ### 3. Checking if a vector field X is a killing field
 >
-> #### 4. Displaying killing vector equations for a given metric tensor
+> ### 4. Displaying killing vector equations for a given metric tensor
 >
-> #### 5. Displaying Geodesic Equations
+> ### 5. Displaying Geodesic Equations
 >
-> #### 6. Raising and lowering indices of a given tensor
+> ### 6. Raising and lowering indices of a given tensor
 
+## Requirements
 
-#### Requirements
 1. `IPython.display`, `itertools`, `numpy`, `PIL`, `PySimpleGUI`, `sympy`
 2. [`Latex`](https://www.latex-project.org/get/) (To produce images and equations)
 3. (**OPTIONAL**) You'll also need three fonts; `Tahoma`, `Verdana`, and `Georgia`(These are the standard fonts for Windows, but if they are missing, you can download them online or change the font manually from the `GRTC_GUI.py`). It seems that when one of the font is missing, the PySimpleGUI runs with the default font, without giving error.
 
-### Getting Started
+## Getting Started
 
-#### 0. Open the `GRTC Main` directory
-#### 1. Run the `GRTC_GUI.py` file
-#### 2. Choose a suitable dimension from the given page 
+### 0. Open the `GRTC Main` directory
+
+### 1. Run the `GRTC_GUI.py` file
+
+### 2. Choose a suitable dimension from the given page
 
 You'll have two options
 
@@ -48,7 +50,7 @@ similarly, for three dimensions
 
 ![3d](https://user-images.githubusercontent.com/45866787/124366156-3d610a00-dc56-11eb-9b09-46e46f003a30.png)
 
-#### 3. Define the coordinate system (cartesian, spherical, etc.)
+### 3. Define the coordinate system (cartesian, spherical, etc.)
 
 ![coord_sys](https://user-images.githubusercontent.com/45866787/124366173-65506d80-dc56-11eb-829a-3fbef8e2b9c0.png)
 
@@ -56,7 +58,7 @@ These are the available/most commonly used coordinate system components. If you 
 
 ![coordinate_symbols](https://user-images.githubusercontent.com/45866787/124366202-9af55680-dc56-11eb-9cd3-03cb15db5aa6.png)
 
-#### 4. Define the diagonal components of the metric tensor
+### 4. Define the diagonal components of the metric tensor
 
 Let us study the Schwarzschild metric for an example.
 
@@ -84,20 +86,25 @@ and get any component from the given page.
 
 There are 6 different options that you can choose to calculate the covariant derivative of a field. These are;
 
-1. ##### `Scalar Field` 
-2. ##### `Type (1,0) Vector Field` 
-3. ##### `Type (0,1) Vector Field`
-4. ##### `Type (2,0) Tensor Field`
-5. ##### `Type (1,1) Tensor Field`
-6. ##### `Type (0,2) Tensor Field`
+1. ### `Scalar Field`
 
-### Scalar Fields
+2. ### `Type (1,0) Vector Field`
+
+3. ### `Type (0,1) Vector Field`
+
+4. ### `Type (2,0) Tensor Field`
+
+5. ### `Type (1,1) Tensor Field`
+
+6. ### `Type (0,2) Tensor Field`
+
+#### Scalar Fields
 
 When you choose `Scalar Field` from the main page, you'll see a page in this form
 
 ![scalar_field](https://user-images.githubusercontent.com/45866787/124366363-f3792380-dc57-11eb-992d-b8a6dc35f043.png)
 
-From here, you can form a scalar field and choose the covariant derivative component that you want to calculate. 
+From here, you can form a scalar field and choose the covariant derivative component that you want to calculate.
 
 ![scalar_1](https://user-images.githubusercontent.com/45866787/124366365-f6741400-dc57-11eb-8a3c-7d5b650140db.png)
 
@@ -105,7 +112,7 @@ For this type of field, we obtain
 
 ![scalar_2](https://user-images.githubusercontent.com/45866787/124366367-f8d66e00-dc57-11eb-9c7f-7201b51ca20b.png)
 
-### Vector Fields
+#### Vector Fields
 
 For example, when you choose `Type (1,0) Vector Field`, you'll see a page in this form
 
@@ -119,13 +126,13 @@ You'll obtain
 
 ![vector_field_3](https://user-images.githubusercontent.com/45866787/124366393-3cc97300-dc58-11eb-8aca-e5d2f1e3672f.png)
 
-### Tensor Fields
+#### Tensor Fields
 
 For example, when you choose `Type (0,2) Tensor Field` you'll see a page in this form
 
 ![tensor_field](https://user-images.githubusercontent.com/45866787/124366466-c5e0aa00-dc58-11eb-89cb-6b2ca05a0be7.png)
 
-From here, you can form a tensor field and choose the covariant derivative component that you want to calculate. 
+From here, you can form a tensor field and choose the covariant derivative component that you want to calculate.
 
 ![tensor_field_1](https://user-images.githubusercontent.com/45866787/124366468-ca0cc780-dc58-11eb-8123-2fc0a2b0c47f.png)
 
@@ -138,12 +145,17 @@ For this type of field, we obtain
 There are 6 different options that you can choose to calculate the lie derivative of a field with respect to vector field X. Similar to the covariant derivative case
 you'll have 6 different field options. These are;
 
-1. ##### `Scalar Field` 
-2. ##### `Type (1,0) Vector Field` 
-3. ##### `Type (0,1) Vector Field`
-4. ##### `Type (2,0) Tensor Field`
-5. ##### `Type (1,1) Tensor Field`
-6. ##### `Type (0,2) Tensor Field`
+1. ### `Scalar Field`
+
+2. ### `Type (1,0) Vector Field`
+
+3. ### `Type (0,1) Vector Field`
+
+4. ### `Type (2,0) Tensor Field`
+
+5. ### `Type (1,1) Tensor Field`
+
+6. ### `Type (0,2) Tensor Field`
 
 For this case let us consider `Type (1,1) tensor field`.
 
