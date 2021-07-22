@@ -34,9 +34,15 @@ GRTC-GUI allows you to calculate the well-known tensors in general relativity, w
 
 You'll have two options
 
+![ndim](https://user-images.githubusercontent.com/45866787/126603724-a918ccd6-5628-49b0-8a05-5d2c8d44037e.png)
+
 If you choose four dimensions, you'll see a page in this form
 
+![4d](https://user-images.githubusercontent.com/45866787/126603740-8cc88079-4003-462c-a36e-a8c23ec151de.png)
+
 similarly, for three dimensions
+
+![3d](https://user-images.githubusercontent.com/45866787/126603750-c0e58333-c4c9-4c05-a0d5-aedfd22caaee.png)
 
 ### 3. Define the coordinate system (cartesian, spherical, etc.)
 
@@ -54,33 +60,43 @@ You can either choose a predefined coordinate system or type your own metric ten
 
 Let us study the Schwarzschild Coordinates as an example.
 
+![sch](https://user-images.githubusercontent.com/45866787/126603788-2bed9de3-45d6-4801-9885-d84760f9f3bc.png)
+
 ## Tensors, Tensor Types, and Index Lowering/Raising
 
 Just click one of the tensor buttons, which will lead you to the default page of the choosen tensor.
 
+![chris](https://user-images.githubusercontent.com/45866787/126603809-1cc76f5c-3ce9-46ff-b275-204bc0d974a1.png)
+
 Later on, you can change the type of the tensor and get any component from the given page.
+
+![chris2](https://user-images.githubusercontent.com/45866787/126603815-ec26d2e7-974f-41ff-83e3-8e8b0c53364f.png)
 
 ## Fields
 
 If you click on the Fields tab you'll see the 6 available fields.
 
+![fieldstab](https://user-images.githubusercontent.com/45866787/126603828-5627b713-858b-41fc-b154-a95f52b68920.png)
+
 From there, you can pick the field that you want to calculate, the Lie derivative or Covariant derivative.
 For instance, if you choose `Type (0,2) Tensor Field`, you'll see a page in this format.
+
+![tensorfield](https://user-images.githubusercontent.com/45866787/126603860-2c59ac50-0323-4bf7-b6ed-f18cc33b9b52.png)
 
 From there, after typing your field, you can perform any available operation.
 
 > ## Upcoming Features
 >
-> ### 1. Checking if a vector field, X, is a killing field
+> 1. Checking if a vector field, X, is a killing field
 >
-> ### 2. Displaying killing vector equations for a given metric tensor
+> 2. Displaying killing vector equations for a given metric tensor
 >
-> ### 3. Displaying geodesic equations
+> 3. Displaying geodesic equations
 >
-> ### 4. Raising and lowering indices of a given vector and tensor fields
+> 4. Raising and lowering indices of a given vector and tensor fields
 >
-> ### 5. Gradient, Divergence, Curl and Laplace operations on fields
+> 5. Gradient, Divergence, Curl and Laplace operations on fields
 >
-> ### 6. Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, Ricci Tensor, Einstein Tensor etc.)
+> 6. Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, Ricci Tensor, Einstein Tensor etc.)
 >
-> ### 7. Including more coordinate systems for both 3D and 4D
+> 7. Including more coordinate systems for both 3D and 4D
