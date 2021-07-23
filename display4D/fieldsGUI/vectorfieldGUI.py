@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from display4D.image_resizer_fields import resize_cd_image4d, resize_ld_image4d
+from display4D.image_resizer_fields import *
 from equations.FieldsEP.vectorfieldEP import *
 from sympy import preview, sympify
 
@@ -43,7 +43,11 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                                             [sg.Image(r'display4D\input images\LX3.png'),
                                             sg.InputText(default_text='0', font=('Tahoma', 11))],
                                             [sg.Button('Calculate', button_color='purple'),
-                                            sg.Image(r'display4D\input images\LX_vectorfield_10.png')]], title='Lie Derivative', font=('Verdana', 12))]
+                                            sg.Image(r'display4D\input images\LX_vectorfield_10.png')]], title='Lie Derivative', font=('Verdana', 12))],
+
+                                        [sg.Frame(layout=[
+                                            [sg.Button('Check', button_color='purple'),
+                                             sg.Image(r'display4D\input images\killingvector.png')]], title='Killing Field Condition', font=('Verdana', 12))]
                                     ]
         windows_vector_field = sg.Window('Vector Field', vector_field_10_layout)
         while True:
@@ -84,6 +88,22 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                         event, values = window_ld_vector_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+
+                # Checking Killing Field Condition
+                elif event == 'Check':
+                    killingfield_eqn = killingfield10_ep(metric_tensor, coord_sys, vector_field)
+                    preview(killingfield_eqn, viewer='file', filename=r'display4D\output images\killing_field_10.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_killing_image4d('Type (1,0) Vector Field')
+                    layout_killing_field_result = [
+                                                        [sg.Image(r'display4D\output images\killing_field_10.png')]
+                                                ]
+                    window_killing_field_result = sg.Window('Vector Field', layout_killing_field_result)
+                    while True:
+                        event, values = window_killing_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+
     else:
         vector_field_01_layout = [
                                     [sg.Image(r'display4D\input images\vectorfield_01_0.png'),
@@ -113,7 +133,11 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                                         [sg.Image(r'display4D\input images\LX3.png'),
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
-                                        sg.Image(r'display4D\input images\LX_vectorfield_01.png')]], title='Lie Derivative', font=('Verdana', 12))]
+                                        sg.Image(r'display4D\input images\LX_vectorfield_01.png')]], title='Lie Derivative', font=('Verdana', 12))],
+
+                                     [sg.Frame(layout=[
+                                            [sg.Button('Check', button_color='purple'),
+                                             sg.Image(r'display4D\input images\killingvector.png')]], title='Killing Field Condition', font=('Verdana', 12))]
                                 ]
         windows_vector_field = sg.Window('Vector Field', vector_field_01_layout)
         while True:
@@ -152,5 +176,20 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                     window_ld_vector_field_result = sg.Window('Vector Field', layout_ld_vector_field_result)
                     while True:
                         event, values = window_ld_vector_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+
+                # Checking Killing Field Condition
+                elif event == 'Check':
+                    killingfield_eqn = killingfield01_ep(metric_tensor, coord_sys, vector_field)
+                    preview(killingfield_eqn, viewer='file', filename=r'display4D\output images\killing_field_01.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_killing_image4d('Type (0,1) Vector Field')
+                    layout_killing_field_result = [
+                                                        [sg.Image(r'display4D\output images\killing_field_01.png')]
+                                                ]
+                    window_killing_field_result = sg.Window('Vector Field', layout_killing_field_result)
+                    while True:
+                        event, values = window_killing_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break

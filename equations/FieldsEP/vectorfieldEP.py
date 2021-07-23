@@ -82,3 +82,37 @@ def ld_vectorfield01_ep(metric_tensor, coord_sys, vector_field, X):
         return '$$\mathcal{{L}}_XV_{{\\alpha}} = {0}$$'.format(ld_eqn)
     elif ndim == 3:
         return '$$\mathcal{{L}}_XV_{{a}} = {0}$$'.format(ld_eqn)
+
+
+def killingfield10_ep(metric_tensor, coord_sys, vector_field):
+    """
+    Producing equation of a killing field for type (1,0) vector field
+
+    Args:
+        metric_tensor [list]: The metric tensor, provided by the user
+        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field [list]: The vector field, provided by the user
+    """
+    vf = VectorField(metric_tensor, coord_sys, vector_field, 'u')
+    if vf.isKillingField(vector_field) == True:
+        return '$$V^{{\\alpha}}={0}~\\text{{is a killing field}}$$'.format(latex(vector_field))
+    else:
+        return '$$V^{{\\alpha}}={0}~\\text{{is not a killing field}}$$'.format(latex(vector_field))
+
+
+def killingfield01_ep(metric_tensor, coord_sys, vector_field):
+    """
+    Producing equation of a killing field for type (0,1) vector field
+
+    Args:
+        metric_tensor [list]: The metric tensor, provided by the user
+        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field [list]: The vector field, provided by the user
+    """
+    vf = VectorField(metric_tensor, coord_sys, vector_field, 'd')
+    vector_field_raised = vf.vary_vectorfield_type(vector_field, 'u')
+    # since the lie derivative in the killing vector equation only takes upper indices
+    if vf.isKillingField(vector_field_raised) == True:
+        return '$$V_{{\\alpha}}={0}~\\text{{is a killing field}}$$'.format(latex(vector_field))
+    else:
+        return '$$V_{{\\alpha}}={0}~\\text{{is not a killing field}}$$'.format(latex(vector_field))

@@ -52,6 +52,7 @@ vectorfield_10_3 -> (20, 200)
 cov_vectorfield_10 -> (55, 200)
 gamma -> (27, 200)
 LX_vectorfield_10 -> (55, 200)
+killingvector -> (90, 200)
 ---------------
 vectorfield_01_0 -> (20, 200)
 vectorfield_01_1 -> (20, 200)

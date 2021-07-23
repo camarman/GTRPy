@@ -1,6 +1,6 @@
 # General Relativity Tensorial Calculations by Graphical User Interface (GRTC-GUI)
 
-GRTC-GUI allows you to calculate the well-known tensors in general relativity, without writing a single line of code. It also has built-in features that will enable you to calculate the Covariant derivative and Lie derivative for 6 different types of fields. New features will be available in the following weeks.
+GRTC-GUI allows you to calculate the well-known tensors in general relativity, without writing a single line of code. In addition, you can apply many operations to 6 different fields. New features will be available in the following weeks.
 
 > ## Current Features
 >
@@ -24,7 +24,12 @@ GRTC-GUI allows you to calculate the well-known tensors in general relativity, w
 >
 > 6. `Type (0,2) Tensor Field`
 >
-> You can calculate the Covariant derivative and Lie derivative by using these fields.
+> #### 2.1 Operations on Fields
+>
+> 2.1.1 You can calculate the Covariant derivative and Lie derivative by using these fields
+>
+> 2.1.2 You can check for a given type (1,0) or type (0,1) vector field satisfies the >killing field condition or not
+>
 
 ## User Guide
 
@@ -79,24 +84,20 @@ If you click on the Fields tab you'll see the 6 available fields.
 ![fieldstab](https://user-images.githubusercontent.com/45866787/126603828-5627b713-858b-41fc-b154-a95f52b68920.png)
 
 From there, you can pick the field that you want to calculate, the Lie derivative or Covariant derivative.
-For instance, if you choose `Type (0,2) Tensor Field`, you'll see a page in this format.
-
-![tensorfield](https://user-images.githubusercontent.com/45866787/126603860-2c59ac50-0323-4bf7-b6ed-f18cc33b9b52.png)
+For instance, if you choose `Type (1,0) Tensor Field`, you'll see a page in this format.
 
 From there, after typing your field, you can perform any available operation.
 
 > ## Upcoming Features
 >
-> 1. Checking if a vector field, X, is a killing field
+> 1. Displaying killing vector equations for a given metric tensor
 >
-> 2. Displaying killing vector equations for a given metric tensor
+> 2. Displaying geodesic equations
 >
-> 3. Displaying geodesic equations
+> 3. Raising and lowering indices of a given vector and tensor fields
 >
-> 4. Raising and lowering indices of a given vector and tensor fields
+> 4. Gradient, Divergence, Curl and Laplace operations on fields
 >
-> 5. Gradient, Divergence, Curl and Laplace operations on fields
+> 5. Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, Ricci Tensor, Einstein Tensor etc.)
 >
-> 6. Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, Ricci Tensor, Einstein Tensor etc.)
->
-> 7. Including more coordinate systems for both 3D and 4D
+> 6. Including more coordinate systems for both 3D and 4D

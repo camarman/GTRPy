@@ -1,6 +1,9 @@
+from numpy import einsum, zeros
+from objects.fields.tensorfield import TensorField
 from objects.grtensors.christoffelsymbol import ChristoffelSymbol
+from objects.grtensors.metrictensor import MetricTensor
 from objects.simplifyobjects import Simplify
-from sympy import Array, diff
+from sympy import Array, MutableDenseNDimArray, diff
 
 
 class VectorField():
@@ -88,3 +91,32 @@ class VectorField():
                         self.vector_field[c]*diff(X[c], self.coord_sys[a])
                 ld_vector_field.append(einstein_sum)
         return Simplify(Array(ld_vector_field))
+
+    def isKillingField(self, xvector_field):
+        """
+        Checking if a giving vector field with type (1,0) is a killing field or not
+        """
+        g = TensorField(self.metric_obj, self.coord_sys, self.metric_obj, 'dd')
+        if g.cal_lie_derivative(xvector_field) == MutableDenseNDimArray(zeros((4,)*2)):
+            return True
+        return False
+
+    def vary_vectorfield_type(self, xvector_field, new_type):
+        """
+        Varying the type of the vector field
+
+        Args:
+            xvector_field [list]: Given vector field
+            new_type [str]: The new type of the vector field. It should be given
+            in terms of 'u': contravariant (upper-indices) and 'd': covariant (lower-indices)
+
+        Returns:
+            The new vector field for a given type
+        """
+        self.vector_field_type = new_type
+        if new_type == 'u':
+            mt = MetricTensor(self.metric_obj, self.coord_sys)
+            inverse_metric = mt.get_inverse()
+            return Simplify(Array(einsum('ij,i->j', inverse_metric, xvector_field, optimize='optimal')))
+        elif new_type == 'd':
+            return Simplify(Array(einsum('ij,i->j', self.metric_obj, xvector_field, optimize='optimal')))
