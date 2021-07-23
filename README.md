@@ -86,6 +86,8 @@ If you click on the Fields tab you'll see the 6 available fields.
 From there, you can pick the field that you want to calculate, the Lie derivative or Covariant derivative.
 For instance, if you choose `Type (1,0) Tensor Field`, you'll see a page in this format.
 
+![vectorfield](https://user-images.githubusercontent.com/45866787/126834943-766261e5-4bf3-49bb-a355-d57dc12021d1.png)
+
 From there, after typing your field, you can perform any available operation.
 
 > ## Upcoming Features
