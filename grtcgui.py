@@ -31,3 +31,13 @@ if event == 'Submit':
         grtc_gui4d()   # if the dimesion is 4
     else:
         grtc_gui3d()   # if the dimesion is 3
+
+
+# The code block below will delete all the pycache folders after you stop running the program
+# if you want to try it, download the pyclean (version 2.0.0) package and uncomment the lines below
+
+# try:
+#     import subprocess
+#     res = subprocess.run('pyclean .')
+# except:
+#     print('pycache folders could not be cleared')
