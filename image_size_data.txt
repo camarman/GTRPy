@@ -1,4 +1,4 @@
-Storing the size of the input images (for 3D and 4D)
+Storing the size of the input images
 
 --- Main Page ---
 
@@ -40,7 +40,6 @@ LX1 -> (20, 200)
 LX2 -> (20, 200)
 LX3 -> (20, 200)
 cov_scalarfield -> (35, 200)
-gamma -> (27, 200)
 LX_scalarfield -> (35, 200)
 
 --- Fields GUI - VECTOR FIELD ---
@@ -50,7 +49,6 @@ vectorfield_10_1 -> (20, 200)
 vectorfield_10_2 -> (20, 200)
 vectorfield_10_3 -> (20, 200)
 cov_vectorfield_10 -> (55, 200)
-gamma -> (27, 200)
 LX_vectorfield_10 -> (55, 200)
 killingvector -> (90, 200)
 ---------------
@@ -59,7 +57,6 @@ vectorfield_01_1 -> (20, 200)
 vectorfield_01_2 -> (20, 200)
 vectorfield_01_3 -> (20, 200)
 LX_vectorfield_01 -> (55, 200)
-gamma -> (27, 200)
 cov_vectorfield_01 -> (55, 200)
 
 --- Fields GUI - TENSOR FIELD ---
@@ -69,7 +66,6 @@ tensorfield_20_1 -> (20, 200)
 tensorfield_20_2 -> (20, 200)
 tensorfield_20_3 -> (20, 200)
 cov_tensorfield_20 -> (60, 200)
-gamma -> (27, 200)
 LX_tensorfield_20 -> (60, 200)
 ------------------
 tensorfield_11_0 -> (17, 200)
@@ -77,7 +73,6 @@ tensorfield_11_1 -> (17, 200)
 tensorfield_11_2 -> (17, 200)
 tensorfield_11_3 -> (17, 200)
 cov_tensorfield_11 -> (52, 200)
-gamma -> (27, 200)
 LX_tensorfield_11 -> (52, 200)
 ----------------
 tensorfield_02_0 -> (22, 200)
@@ -85,7 +80,7 @@ tensorfield_02_1 -> (22, 200)
 tensorfield_02_2 -> (22, 200)
 tensorfield_02_3 -> (22, 200)
 cov_tensorfield_02 -> (60, 200)
-gamma -> (27, 200)
 LX_tensorfield_02 -> (60, 200)
 
 e -> (8, 200)
+gamma -> (27, 200)

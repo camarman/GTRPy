@@ -8,8 +8,6 @@ Requirements
 
 6.(OPTIONAL) You'll also need three fonts; Tahoma, Verdana, and Georgia.
 These are the standard fonts for Windows, but if they are missing, you can download them online or change the font
-manually from the source code.
-
-It seems that when one of the fonts is missing,
+manually from the source code. It seems that when one of the fonts is missing,
 the PySimpleGUI runs with the default font without giving an error. If there any errors occur
 related to the font, feel free to create an issue.
