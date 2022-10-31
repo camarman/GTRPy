@@ -1,6 +1,6 @@
 # General Relativity Tensor Calculator by Graphical User Interface (GRTC-GUI)
 
-GRTC-GUI allows you to calculate the well-known tensors in general relativity, without writing a single line of code. In addition, you can apply many operations to 6 different fields. It works in Linux, Mac OS and Windows.
+GRTC-GUI allows you to calculate the well-known tensors in general relativity, without writing a single line of code. In addition, you can apply many operations to 6 different type of fields. It works in Linux, Mac OS and Windows.
 
 ## Current Features
 
@@ -53,7 +53,7 @@ similarly, for three dimensions
 
 ![3d](https://user-images.githubusercontent.com/45866787/198973467-1391e0ba-be1f-438c-a5bf-40a4d7494978.png)
 
-2) Define the coordinate system (cartesian, spherical, etc.). You can either choose a predefined coordinate system or type your own metric tensor. Currently predefined coordinates for 4D;
+2) Define the coordinate system (cartesian, spherical, etc.). You can either choose a predefined coordinate system or type your own metric tensor. Currently predefined coordinates for 4D are;
 
     1) Cartesian Coordinates
     2) Cylindrical Coordinates
@@ -81,7 +81,7 @@ If you click on the Fields tab you'll see the 6 available fields.
 
 ![fields_tab](https://user-images.githubusercontent.com/45866787/198974014-29cd448d-9a8c-4c3c-ae4e-1de98e862a86.png)
 
-From there, you can pick the field that you want to calculate. From there, after typing your field, you can perform any available operation.
+From there, you can pick the field that you want to calculate. After typing your field, you can perform any available operation.
 
 ![scalar](https://user-images.githubusercontent.com/45866787/198974191-763724b2-22cb-4196-b39e-87b52f509f52.png)
 
@@ -91,9 +91,7 @@ From there, you can pick the field that you want to calculate. From there, after
 
 ## Upcoming Features
 
-1) Displaying killing vector equations for a given metric tensor
-2) Displaying geodesic equations
-3) Raising and lowering indices of a given vector and tensor fields
-4) Gradient, Divergence, Curl and Laplace operations on fields
-5) Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, Ricci Tensor, Einstein Tensor etc.)
-6) Including more coordinate systems for both 3D and 4D
+1) Raising and lowering indices of a given vector and tensor fields
+2) Gradient, Divergence, Curl and Laplace operations on fields
+3) Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, Ricci Tensor, Einstein Tensor etc.)
+4) Including more coordinate systems for both 3D and 4D
