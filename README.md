@@ -73,11 +73,21 @@ Just click one of the tensor buttons, which will lead you to the default page of
 
 Later on, you can change the type of the tensor and get any component from the given page.
 
+![chris_2](https://user-images.githubusercontent.com/45866787/198973890-22bed6aa-c5fa-4238-89bb-72a29ea82e85.png)
+
 ## Fields
 
 If you click on the Fields tab you'll see the 6 available fields.
 
+![fields_tab](https://user-images.githubusercontent.com/45866787/198974014-29cd448d-9a8c-4c3c-ae4e-1de98e862a86.png)
+
 From there, you can pick the field that you want to calculate. From there, after typing your field, you can perform any available operation.
+
+![scalar](https://user-images.githubusercontent.com/45866787/198974191-763724b2-22cb-4196-b39e-87b52f509f52.png)
+
+![vector](https://user-images.githubusercontent.com/45866787/198974154-9478f0a5-b556-47c6-9496-f6f933a29a58.png)
+
+![tensor](https://user-images.githubusercontent.com/45866787/198974166-7b9e7941-582f-485b-911a-1b7a8a01194e.png)
 
 ## Upcoming Features
 
