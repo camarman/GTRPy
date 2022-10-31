@@ -2,7 +2,7 @@ from itertools import product
 
 from numpy import einsum, zeros
 from objects.grtensors.ricciscalar import RicciScalar
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import Array, MutableDenseNDimArray
 
 
@@ -27,17 +27,20 @@ class EinsteinTensor(RicciScalar):
                 (1/2) * self.ricciscalar_obj * self.metric_obj[i, k]
         self.einsteintensor_obj = einstein_tensor
 
+
     def get_einsteintensor(self):
         """
         Returns the einstein tensor object
         """
         return Simplify(self.einsteintensor_obj)
 
+
     def get_einsteintensor_type(self):
         """
         Returns the type of the einstein tensor
         """
         return self.einsteintensor_type
+
 
     def raise_index(self, xeinstein_tensor):
         """
@@ -47,6 +50,7 @@ class EinsteinTensor(RicciScalar):
             xeinstein_tensor [sympy.tensor]: Given einstein tensor
         """
         return Array(einsum('ij,jk->ki', xeinstein_tensor, self.inverse_metric_obj, optimize='optimal'))
+
 
     def vary_einsteintensor_type(self, xeinstein_tensor, new_type):
         """

@@ -2,7 +2,7 @@ from itertools import product
 
 from numpy import einsum, zeros
 from objects.grtensors.metrictensor import MetricTensor
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import Array, MutableDenseNDimArray, diff
 
 
@@ -49,17 +49,20 @@ class ChristoffelSymbol(MetricTensor):
             chris_sym[m, i, j] = einstein_sum
         self.chris_obj = chris_sym
 
+
     def get_christoffelsymbol(self):
         """
         Returns the christoffel symbol object
         """
         return Simplify(self.chris_obj)
 
+
     def get_christoffelsymbol_type(self):
         """
         Returns the type of the christoffel symbol
         """
         return self.chris_type
+
 
     def lower_index(self, xchris_symbol):
         """
@@ -70,6 +73,7 @@ class ChristoffelSymbol(MetricTensor):
         """
         return Array(einsum('ijk,il->ljk', xchris_symbol, self.metric_obj, optimize='optimal'))
 
+
     def raise_index(self, xchris_symbol):
         """
         Raising the index of the christoffel symbol
@@ -79,6 +83,7 @@ class ChristoffelSymbol(MetricTensor):
         """
         return Array(einsum('ikj,jm->imk', xchris_symbol, self.inverse_metric_obj, optimize='optimal'))
 
+
     def raise_index1(self, xchris_symbol):
         """
         Raising the second index of the christoffel symbol
@@ -87,6 +92,7 @@ class ChristoffelSymbol(MetricTensor):
             xchris_symbol [sympy.tensor]: Given christoffel symbol
         """
         return Array(einsum('imk,kn->imn', xchris_symbol, self.inverse_metric_obj, optimize='optimal'))
+
 
     def vary_christoffelsymbol_type(self, xchris_symbol, new_type):
         """

@@ -2,7 +2,7 @@ from itertools import product
 
 from numpy import einsum, zeros
 from objects.grtensors.riemanntensor import RiemannTensor
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import Array, MutableDenseNDimArray
 
 
@@ -29,17 +29,20 @@ class RicciTensor(RiemannTensor):
             ricci_tensor[i, k] = einstein_sum
         self.riccitensor_obj = ricci_tensor
 
+
     def get_riccitensor(self):
         """
         Returns the ricci tensor object
         """
         return Simplify(self.riccitensor_obj)
 
+
     def get_riccitensor_type(self):
         """
         Returns the type of the ricci tensor
         """
         return self.riccitensor_type
+
 
     def raise_index(self, xricci_tensor):
         """
@@ -49,6 +52,7 @@ class RicciTensor(RiemannTensor):
             xricci_tensor [sympy.tensor]: Given ricci tensor
         """
         return Array(einsum('ij,jk->ik', xricci_tensor, self.inverse_metric_obj, optimize='optimal'))
+
 
     def vary_riccitensor_type(self, xricci_tensor, new_type):
         """

@@ -2,7 +2,7 @@ from numpy import einsum, zeros
 from objects.fields.tensorfield import TensorField
 from objects.grtensors.christoffelsymbol import ChristoffelSymbol
 from objects.grtensors.metrictensor import MetricTensor
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import Array, MutableDenseNDimArray, diff
 
 
@@ -24,17 +24,20 @@ class VectorField():
         self.vector_field_type = vector_field_type
         self.ndim = len(coord_sys)
 
+
     def get_vectorfield(self):
         """
         Returns the vector field object
         """
         return Simplify(self.vector_field)
 
+
     def get_vectorfield_type(self):
         """
         Returns the type of the vector field
         """
         return self.vector_field_type
+
 
     def cal_covariant_derivative(self, index):
         """
@@ -67,6 +70,7 @@ class VectorField():
                 cd_vector_field.append(cov_V)
         return Simplify(Array(cd_vector_field))
 
+
     def cal_lie_derivative(self, X):
         """
         The lie derivative of a vector field with respect to another vector field, X
@@ -92,6 +96,7 @@ class VectorField():
                 ld_vector_field.append(einstein_sum)
         return Simplify(Array(ld_vector_field))
 
+
     def isKillingField(self, xvector_field):
         """
         Checking if a giving vector field with type (1,0) is a killing field or not
@@ -100,6 +105,7 @@ class VectorField():
         if g.cal_lie_derivative(xvector_field) == MutableDenseNDimArray(zeros((4,)*2)):
             return True
         return False
+
 
     def vary_vectorfield_type(self, xvector_field, new_type):
         """

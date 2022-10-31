@@ -52,46 +52,46 @@ def grtc_gui4d(coordinate_type='Spherical Coordinates'):
 
     GRTensors_col1 = [
                             [sg.Button('Metric Tensor', button_color='purple'),
-                             sg.Image(r'display4D\input images\metrictensor.png')],
+                             sg.Image(r'display4D/input images/metrictensor.png')],
                             [sg.Button('Inverse Metric Tensor', button_color='purple'),
-                             sg.Image(r'display4D\input images\inversemetrictensor.png')],
+                             sg.Image(r'display4D/input images/inversemetrictensor.png')],
                             [sg.Button('Christoffel Symbol', button_color='purple'),
-                             sg.Image(r'display4D\input images\chrissymbol.png')],
+                             sg.Image(r'display4D/input images/chrissymbol.png')],
                             [sg.Button('Riemann Tensor', button_color='purple'),
-                             sg.Image(r'display4D\input images\riemanntensor.png')],
+                             sg.Image(r'display4D/input images/riemanntensor.png')],
                             [sg.Button('Ricci Tensor', button_color='purple'),
-                             sg.Image(r'display4D\input images\riccitensor.png')]
+                             sg.Image(r'display4D/input images/riccitensor.png')]
                         ]
 
     GRTensors_col2 = [
                         [sg.Button('Ricci Scalar', button_color='purple'),
-                            sg.Image(r'display4D\input images\ricciscalar.png')],
+                            sg.Image(r'display4D/input images/ricciscalar.png')],
                         [sg.Button('Weyl Tensor', button_color='purple'),
-                            sg.Image(r'display4D\input images\weyltensor.png')],
+                            sg.Image(r'display4D/input images/weyltensor.png')],
                         [sg.Button('Traceless Ricci Tensor', button_color='purple'),
-                            sg.Image(r'display4D\input images\tracelessriccitensor.png')],
+                            sg.Image(r'display4D/input images/tracelessriccitensor.png')],
                         [sg.Button('Einstein Tensor', button_color='purple'),
-                            sg.Image(r'display4D\input images\einsteintensor.png')],
+                            sg.Image(r'display4D/input images/einsteintensor.png')],
                         [sg.Button('Kretschmann Scalar', button_color='purple'),
-                            sg.Image(r'display4D\input images\kretschmannscalar.png')]
+                            sg.Image(r'display4D/input images/kretschmannscalar.png')]
                     ]
 
     Fields_col1 = [
                     [sg.Button('Scalar Field', button_color='purple'),
-                        sg.Image(r'display4D\input images\scalarfield.png')],
+                        sg.Image(r'display4D/input images/scalarfield.png')],
                     [sg.Button('Type (1,0) Vector Field', button_color='purple'),
-                        sg.Image(r'display4D\input images\vectorfield_10.png')],
+                        sg.Image(r'display4D/input images/vectorfield_10.png')],
                     [sg.Button('Type (0,1) Vector Field', button_color='purple'),
-                        sg.Image(r'display4D\input images\vectorfield_01.png')]
+                        sg.Image(r'display4D/input images/vectorfield_01.png')]
                     ]
 
     Fields_col2 = [
                     [sg.Button('Type (2,0) Tensor Field', button_color='purple'),
-                        sg.Image(r'display4D\input images\tensorfield_20.png')],
+                        sg.Image(r'display4D/input images/tensorfield_20.png')],
                     [sg.Button('Type (1,1) Tensor Field', button_color='purple'),
-                        sg.Image(r'display4D\input images\tensorfield_11.png')],
+                        sg.Image(r'display4D/input images/tensorfield_11.png')],
                     [sg.Button('Type (0,2) Tensor Field', button_color='purple'),
-                        sg.Image(r'display4D\input images\tensorfield_02.png')]
+                        sg.Image(r'display4D/input images/tensorfield_02.png')]
                 ]
 
     GRTensors_tab = [
@@ -110,32 +110,32 @@ def grtc_gui4d(coordinate_type='Spherical Coordinates'):
                         sg.Button('Change Coordinate', button_color='blue')]], title='Predefined Coordinates', font=('Georgia', 14))],
 
                     [sg.Frame(layout=[
-                        [sg.Image(r'display4D\input images\x0.png'),
+                        [sg.Image(r'display4D/input images/x0.png'),
                         sg.InputCombo(coordinate_symbols, size=(6, 1), default_value=new_coord_sys[0], font=('Tahoma', 11)),
-                        sg.Image(r'display4D\input images\x1.png'),
+                        sg.Image(r'display4D/input images/x1.png'),
                         sg.InputCombo(coordinate_symbols, size=(6, 1), default_value=new_coord_sys[1], font=('Tahoma', 11)),
-                        sg.Image(r'display4D\input images\x2.png'),
+                        sg.Image(r'display4D/input images/x2.png'),
                         sg.InputCombo(coordinate_symbols, size=(6, 1), default_value=new_coord_sys[2], font=('Tahoma', 11)),
-                        sg.Image(r'display4D\input images\x3.png'),
+                        sg.Image(r'display4D/input images/x3.png'),
                         sg.InputCombo(coordinate_symbols, size=(6, 1), default_value=new_coord_sys[3], font=('Tahoma', 11))]], title='Coordinate System', font=('Georgia', 14))],
 
                     [sg.Frame(layout = [
-                        [sg.Image(r'display4D\input images\g0beta.png'),
+                        [sg.Image(r'display4D/input images/g0beta.png'),
                             sg.InputText(default_text=new_metric_tensor[0][0], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[0][1], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[0][2], size=(15, 1), font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[0][3], size=(15, 1), font=('Tahoma', 11))],
-                        [sg.Image(r'display4D\input images\g1beta.png'),
+                        [sg.Image(r'display4D/input images/g1beta.png'),
                             sg.InputText(default_text=new_metric_tensor[1][0], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[1][1], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[1][2], size=(15 , 1), font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[1][3], size=(15, 1), font=('Tahoma', 11))],
-                        [sg.Image(r'display4D\input images\g2beta.png'),
+                        [sg.Image(r'display4D/input images/g2beta.png'),
                             sg.InputText(default_text=new_metric_tensor[2][0], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[2][1], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[2][2], size=(15, 1), font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[2][3], size=(15, 1), font=('Tahoma', 11))],
-                        [sg.Image(r'display4D\input images\g3beta.png'),
+                        [sg.Image(r'display4D/input images/g3beta.png'),
                             sg.InputText(default_text=new_metric_tensor[3][0], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[3][1], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[3][2], size=(15, 1), font=('Tahoma', 11)),

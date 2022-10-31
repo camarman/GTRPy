@@ -2,7 +2,7 @@ from itertools import product
 
 from numpy import zeros
 from objects.grtensors.christoffelsymbol import ChristoffelSymbol
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import MutableDenseNDimArray, diff
 
 
@@ -24,17 +24,20 @@ class TensorField():
         self.tensor_field_type = tensor_field_type
         self.ndim = len(coord_sys)
 
+
     def get_tensorfield(self):
         """
         Returns the tensor field object
         """
         return Simplify(self.tensor_field)
 
+
     def get_tensorfield_type(self):
         """
         Returns the type of the tensor field
         """
         return self.tensor_field_type
+
 
     def cal_covariant_derivative(self, index):
         """
@@ -59,6 +62,7 @@ class TensorField():
                 cd_tensor_field[a, b] = T_partial + \
                     einstein_sum1 + einstein_sum2
 
+
         elif self.tensor_field_type == 'ud':
             for a, b in product(range(self.ndim), repeat=2):
                 T_partial = diff(
@@ -71,6 +75,7 @@ class TensorField():
                                                   index, b]*self.tensor_field[a][d]
                 cd_tensor_field[a, b] = T_partial + \
                     einstein_sum1 - einstein_sum2
+
 
         elif self.tensor_field_type == 'dd':
             for a, b in product(range(self.ndim), repeat=2):
@@ -85,6 +90,7 @@ class TensorField():
                 cd_tensor_field[a, b] = T_partial - \
                     einstein_sum1 - einstein_sum2
         return Simplify(cd_tensor_field)
+
 
     def cal_lie_derivative(self, X):
         """

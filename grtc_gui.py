@@ -14,8 +14,8 @@ sg.ChangeLookAndFeel('SandyBeach')
 
 
 layout_dimension = [
-                        [sg.Text('General Relativity Tensorial Calculations (GRTC)', font=('Georgia', 14))],
-                        [sg.Text('Please Enter the Dimension of the Space:', font=('Tahoma', 11)),
+                        [sg.Text('General Relativity Tensor Calculator (GRTC)', font=('Georgia', 14))],
+                        [sg.Text('Please enter the number of dimensions:', font=('Tahoma', 11)),
                          sg.InputCombo([3, 4], size=(8, 1), default_value='4', font=('Tahoma', 11))],
                         [sg.Submit(button_color='blue'), sg.Exit(button_color='red')]
                     ]
@@ -28,16 +28,7 @@ if event == sg.WIN_CLOSED or event == 'Exit':
 if event == 'Submit':
     window_dim.close()
     if ndim == 4:
-        grtc_gui4d()   # if the dimesion is 4
+        grtc_gui4d()   # if the dimension is 4
     else:
-        grtc_gui3d()   # if the dimesion is 3
+        grtc_gui3d()   # if the dimension is 3
 
-
-# The code block below will delete all the pycache folders after you stop running the program
-# if you want to try it, download the pyclean (version 2.0.0) package and uncomment the lines below
-
-# try:
-#     import subprocess
-#     res = subprocess.run('pyclean .')
-# except:
-#     print('pycache folders could not be cleared')

@@ -1,5 +1,5 @@
 from numpy import array, einsum
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import Array, Matrix
 
 
@@ -25,11 +25,13 @@ class MetricTensor(object):
         self.inverse_metric_obj = Array(Matrix(metric_tensor).inv())
         self.ndim = len(coord_sys)
 
+
     def get_metrictensor(self):
         """
         Returns the metric tensor object
         """
         return Simplify(self.metric_obj)
+
 
     def get_metrictensor_type(self):
         """
@@ -37,11 +39,13 @@ class MetricTensor(object):
         """
         return self.metric_type
 
+
     def get_inverse(self):
         """
         Returns the inverse of the metric tensor
         """
         return Simplify(self.inverse_metric_obj)
+
 
     def raise_index(self, xmetric_tensor):
         """
@@ -51,6 +55,7 @@ class MetricTensor(object):
             xmetric_tensor [sympy.tensor]: Given metric tensor
         """
         return Array(einsum('jk,ki->ji', xmetric_tensor, self.inverse_metric_obj, optimize='optimal'))
+
 
     def vary_metrictensor_type(self, xmetric_tensor, new_type):
         """

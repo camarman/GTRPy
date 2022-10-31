@@ -2,7 +2,7 @@ from itertools import product
 
 from numpy import einsum, zeros
 from objects.grtensors.christoffelsymbol import ChristoffelSymbol
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import Array, MutableDenseNDimArray, diff
 
 
@@ -48,17 +48,20 @@ class RiemannTensor(ChristoffelSymbol):
             riemann_tensor[l, i, j, k] = Q1 - Q2 + einstein_sum
         self.riemann_obj = riemann_tensor
 
+
     def get_riemanntensor(self):
         """
         Returns the riemann tensor object
         """
         return Simplify(self.riemann_obj)
 
+
     def get_riemanntensor_type(self):
         """
         Returns the type of the riemann tensor
         """
         return self.riemann_type
+
 
     def lower_index(self, xriemann_tensor):
         """
@@ -69,6 +72,7 @@ class RiemannTensor(ChristoffelSymbol):
         """
         return Array(einsum('abcd,ak->kbcd', xriemann_tensor, self.metric_obj, optimize='optimal'))
 
+
     def raise_index(self, xriemann_tensor):
         """
         Raising the first index of the riemann tensor
@@ -77,6 +81,7 @@ class RiemannTensor(ChristoffelSymbol):
             xriemann_tensor [sympy.tensor]: Given riemann tensor
         """
         return Array(einsum('abcd,bk->akcd', xriemann_tensor, self.inverse_metric_obj, optimize='optimal'))
+
 
     def raise_index1(self, xriemann_tensor):
         """
@@ -87,6 +92,7 @@ class RiemannTensor(ChristoffelSymbol):
         """
         return Array(einsum('akcd,cl->akld', xriemann_tensor, self.inverse_metric_obj, optimize='optimal'))
 
+
     def raise_index2(self, xriemann_tensor):
         """
         Raising the third index of the riemann tensor
@@ -95,6 +101,7 @@ class RiemannTensor(ChristoffelSymbol):
             xriemann_tensor [sympy.tensor]: Given riemann tensor
         """
         return Array(einsum('akld,df->aklf', xriemann_tensor, self.inverse_metric_obj, optimize='optimal'))
+
 
     def vary_riemanntensor_type(self, xriemann_tensor, new_type):
         """

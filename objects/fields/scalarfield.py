@@ -1,4 +1,4 @@
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import diff
 
 
@@ -15,11 +15,13 @@ class ScalarField():
         self.scalar_field = scalar_field
         self.ndim = len(coord_sys)
 
+
     def get_scalarfield(self):
         """
         Returns the scalar field object
         """
         return Simplify(self.scalar_field)
+
 
     def cal_covariant_derivative(self, index):
         """
@@ -29,6 +31,7 @@ class ScalarField():
             index [int]: The index of the coordinate system given as an integer; (0-ndim)
         """
         return Simplify(diff(self.scalar_field, self.coord_sys[index]))
+
 
     def cal_lie_derivative(self, X):
         """

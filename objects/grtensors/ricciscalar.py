@@ -23,6 +23,7 @@ class RicciScalar(RicciTensor):
                                                     k] * self.riccitensor_obj[i, k]
         self.ricciscalar_obj = ricci_scalar
 
+
     def get_ricciscalar(self):
         """
         Returns the ricci scalar object

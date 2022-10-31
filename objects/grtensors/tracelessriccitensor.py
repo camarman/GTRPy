@@ -2,7 +2,7 @@ from itertools import product
 
 from numpy import einsum, zeros
 from objects.grtensors.ricciscalar import RicciScalar
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import Array, MutableDenseNDimArray
 
 
@@ -28,17 +28,20 @@ class TracelessRicciTensor(RicciScalar):
                 (1/self.ndim) * self.ricciscalar_obj * self.metric_obj[i, k]
         self.trclss_riccitensor_obj = trclss_ricci_tensor
 
+
     def get_trclss_riccitensor(self):
         """
         Returns the traceless ricci tensor object
         """
         return Simplify(self.trclss_riccitensor_obj)
 
+
     def get_trclss_riccitensor_type(self):
         """
         Returns the type of the traceless ricci tensor
         """
         return self.trclss_riccitensor_type
+
 
     def raise_index(self, xtrclss_riccitensor):
         """
@@ -48,6 +51,7 @@ class TracelessRicciTensor(RicciScalar):
             xtrclss_ricci_tensor [sympy.tensor]: Given traceless ricci tensor
         """
         return Array(einsum('ij,jk->ki', xtrclss_riccitensor, self.inverse_metric_obj, optimize='optimal'))
+
 
     def vary_trclss_riccitensor_type(self, xtrclss_riccitensor, new_type):
         """

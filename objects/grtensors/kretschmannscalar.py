@@ -28,6 +28,7 @@ class KretschmannScalar(RiemannTensor):
                                                    b, c, d] * riemanntensor_40[a, b, c, d]
         self.kretschmannscalar_obj = kretschmann_scalar
 
+
     def get_kretschmannscalar(self):
         """
         Returns the kretschmann scalar object

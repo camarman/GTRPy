@@ -2,7 +2,7 @@ from itertools import product
 
 from numpy import einsum, zeros
 from objects.grtensors.ricciscalar import RicciScalar
-from objects.simplifyobjects import Simplify
+from objects.simplify_objects import Simplify
 from sympy import Array, MutableDenseNDimArray
 
 
@@ -34,17 +34,20 @@ class WeylTensor(RicciScalar):
             weyl_tensor[i, k, l, m] = riemanntensor_04[i, k, l, m] + I_1 + I_2
         self.weyltensor_obj = weyl_tensor
 
+
     def get_weyltensor(self):
         """
         Returns the weyl tensor object
         """
         return Simplify(self.weyltensor_obj)
 
+
     def get_weyltensor_type(self):
         """
         Returns the type of the weyl tensor
         """
         return self.weyltensor_type
+
 
     def raise_index(self, xweyl_tensor):
         """
@@ -55,6 +58,7 @@ class WeylTensor(RicciScalar):
         """
         return Array(einsum('iklm,ai->aklm', xweyl_tensor, self.inverse_metric_obj, optimize='optimal'))
 
+
     def raise_index1(self, xweyl_tensor):
         """
         Raising the second index of the weyl tensor
@@ -63,6 +67,7 @@ class WeylTensor(RicciScalar):
             xweyl_tensor [sympy.tensor]: Given weyl tensor
         """
         return Array(einsum('aklm,bk->ablm', xweyl_tensor, self.inverse_metric_obj, optimize='optimal'))
+
 
     def raise_index2(self, xweyl_tensor):
         """
@@ -73,6 +78,7 @@ class WeylTensor(RicciScalar):
         """
         return Array(einsum('ablm,cl->abcm', xweyl_tensor, self.inverse_metric_obj, optimize='optimal'))
 
+
     def raise_index3(self, xweyl_tensor):
         """
         Raising the fourth index of the weyl tensor
@@ -81,6 +87,7 @@ class WeylTensor(RicciScalar):
             xweyl_tensor [sympy.tensor]: Given weyl tensor
         """
         return Array(einsum('abcm,md->abcd', xweyl_tensor, self.inverse_metric_obj, optimize='optimal'))
+
 
     def vary_weyltensor_type(self, xweyl_tensor, new_type):
         """
