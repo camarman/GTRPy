@@ -43,11 +43,17 @@ to install the requirements
 
         python3 grtc_gui.py
 
+![greeting_page](https://user-images.githubusercontent.com/45866787/198973226-3cb1b794-15ca-4926-9b5f-55743dac78bd.png)
+
 Later on choose a suitable dimension from the gui. If you choose four dimensions, you'll see a page in this form
+
+![4d](https://user-images.githubusercontent.com/45866787/198973300-ac36cd0f-1b01-4530-80c3-7c6d0da3ccf8.png)
 
 similarly, for three dimensions
 
-2) Define the coordinate system (cartesian, spherical, etc.). You can either choose a predefined coordinate system or type your own metric tensor. Currently predefined coordinates;
+![3d](https://user-images.githubusercontent.com/45866787/198973467-1391e0ba-be1f-438c-a5bf-40a4d7494978.png)
+
+2) Define the coordinate system (cartesian, spherical, etc.). You can either choose a predefined coordinate system or type your own metric tensor. Currently predefined coordinates for 4D;
 
     1) Cartesian Coordinates
     2) Cylindrical Coordinates
@@ -62,6 +68,8 @@ Let us study the Schwarzschild Coordinates as an example.
 ## Tensors, Tensor Types, and Index Lowering/Raising
 
 Just click one of the tensor buttons, which will lead you to the default page of the choosen tensor.
+
+![chris_1](https://user-images.githubusercontent.com/45866787/198973666-7b8e5607-0591-449a-8244-cdcac9bbca58.png)
 
 Later on, you can change the type of the tensor and get any component from the given page.
 
