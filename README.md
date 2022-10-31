@@ -1,6 +1,6 @@
 # General Relativity Tensor Calculator by Graphical User Interface (GRTC-GUI)
 
-GRTC-GUI allows you to calculate the well-known tensors in general relativity, without writing a single line of code. In addition, you can apply many operations to 6 different type of fields. It works in Linux, Mac OS and Windows.
+GRTC-GUI allows you to calculate the well-known tensors in general relativity, without writing a single line of code. In addition, you can apply many operations to 6 different type of fields. It works in GNU/Linux, Mac OS and Windows.
 
 ## Current Features
 
