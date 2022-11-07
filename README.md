@@ -22,12 +22,12 @@ Currently, there are 6 different field objects that you can carry out operations
 #### Operations on Fields
 
 1) You can calculate the Covariant derivative and Lie derivative by using these fields
-2) You can check for a given type (1,0) or type (0,1) vector field satisfies the 
+2) You can check for a given type (1,0) or type (0,1) vector field satisfies the
 killing field condition or not
 
 ## Installation
 
-You can easily install GRTC-GUI via
+You can easily install via
 
     git clone https://github.com/seVenVo1d/grtc_gui
 
@@ -35,17 +35,17 @@ Later on run
 
     python3 -m pip install -r requirements.txt
 
-to install the requirements
+to install the requirements.
 
 ## User Guide
 
-1) To run the program type
+To run the program type
 
-        python3 grtc_gui.py
+    python3 grtc_gui.py
 
 ![greeting_page](https://user-images.githubusercontent.com/45866787/198973226-3cb1b794-15ca-4926-9b5f-55743dac78bd.png)
 
-Later on choose a suitable dimension from the gui. If you choose four dimensions, you'll see a page in this form
+Later on choose a suitable dimension from the GUI. If you choose four dimensions, you'll see a page in this form
 
 ![4d](https://user-images.githubusercontent.com/45866787/198973300-ac36cd0f-1b01-4530-80c3-7c6d0da3ccf8.png)
 
@@ -53,7 +53,11 @@ similarly, for three dimensions
 
 ![3d](https://user-images.githubusercontent.com/45866787/198973467-1391e0ba-be1f-438c-a5bf-40a4d7494978.png)
 
-2) Define the coordinate system (cartesian, spherical, etc.). You can either choose a predefined coordinate system or type your own metric tensor. Currently predefined coordinates for 4D are;
+Later on you can define the coordinate system and create your own metric tensor. While defining the coordinate system you can choose from the given coordinate system symbols
+
+    t, x, y, z, r, v, r, theta, phi, rho, sigma, psi, eta, tau, xi, T, X
+
+Or you can simply choose one of the predefined coordinate systems. Currently predefined coordinates in 4D are;
 
     1) Cartesian Coordinates
     2) Cylindrical Coordinates
@@ -63,9 +67,15 @@ similarly, for three dimensions
     6) Schwarzschild Coordinates
     7) Eddington-Finkelstein Coordinates
 
+and in 3D;
+
+    1) Cartesian Coordinates
+    2) Cylindrical Coordinates
+    3) Spherical Coordinates
+
 Let us study the Schwarzschild Coordinates as an example.
 
-## Tensors, Tensor Types, and Index Lowering/Raising
+### Tensors, Tensor Types, Index Lowering and Raising
 
 Just click one of the tensor buttons, which will lead you to the default page of the choosen tensor.
 
@@ -75,7 +85,7 @@ Later on, you can change the type of the tensor and get any component from the g
 
 ![chris_2](https://user-images.githubusercontent.com/45866787/198973890-22bed6aa-c5fa-4238-89bb-72a29ea82e85.png)
 
-## Fields
+### Fields
 
 If you click on the Fields tab you'll see the 6 available fields.
 

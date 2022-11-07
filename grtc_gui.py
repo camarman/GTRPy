@@ -16,7 +16,7 @@ sg.ChangeLookAndFeel('SandyBeach')
 layout_dimension = [
                         [sg.Text('General Relativity Tensor Calculator (GRTC)', font=('Georgia', 14))],
                         [sg.Text('Please enter the number of dimensions:', font=('Tahoma', 11)),
-                         sg.InputCombo([3, 4], size=(8, 1), default_value='4', font=('Tahoma', 11))],
+                            sg.InputCombo([3, 4], size=(8, 1), default_value='4', font=('Tahoma', 11))],
                         [sg.Submit(button_color='blue'), sg.Exit(button_color='red')]
                     ]
 
