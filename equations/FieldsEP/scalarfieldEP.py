@@ -1,4 +1,4 @@
-#---------- PRODUCING EQUATIONS OF SCALAR FIELD ----------#
+#---------- PRODUCING EQUATIONS FOR SCALAR FIELDS ----------#
 
 from objects.fields.scalarfield import ScalarField
 from sympy import latex

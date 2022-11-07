@@ -25,11 +25,11 @@ tensor_fields = ['Type (2,0) Tensor Field',
 coordinate_symbols = ['t', 'x', 'y', 'z', 'r', 'v', 'r', 'theta', 'phi', 'rho', 'sigma', 'psi', 'eta', 'tau', 'xi', 'T', 'X']
 
 # Available/Predefined Coordinate Systems
-avaliable_coord_sys = [
+available_coord_sys = [
                         'Cartesian Coordinates',
                         'Cylindrical Coordinates',
                         'Spherical Coordinates',
-                       ]
+                        ]
 
 
 #---------- GRTC GUI - MAIN PAGE ----------#
@@ -102,7 +102,7 @@ def grtc_gui3d(coordinate_type='Spherical Coordinates'):
 
     layout_4dim = [
                     [sg.Frame(layout=[
-                        [sg.InputCombo(avaliable_coord_sys, default_value=coordinate_type, font=('Tahoma', 11)),
+                        [sg.InputCombo(available_coord_sys, default_value=coordinate_type, font=('Tahoma', 11)),
                         sg.Button('Change Coordinate', button_color='blue')]], title='Predefined Coordinates', font=('Georgia', 14))],
 
                     [sg.Frame(layout=[

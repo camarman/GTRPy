@@ -1,4 +1,4 @@
-#---------- PRODUCING EQUATIONS OF TENSOR FIELD ----------#
+#---------- PRODUCING EQUATIONS FOR TENSOR FIELDS ----------#
 
 from objects.fields.tensorfield import TensorField
 from sympy import latex

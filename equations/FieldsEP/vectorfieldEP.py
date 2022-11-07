@@ -1,4 +1,4 @@
-#---------- PRODUCING EQUATIONS OF VECTOR FIELD ----------#
+#---------- PRODUCING EQUATIONS FOR VECTOR FIELDS ----------#
 
 from objects.fields.vectorfield import VectorField
 from sympy import latex

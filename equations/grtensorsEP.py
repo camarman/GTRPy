@@ -1,4 +1,4 @@
-#---------- PRODUCING EQUATIONS OF GRTENSORS ----------#
+#---------- PRODUCING EQUATIONS FOR GR-TENSORS ----------#
 
 from objects.grtensors import *
 from sympy import latex
