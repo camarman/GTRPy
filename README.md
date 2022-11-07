@@ -75,6 +75,8 @@ and in 3D;
 
 Let us study the Schwarzschild Coordinates as an example.
 
+> :exclamation: For more detailed usage with examples, see `example.md`.
+
 ### Tensors, Tensor Types, Index Lowering and Raising
 
 Just click one of the tensor buttons, which will lead you to the default page of the choosen tensor.

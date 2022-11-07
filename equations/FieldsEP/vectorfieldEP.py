@@ -17,7 +17,23 @@ def vry_vectorfield10_ep(metric_tensor, coord_sys, vector_field):
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'u')
     vector_field = vf.get_vectorfield()
     new_vf = vf.vary_vectorfield_type(vector_field, 'd')
-    return '$$' + latex(new_vf) + '$$'
+    return '$$V_{{\\alpha}}={0}$$'.format(latex(new_vf))
+
+
+def vry_vectorfield01_ep(metric_tensor, coord_sys, vector_field):
+    """
+    Varying the type of the vector field from 'd' (covariant)
+    to 'u' (contravariant)
+
+    Args:
+        metric_tensor [list]: The metric tensor, provided by the user
+        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field [list]: The vector field, provided by the user
+    """
+    vf = VectorField(metric_tensor, coord_sys, vector_field, 'd')
+    vector_field = vf.get_vectorfield()
+    new_vf = vf.vary_vectorfield_type(vector_field, 'u')
+    return '$$V^{{\\alpha}}={0}$$'.format(latex(new_vf))
 
 
 def cd_vectorfield10_ep(metric_tensor, coord_sys, vector_field, index_symbol):

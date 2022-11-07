@@ -137,6 +137,11 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
+                                        sg.Image(r'display4D/input images/vectorfield_10.png')
+                                        ]], title='Vary Type', font=('Verdana', 12))],
+
+                                    [sg.Frame(layout=[
+                                        [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(r'display4D/input images/cov_vectorfield_01.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(r'display4D/input images/gamma.png'),
@@ -167,9 +172,24 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
             else:
                 vector_field = [sympify(values[i]) for i in range(1, 9, 2)]   # Obtaining the vector field
 
-                # Calculation of the covariant derivative
+                # Varying the type of the vector field
                 if event == 'Calculate':
-                    index_symbol = values[10]
+                    vry_vector_field_eqn = vry_vectorfield01_ep(metric_tensor, coord_sys, vector_field)
+                    preview(vry_vector_field_eqn, viewer='file', filename=r'display4D/output images/vry_vector_field_01.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_image4d('Type (0,1) Vector Field')
+                    layout_vry_vector_field_result = [
+                                                        [sg.Image(r'display4D/output images/vry_vector_field_01.png')],
+                                                    ]
+                    window_vry_vector_field_result = sg.Window('Vector Field', layout_vry_vector_field_result)
+                    while True:
+                        event, values = window_vry_vector_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+
+                # Calculation of the covariant derivative
+                if event == 'Calculate0':
+                    index_symbol = values[11]
                     cd_vector_field_eqn = cd_vectorfield01_ep(metric_tensor, coord_sys, vector_field, index_symbol)
                     preview(cd_vector_field_eqn, viewer='file', filename=r'display4D/output images/cd_vector_field_01.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -184,8 +204,8 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                             break
 
                 # Calculation of the lie derivative
-                elif event == 'Calculate0':
-                    X = [sympify(values[i]) for i in range(12, 20, 2)]
+                elif event == 'Calculate1':
+                    X = [sympify(values[i]) for i in range(13, 21, 2)]
                     ld_vector_field_eqn = ld_vectorfield01_ep(metric_tensor, coord_sys, vector_field, X)
                     preview(ld_vector_field_eqn, viewer='file', filename=r'display4D/output images/ld_vector_field_01.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])

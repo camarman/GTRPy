@@ -14,6 +14,13 @@ def resize_vry_image4d(field_object):
         im.thumbnail(size, Image.ANTIALIAS)
         out_dim = im.size
         out_name = r'display4D/output images/vry_vector_field_10.png'
+
+    elif field_object == 'Type (0,1) Vector Field':
+        im = Image.open(r'display4D/output images/vry_vector_field_01.png')
+        size = (800, 600)
+        im.thumbnail(size, Image.ANTIALIAS)
+        out_dim = im.size
+        out_name = r'display4D/output images/vry_vector_field_01.png'
     im.save(out_name, "PNG")
     im.close()
 
