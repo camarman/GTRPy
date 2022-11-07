@@ -4,6 +4,22 @@ from objects.fields.vectorfield import VectorField
 from sympy import latex
 
 
+def vry_vectorfield10_ep(metric_tensor, coord_sys, vector_field):
+    """
+    Varying the type of the vector field from 'u' (contravariant)
+    to 'd' (covariant)
+
+    Args:
+        metric_tensor [list]: The metric tensor, provided by the user
+        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field [list]: The vector field, provided by the user
+    """
+    vf = VectorField(metric_tensor, coord_sys, vector_field, 'u')
+    vector_field = vf.get_vectorfield()
+    new_vf = vf.vary_vectorfield_type(vector_field, 'd')
+    return '$$' + latex(new_vf) + '$$'
+
+
 def cd_vectorfield10_ep(metric_tensor, coord_sys, vector_field, index_symbol):
     """
     Producing equations of covariant derivative for type (1,0) vector field
