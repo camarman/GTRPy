@@ -14,10 +14,14 @@ def vry_vectorfield10_ep(metric_tensor, coord_sys, vector_field):
         coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
         vector_field [list]: The vector field, provided by the user
     """
+    ndim = len(coord_sys)
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'u')
     vector_field = vf.get_vectorfield()
     new_vf = vf.vary_vectorfield_type(vector_field, 'd')
-    return '$$V_{{\\alpha}}={0}$$'.format(latex(new_vf))
+    if ndim == 4:
+        return '$$V_{{\\alpha}}={0}$$'.format(latex(new_vf))
+    elif ndim == 3:
+        return '$$V_{{a}}={0}$$'.format(latex(new_vf))
 
 
 def vry_vectorfield01_ep(metric_tensor, coord_sys, vector_field):
@@ -30,10 +34,14 @@ def vry_vectorfield01_ep(metric_tensor, coord_sys, vector_field):
         coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
         vector_field [list]: The vector field, provided by the user
     """
+    ndim = len(coord_sys)
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'd')
     vector_field = vf.get_vectorfield()
     new_vf = vf.vary_vectorfield_type(vector_field, 'u')
-    return '$$V^{{\\alpha}}={0}$$'.format(latex(new_vf))
+    if ndim == 4:
+        return '$$V^{{\\alpha}}={0}$$'.format(latex(new_vf))
+    elif ndim == 3:
+        return '$$V^{{a}}={0}$$'.format(latex(new_vf))
 
 
 def cd_vectorfield10_ep(metric_tensor, coord_sys, vector_field, index_symbol):

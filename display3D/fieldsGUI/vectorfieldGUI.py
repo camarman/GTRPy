@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from display3D.image_resizer_fields import resize_cd_image3d, resize_ld_image3d
+from display3D.image_resizer_fields import *
 from equations.FieldsEP.vectorfieldEP import *
 from sympy import preview, sympify
 
@@ -22,6 +22,11 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Image(r'display3D/input images/vectorfield_10_2.png'),
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
+
+                                        [sg.Frame(layout=[
+                                            [sg.Button('Calculate', button_color='purple'),
+                                            sg.Image(r'display3D/input images/vectorfield_01.png')
+                                            ]], title='Vary Type', font=('Verdana', 12))],
 
                                         [sg.Frame(layout=[
                                             [sg.Button('Calculate', button_color='purple'),
@@ -49,9 +54,24 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
             else:
                 vector_field = [sympify(values[i]) for i in range(1, 7, 2)]   # Obtaining the vector field
 
+                # Varying the type of the vector field
+                if event =='Calculate':
+                    vry_vector_field_eqn = vry_vectorfield10_ep(metric_tensor, coord_sys, vector_field)
+                    preview(vry_vector_field_eqn, viewer='file', filename=r'display3D/output images/vry_vector_field_10.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_image3d('Type (1,0) Vector Field')
+                    layout_vry_vector_field_result = [
+                                                        [sg.Image(r'display3D/output images/vry_vector_field_10.png')],
+                                                    ]
+                    window_vry_vector_field_result = sg.Window('Vector Field', layout_vry_vector_field_result)
+                    while True:
+                        event, values = window_vry_vector_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+
                 # Calculation of the covariant derivative
-                if event == 'Calculate':
-                    index_symbol = values[8]
+                if event == 'Calculate0':
+                    index_symbol = values[9]
                     cd_vector_field_eqn = cd_vectorfield10_ep(metric_tensor, coord_sys, vector_field, index_symbol)
                     preview(cd_vector_field_eqn, viewer='file', filename=r'display3D/output images/cd_vector_field_10.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -66,8 +86,8 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
                             break
 
                 # Calculation of the lie derivative
-                elif event == 'Calculate0':
-                    X = [sympify(values[i]) for i in range(10, 16, 2)]
+                elif event == 'Calculate1':
+                    X = [sympify(values[i]) for i in range(11, 16, 2)]
                     ld_vector_field_eqn = ld_vectorfield10_ep(metric_tensor, coord_sys, vector_field, X)
                     preview(ld_vector_field_eqn, viewer='file', filename=r'display3D/output images/ld_vector_field_10.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -88,6 +108,11 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                     [sg.Image(r'display3D/input images/vectorfield_01_2.png'),
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
+
+                                    [sg.Frame(layout=[
+                                            [sg.Button('Calculate', button_color='purple'),
+                                            sg.Image(r'display3D/input images/vectorfield_10.png')
+                                            ]], title='Vary Type', font=('Verdana', 12))],
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
@@ -115,9 +140,24 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
             else:
                 vector_field = [sympify(values[i]) for i in range(1, 7, 2)]   # Obtaining the vector field
 
+                # Varying the type of the vector field
+                if event =='Calculate':
+                    vry_vector_field_eqn = vry_vectorfield01_ep(metric_tensor, coord_sys, vector_field)
+                    preview(vry_vector_field_eqn, viewer='file', filename=r'display3D/output images/vry_vector_field_01.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_image3d('Type (0,1) Vector Field')
+                    layout_vry_vector_field_result = [
+                                                        [sg.Image(r'display3D/output images/vry_vector_field_01.png')],
+                                                    ]
+                    window_vry_vector_field_result = sg.Window('Vector Field', layout_vry_vector_field_result)
+                    while True:
+                        event, values = window_vry_vector_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+
                 # Calculation of the covariant derivative
-                if event == 'Calculate':
-                    index_symbol = values[8]
+                if event == 'Calculate0':
+                    index_symbol = values[9]
                     cd_vector_field_eqn = cd_vectorfield01_ep(metric_tensor, coord_sys, vector_field, index_symbol)
                     preview(cd_vector_field_eqn, viewer='file', filename=r'display3D/output images/cd_vector_field_01.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -132,8 +172,8 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
                             break
 
                 # Calculation of the lie derivative
-                elif event == 'Calculate0':
-                    X = [sympify(values[i]) for i in range(10, 16, 2)]
+                elif event == 'Calculate1':
+                    X = [sympify(values[i]) for i in range(11, 16, 2)]
                     ld_vector_field_eqn = ld_vectorfield01_ep(metric_tensor, coord_sys, vector_field, X)
                     preview(ld_vector_field_eqn, viewer='file', filename=r'display3D/output images/ld_vector_field_01.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])

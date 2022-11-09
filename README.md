@@ -21,8 +21,9 @@ Currently, there are 6 different field objects that you can carry out operations
 
 #### Operations on Fields
 
-1) You can calculate the Covariant derivative and Lie derivative by using these fields
-2) You can check for a given type (1,0) or type (0,1) vector field satisfies the
+1) You vary the type of the vector field from (1,0) -> (0,1) or vice versa
+2) You can calculate the Covariant derivative and Lie derivative by using these fields
+3) You can check for a given type (1,0) or type (0,1) vector field satisfies the
 killing field condition or not
 
 ## Installation
@@ -103,7 +104,7 @@ From there, you can pick the field that you want to calculate. After typing your
 
 ## Upcoming Features
 
-1) Raising and lowering indices of a given vector and tensor fields
+1) Raising and lowering indices for a given tensor field
 2) Gradient, Divergence, Curl and Laplace operations on fields
 3) Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, Ricci Tensor, Einstein Tensor etc.)
 4) Including more coordinate systems for both 3D and 4D
