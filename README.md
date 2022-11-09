@@ -21,7 +21,7 @@ Currently, there are 6 different field objects that you can carry out operations
 
 #### Operations on Fields
 
-1) You vary the type of the vector field from (1,0) -> (0,1) or vice versa
+1) You vary the type of the vector field from (1,0) to (0,1) or vice versa
 2) You can calculate the Covariant derivative and Lie derivative by using these fields
 3) You can check for a given type (1,0) or type (0,1) vector field satisfies the
 killing field condition or not
@@ -98,7 +98,7 @@ From there, you can pick the field that you want to calculate. After typing your
 
 ![scalar](https://user-images.githubusercontent.com/45866787/198974191-763724b2-22cb-4196-b39e-87b52f509f52.png)
 
-![vector](https://user-images.githubusercontent.com/45866787/198974154-9478f0a5-b556-47c6-9496-f6f933a29a58.png)
+![vector](https://user-images.githubusercontent.com/45866787/200797025-53bd0b2f-eed2-435a-a05c-9722f153579b.png)
 
 ![tensor](https://user-images.githubusercontent.com/45866787/198974166-7b9e7941-582f-485b-911a-1b7a8a01194e.png)
 
