@@ -32,3 +32,14 @@ if event == 'Submit':
     else:
         grtc_gui3d()   # if the dimension is 3
 
+
+# The below code block will delete all the .pyc files and
+# __pycache__ directories. If you want to try it,
+# download the pyclean package, and uncomment the lines below
+
+try:
+    import os
+    os.system('pyclean .')
+    print('The cleaning successfully ended.')
+except:
+    print('Something went wrong during the cleaning process!')

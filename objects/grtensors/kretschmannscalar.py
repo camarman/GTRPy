@@ -7,11 +7,11 @@ from sympy import simplify
 class KretschmannScalar(RiemannTensor):
     def __init__(self, metric_tensor, coord_sys):
         """
-        Creating the kretschmann scalar object
+        Creating the Kretschmann scalar object
 
         Args:
             metric_tensor [list]: The metric tensor, provided by the user
-            coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+            coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
 
         Returns:
             self.kretschmannscalar_obj [int/symbol]: The kretschmann scalar, K
@@ -23,14 +23,13 @@ class KretschmannScalar(RiemannTensor):
         riemanntensor_40 = self.vary_riemanntensor_type(
             riemanntensor_13, 'uuuu')
         kretschmann_scalar = 0
-        for a, b, c, d in product(range(self.ndim), repeat=4):
-            kretschmann_scalar += riemanntensor_04[a,
-                                                   b, c, d] * riemanntensor_40[a, b, c, d]
+        for i, j, k, l in product(range(self.ndim), repeat=4):
+            kretschmann_scalar += riemanntensor_04[i, j, k, l] * riemanntensor_40[i, j, k, l]
         self.kretschmannscalar_obj = kretschmann_scalar
 
 
     def get_kretschmannscalar(self):
         """
-        Returns the kretschmann scalar object
+        Returns the Kretschmann scalar object
         """
         return simplify(self.kretschmannscalar_obj)

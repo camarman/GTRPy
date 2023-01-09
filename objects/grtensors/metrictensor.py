@@ -9,15 +9,15 @@ class MetricTensor(object):
         Creating the metric tensor object
 
         Args:
-            metric_tensor [list]: The metric tensor, provided by the user
-            coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+            metric_tensor [list]: The metric tensor
+            coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
 
         Returns:
-            self.metric_obj [sympy.tensor]: The metric tensor, g_jk
-            self.coord_sys [np.ndarray]: The coordinate system (cartesian, spherical, etc.)
-            self.metric_type [str]: Type of the metric tensor. Default type is 'dd'
-            self.inverse_metric_obj [sympy.tensor]: The inverse of the metric tensor, g^jk
-            self.ndim [int]: Dimension of the space. It can be 3 or 4
+            self.metric_obj         [sympy.tensor]: The metric tensor, g_ij
+            self.coord_sys          [np.ndarray]  : The coordinate system (cartesian, spherical, etc.)
+            self.metric_type        [str]         : Type of the metric tensor. Default type is 'dd'
+            self.inverse_metric_obj [sympy.tensor]: The inverse of the metric tensor, g^ij
+            self.ndim               [int]         : Dimension of the space. It can be 3 or 4
         """
         self.metric_obj = Array(metric_tensor)
         self.coord_sys = array(coord_sys)
@@ -54,7 +54,17 @@ class MetricTensor(object):
         Args:
             xmetric_tensor [sympy.tensor]: Given metric tensor
         """
-        return Array(einsum('jk,ki->ji', xmetric_tensor, self.inverse_metric_obj, optimize='optimal'))
+        return Array(einsum('ij,jk->ki', xmetric_tensor, self.inverse_metric_obj, optimize='optimal'))
+
+
+    def raise_index1(self, xmetric_tensor):
+        """
+        Raising the second index of the metric tensor
+
+        Args:
+            xmetric_tensor [sympy.tensor]: Given metric tensor
+        """
+        return Array(einsum('ki,il->kl', xmetric_tensor, self.inverse_metric_obj, optimize='optimal'))
 
 
     def vary_metrictensor_type(self, xmetric_tensor, new_type):
@@ -63,8 +73,10 @@ class MetricTensor(object):
 
         Args:
             xmetric_tensor [sympy.tensor]: Given metric tensor
-            new_type [str]: The new type of the metric tensor. It should be in terms of
-            'u': contravariant (upper-indices) and 'd': covariant (lower-indices)
+            new_type       [str]         : The new type of the metric tensor.
+            It should be given in terms of:
+            'u': contravariant (upper-indices)
+            'd': covariant (lower-indices)
 
         Returns:
             The new metric tensor for a given type
@@ -75,4 +87,4 @@ class MetricTensor(object):
         elif new_type == 'ud':
             return Simplify(self.raise_index(xmetric_tensor))
         elif new_type == 'uu':
-            return Simplify(self.raise_index(self.raise_index(xmetric_tensor)))
+            return Simplify(self.raise_index1(self.raise_index(xmetric_tensor)))
