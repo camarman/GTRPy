@@ -1,6 +1,8 @@
 # Equations
 
-This is the list of the all used equations in the program. You can easily compare the written equations with the code in the `objects` directory.
+This is the list of the all equations used in the program. Now, you can easily compare the written equations with the code (under the `objects` directory).
+
+> Fields will be added soon!
 
 ## Metric Tensor
 
@@ -67,7 +69,7 @@ C_{ijkl}g^{im} = C^{m}_{~~~jkl}
 $$
 
 $$
-C^{m}_{~jkl}g^{jn} = C^{mn}_{~~~~~~kl}
+C^{m}_{~~~jkl}g^{jn} = C^{mn}_{~~~~~~kl}
 $$
 
 $$

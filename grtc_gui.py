@@ -33,9 +33,8 @@ if event == 'Submit':
         grtc_gui3d()   # if the dimension is 3
 
 
-# The below code block will delete all the .pyc files and
-# __pycache__ directories. If you want to try it,
-# download the pyclean package, and uncomment the lines below
+# The below code block will delete all the .pyc files and __pycache__ directories.
+# If you want to try it, download the pyclean package, and uncomment the lines below
 
 # try:
 #     import os
