@@ -1,33 +1,37 @@
 # Equations
 
-This is the list of the all used equations in the program. You can easily compare the written equations with the code.
+This is the list of the all used equations in the program. You can easily compare the written equations with the code in the `objects` directory.
 
 ## Metric Tensor
 
 $$
-g_{ij}g^{jk} = g^{k}_{~i}
+g_{ij}={\rm diag}(-1, 1, r^2, r^2sin^2(\theta))
 $$
 
 $$
-g^{k}_{~i}g^{il} = g^{kl}
+g_{ij}g^{jk} = g^{k}_{~~i}
+$$
+
+$$
+g^{k}_{~~i}g^{il} = g^{kl}
 $$
 
 ## Christoffel Symbol
 
 $$
-    \Gamma^{k}_{~ij} = \frac{1}{2}g^{kl}(g_{li,j}+g_{lj,i}-g_{ij,l})
+    \Gamma^{k}_{~~ij} = \frac{1}{2}g^{kl}(g_{li,j}+g_{lj,i}-g_{ij,l})
 $$
 
 $$
-    \Gamma^{k}_{~ij}g_{kl} = \Gamma_{ijl}
+    \Gamma^{k}_{~~ij}g_{kl} = \Gamma_{ijl}
 $$
 
 $$
-    \Gamma^{k}_{~ij}g^{il} = \Gamma^{kl}_{~~j}
+    \Gamma^{k}_{~~ij}g^{il} = \Gamma^{kl}_{~~~j}
 $$
 
 $$
-    \Gamma^{kl}_{~~j}g^{jm} = \Gamma^{klm}
+    \Gamma^{kl}_{~~~j}g^{jm} = \Gamma^{klm}
 $$
 
 ## Riemann Tensor
@@ -41,15 +45,15 @@ $$
 $$
 
 $$
-    R^l_{~ijk}g^{im} = R^{lm}_{~~jk}
+    R^l_{~ijk}g^{im} = R^{lm}_{~~~~jk}
 $$
 
 $$
-    R^{lm}_{~~jk}g^{jn} = R^{lmn}_{~~~k}
+    R^{lm}_{~~~~jk}g^{jn} = R^{lmn}_{~~~~~~~k}
 $$
 
 $$
-    R^{lmn}_{~~~k}g^{kp} = R^{lmnp}
+    R^{lmn}_{~~~~~~~k}g^{kp} = R^{lmnp}
 $$
 
 ## Weyl Tensor
@@ -59,33 +63,33 @@ $$
 $$
 
 $$
-C_{ijkl}g^{im} = C^{m}_{~jkl}
+C_{ijkl}g^{im} = C^{m}_{~~~jkl}
 $$
 
 $$
-C^{m}_{~jkl}g^{jn} = C^{mn}_{~~kl}
+C^{m}_{~jkl}g^{jn} = C^{mn}_{~~~~~~kl}
 $$
 
 $$
-C^{mn}_{~~kl}g^{kp} = C^{mnp}_{~~~l}
+C^{mn}_{~~~~~~kl}g^{kp} = C^{mnp}_{~~~~~~~~l}
 $$
 
 $$
-C^{mnp}_{~~~l}g^{lr} = C^{mnpr}
+C^{mnp}_{~~~~~~~~l}g^{lr} = C^{mnpr}
 $$
 
 ## Ricci Tensor
 
 $$
-R_{ij} = R^{k}_{~ikj}
+R_{ij} = R^{k}_{~~ikj}
 $$
 
 $$
-R^{ij}g^{jk} = R^{k}_{~i}
+R_{ij}g^{jk} = R^{k}_{~~i}
 $$
 
 $$
-R^{k}_{~i}g^{il} = R^{kl}
+R^{k}_{~~i}g^{il} = R^{kl}
 $$
 
 ## Traceless Ricci tensor
@@ -95,11 +99,11 @@ Z_{ij} = R_{ij} - \frac{1}{n}g_{ij}R
 $$
 
 $$
-Z_{ij}g^{jk} = Z^{k}_{~i}
+Z_{ij}g^{jk} = Z^{k}_{~~i}
 $$
 
 $$
-Z^{k}_{~i}g^{il} = Z^{kl}
+Z^{k}_{~~i}g^{il} = Z^{kl}
 $$
 
 ## Ricci Scalar
@@ -115,11 +119,11 @@ G_{ij} = R_{ij} - \frac{1}{2}g_{ij}R
 $$
 
 $$
-G_{ij}g^{jk} = G^{k}_{~i}
+G_{ij}g^{jk} = G^{k}_{~~i}
 $$
 
 $$
-G^{k}_{~i}g^{il} = G^{kl}
+G^{k}_{~~i}g^{il} = G^{kl}
 $$
 
 ## Kretschmann Scalar

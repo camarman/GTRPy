@@ -37,9 +37,9 @@ if event == 'Submit':
 # __pycache__ directories. If you want to try it,
 # download the pyclean package, and uncomment the lines below
 
-try:
-    import os
-    os.system('pyclean .')
-    print('The cleaning successfully ended.')
-except:
-    print('Something went wrong during the cleaning process!')
+# try:
+#     import os
+#     os.system('pyclean .')
+#     print('The cleaning successfully ended.')
+# except:
+#     print('Something went wrong during the cleaning process!')

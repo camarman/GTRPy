@@ -36,10 +36,8 @@ class RiemannTensor(ChristoffelSymbol):
         self.riemann_type = 'uddd'
         riemann_tensor = MutableDenseNDimArray(zeros((self.ndim,)*4))
         for l, i, j, k in product(range(self.ndim), repeat=4):
-            Q1 = derivative_of_chris(
-                self.coord_sys, self.chris_obj, j, l, i, k)
-            Q2 = derivative_of_chris(
-                self.coord_sys, self.chris_obj, k, l, i, j)
+            Q1 = derivative_of_chris(self.coord_sys, self.chris_obj, j, l, i, k)
+            Q2 = derivative_of_chris(self.coord_sys, self.chris_obj, k, l, i, j)
             einstein_sum = 0
             for m in range(self.ndim):
                 I1 = self.chris_obj[l, m, j] * self.chris_obj[m, i, k]

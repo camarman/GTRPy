@@ -18,10 +18,8 @@ class KretschmannScalar(RiemannTensor):
         """
         RiemannTensor.__init__(self, metric_tensor, coord_sys)
         riemanntensor_13 = self.get_riemanntensor()
-        riemanntensor_04 = self.vary_riemanntensor_type(
-            riemanntensor_13, 'dddd')
-        riemanntensor_40 = self.vary_riemanntensor_type(
-            riemanntensor_13, 'uuuu')
+        riemanntensor_04 = self.vary_riemanntensor_type(riemanntensor_13, 'dddd')
+        riemanntensor_40 = self.vary_riemanntensor_type(riemanntensor_13, 'uuuu')
         kretschmann_scalar = 0
         for i, j, k, l in product(range(self.ndim), repeat=4):
             kretschmann_scalar += riemanntensor_04[i, j, k, l] * riemanntensor_40[i, j, k, l]

@@ -38,12 +38,9 @@ class ChristoffelSymbol(MetricTensor):
         for k, i, j in product(range(self.ndim), repeat=3):
             einstein_sum = 0
             for l in range(self.ndim):
-                I1 = derivative_of_metric(
-                    self.coord_sys, self.metric_obj, j, l, i)
-                I2 = derivative_of_metric(
-                    self.coord_sys, self.metric_obj, i, l, j)
-                I3 = derivative_of_metric(
-                    self.coord_sys, self.metric_obj, l, i, j)
+                I1 = derivative_of_metric(self.coord_sys, self.metric_obj, j, l, i)
+                I2 = derivative_of_metric(self.coord_sys, self.metric_obj, i, l, j)
+                I3 = derivative_of_metric(self.coord_sys, self.metric_obj, l, i, j)
                 S = I1 + I2 - I3
                 einstein_sum += 1/2 * self.inverse_metric_obj[k, l] * S
             chris_sym[k, i, j] = einstein_sum
