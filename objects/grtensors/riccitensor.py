@@ -71,9 +71,9 @@ class RicciTensor(RiemannTensor):
         Args:
             xricci_tensor [sympy.tensor]: Given Ricci tensor
             new_type      [str]         : The new type of the Ricci tensor.
-            It should be given in terms of
-            'u': contravariant (upper-indices)
-            'd': covariant (lower-indices)
+                                        It should be given in terms of
+                                        'u': contravariant (upper-indices)
+                                        'd': covariant (lower-indices)
 
         Returns:
             The new Ricci tensor for a given type

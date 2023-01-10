@@ -69,9 +69,9 @@ class TracelessRicciTensor(RicciScalar):
         Args:
             xtrclss_ricci_tensor [sympy.tensor]: Given Traceless Ricci tensor
             new_type             [str]         : The new type of the Traceless Ricci tensor.
-            It should be given in terms of:
-            'u': contravariant (upper-indices)
-            'd': covariant (lower-indices)
+                                                It should be given in terms of:
+                                                'u': contravariant (upper-indices)
+                                                'd': covariant (lower-indices)
 
         Returns:
             The new Traceless Ricci tensor for a given type

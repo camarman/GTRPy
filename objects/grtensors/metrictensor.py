@@ -74,9 +74,9 @@ class MetricTensor(object):
         Args:
             xmetric_tensor [sympy.tensor]: Given metric tensor
             new_type       [str]         : The new type of the metric tensor.
-            It should be given in terms of:
-            'u': contravariant (upper-indices)
-            'd': covariant (lower-indices)
+                                        It should be given in terms of:
+                                        'u': contravariant (upper-indices)
+                                        'd': covariant (lower-indices)
 
         Returns:
             The new metric tensor for a given type

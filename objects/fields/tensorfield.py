@@ -12,11 +12,12 @@ class TensorField():
         Creating the tensor field object
 
         Args:
-            metric_tensor [list]: The metric tensor, provided by the user
-            coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-            tensor_field [list]: The tensor field, provided by the user
-            tensor_field_type [str]: Type of the tensor field. It should be given
-            in terms of 'u': contravariant (upper-indices) and 'd': covariant (lower-indices)
+            metric_tensor     [list]: The metric tensor, provided by the user
+            coord_sys         [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+            tensor_field      [list]: The tensor field, provided by the user
+            tensor_field_type [str] : Type of the tensor field. It should be given in terms of:
+                                        'u': contravariant (upper-indices)
+                                        'd': covariant (lower-indices)
         """
         self.metric_obj = metric_tensor
         self.coord_sys = coord_sys
@@ -44,89 +45,75 @@ class TensorField():
         The covariant derivative of a tensor field for a given type and index
 
         Args:
-            index [int]: The index of the coordinate system given as an integer; (0-ndim)
+            index [int]: The index of the coordinate system given as an integer (0-ndim)
         """
         cs = ChristoffelSymbol(self.metric_obj, self.coord_sys)
         chris_symbol = cs.get_christoffelsymbol()
         cd_tensor_field = MutableDenseNDimArray(zeros((self.ndim,)*2))
         if self.tensor_field_type == 'uu':
-            for a, b in product(range(self.ndim), repeat=2):
-                T_partial = diff(
-                    self.tensor_field[a][b], self.coord_sys[index])
+            for i, j in product(range(self.ndim), repeat=2):
+                T_partial = diff(self.tensor_field[i][j], self.coord_sys[index])
                 einstein_sum1, einstein_sum2 = 0, 0
-                for d in range(self.ndim):
-                    einstein_sum1 += chris_symbol[a,
-                                                  index, d]*self.tensor_field[d][b]
-                    einstein_sum2 += chris_symbol[b,
-                                                  index, d]*self.tensor_field[a][d]
-                cd_tensor_field[a, b] = T_partial + \
-                    einstein_sum1 + einstein_sum2
-
+                for l in range(self.ndim):
+                    einstein_sum1 += self.tensor_field[l][j]*chris_symbol[i, l, index]
+                    einstein_sum2 += self.tensor_field[i][l]*chris_symbol[j, l, index]
+                cd_tensor_field[i, j] = T_partial + einstein_sum1 + einstein_sum2
 
         elif self.tensor_field_type == 'ud':
-            for a, b in product(range(self.ndim), repeat=2):
-                T_partial = diff(
-                    self.tensor_field[a][b], self.coord_sys[index])
+            for i, j in product(range(self.ndim), repeat=2):
+                T_partial = diff(self.tensor_field[i][j], self.coord_sys[index])
                 einstein_sum1, einstein_sum2 = 0, 0
-                for d in range(self.ndim):
-                    einstein_sum1 += chris_symbol[a,
-                                                  index, d]*self.tensor_field[d][b]
-                    einstein_sum1 += chris_symbol[d,
-                                                  index, b]*self.tensor_field[a][d]
-                cd_tensor_field[a, b] = T_partial + \
-                    einstein_sum1 - einstein_sum2
-
+                for l in range(self.ndim):
+                    einstein_sum1 += self.tensor_field[l][j]*chris_symbol[i, l, index]
+                    einstein_sum1 += self.tensor_field[i][l]*chris_symbol[l, j, index]
+                cd_tensor_field[i, j] = T_partial + einstein_sum1 - einstein_sum2
 
         elif self.tensor_field_type == 'dd':
-            for a, b in product(range(self.ndim), repeat=2):
-                T_partial = diff(
-                    self.tensor_field[a][b], self.coord_sys[index])
+            for i, j in product(range(self.ndim), repeat=2):
+                T_partial = diff(self.tensor_field[i][j], self.coord_sys[index])
                 einstein_sum1, einstein_sum2 = 0, 0
-                for d in range(self.ndim):
-                    einstein_sum1 += chris_symbol[d,
-                                                  index, a]*self.tensor_field[d][b]
-                    einstein_sum2 += chris_symbol[d,
-                                                  index, b]*self.tensor_field[a][d]
-                cd_tensor_field[a, b] = T_partial - \
-                    einstein_sum1 - einstein_sum2
+                for l in range(self.ndim):
+                    einstein_sum1 += self.tensor_field[l][j]*chris_symbol[l, i, index]
+                    einstein_sum2 += self.tensor_field[i][l]*chris_symbol[l, j, index]
+                cd_tensor_field[i, j] = T_partial - einstein_sum1 - einstein_sum2
         return Simplify(cd_tensor_field)
 
 
     def cal_lie_derivative(self, X):
         """
-        The lie derivative of a tensor field with respect to vector field, X
+        The Lie derivative of a tensor field with respect to vector field, X
 
         Args:
-           X [list]: Given vector field that the lie derivative is taken w.r.t
+            X [list]: Given vector field that the Lie derivative is taken w.r.t
         """
         ld_tensor_field = MutableDenseNDimArray(zeros((self.ndim,)*2))
         if self.tensor_field_type == 'uu':
-            for a, b in product(range(self.ndim), repeat=2):
+            for i, j in product(range(self.ndim), repeat=2):
                 einstein_sum = 0
-                for c in range(self.ndim):
-                    S1 = X[c]*diff(self.tensor_field[a][b], self.coord_sys[c])
-                    S2 = self.tensor_field[c][b]*diff(X[a], self.coord_sys[c])
-                    S3 = self.tensor_field[a][c]*diff(X[b], self.coord_sys[c])
+                for k in range(self.ndim):
+                    S1 = X[k]*diff(self.tensor_field[i][j], self.coord_sys[k])
+                    S2 = self.tensor_field[i][k]*diff(X[j], self.coord_sys[k])
+                    S3 = self.tensor_field[k][j]*diff(X[i], self.coord_sys[k])
                     einstein_sum += S1 - S2 - S3
-                ld_tensor_field[a, b] = einstein_sum
+                ld_tensor_field[i, j] = einstein_sum
 
         elif self.tensor_field_type == 'ud':
-            for a, b in product(range(self.ndim), repeat=2):
+            for i, j in product(range(self.ndim), repeat=2):
                 einstein_sum = 0
-                for c in range(self.ndim):
-                    S1 = X[c]*diff(self.tensor_field[a][b], self.coord_sys[c])
-                    S2 = self.tensor_field[c][b]*diff(X[a], self.coord_sys[c])
-                    S3 = self.tensor_field[a][c]*diff(X[c], self.coord_sys[b])
+                for k in range(self.ndim):
+                    S1 = X[k]*diff(self.tensor_field[i][j], self.coord_sys[k])
+                    S2 = self.tensor_field[k][j]*diff(X[i], self.coord_sys[k])
+                    S3 = self.tensor_field[i][k]*diff(X[k], self.coord_sys[j])
                     einstein_sum += S1 - S2 + S3
-                ld_tensor_field[a, b] = einstein_sum
+                ld_tensor_field[i, j] = einstein_sum
 
         elif self.tensor_field_type == 'dd':
-            for a, b in product(range(self.ndim), repeat=2):
+            for i, j in product(range(self.ndim), repeat=2):
                 einstein_sum = 0
-                for c in range(self.ndim):
-                    S1 = X[c]*diff(self.tensor_field[a][b], self.coord_sys[c])
-                    S2 = self.tensor_field[c][b]*diff(X[c], self.coord_sys[a])
-                    S3 = self.tensor_field[a][c]*diff(X[c], self.coord_sys[b])
+                for k in range(self.ndim):
+                    S1 = X[k]*diff(self.tensor_field[i][j], self.coord_sys[k])
+                    S2 = self.tensor_field[k][j]*diff(X[k], self.coord_sys[i])
+                    S3 = self.tensor_field[i][k]*diff(X[k], self.coord_sys[j])
                     einstein_sum += S1 + S2 + S3
-                ld_tensor_field[a, b] = einstein_sum
+                ld_tensor_field[i, j] = einstein_sum
         return Simplify(ld_tensor_field)
