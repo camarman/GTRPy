@@ -2,7 +2,6 @@ numpy
 Pillow
 pysimplegui
 sympy
-# pyclean
 
 
 # fonts (optional)
