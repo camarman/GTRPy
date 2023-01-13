@@ -1,5 +1,3 @@
-# Creating a simplification function that applies to all objects (fields and tensors)
-
 from sympy import nsimplify, simplify
 
 

@@ -1,9 +1,9 @@
 from itertools import product
-
 from numpy import zeros
+from sympy import MutableDenseNDimArray, diff
+
 from objects.grtensors.christoffelsymbol import ChristoffelSymbol
 from objects.simplify_objects import Simplify
-from sympy import MutableDenseNDimArray, diff
 
 
 class TensorField():
@@ -15,9 +15,10 @@ class TensorField():
             metric_tensor     [list]: The metric tensor, provided by the user
             coord_sys         [list]: The coordinate system given as a list (e.g., [t,x,y,z])
             tensor_field      [list]: The tensor field, provided by the user
-            tensor_field_type [str] : Type of the tensor field. It should be given in terms of:
-                                        'u': contravariant (upper-indices)
-                                        'd': covariant (lower-indices)
+            tensor_field_type [str] : Type of the tensor field.
+                                    It should be given in terms of:
+                                    'u': contravariant (upper-indices)
+                                    'd': covariant (lower-indices)
         """
         self.metric_obj = metric_tensor
         self.coord_sys = coord_sys

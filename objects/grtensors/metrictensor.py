@@ -1,6 +1,7 @@
 from numpy import array, einsum
-from objects.simplify_objects import Simplify
 from sympy import Array, Matrix
+
+from objects.simplify_objects import Simplify
 
 
 class MetricTensor(object):

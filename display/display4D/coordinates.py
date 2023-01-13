@@ -1,7 +1,6 @@
 def coordinates4d(coordinate_type='Spherical Coordinates'):
     """
-    Producing well-known metrics and coordinate systems
-    for a given coordinate type in 4D
+    Producing well-known metrics and coordinate systems for a given coordinate type in 4D
 
     Args:
         coordinate_type [str]: The name of the coordinate (cartesian, spherical, etc.)

@@ -1,7 +1,7 @@
 from itertools import product
+from sympy import simplify
 
 from objects.grtensors.riemanntensor import RiemannTensor
-from sympy import simplify
 
 
 class KretschmannScalar(RiemannTensor):
@@ -14,7 +14,7 @@ class KretschmannScalar(RiemannTensor):
             coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
 
         Returns:
-            self.kretschmannscalar_obj [int/symbol]: The kretschmann scalar, K
+            self.kretschmannscalar_obj [int/symbol]: The Kretschmann scalar, K
         """
         RiemannTensor.__init__(self, metric_tensor, coord_sys)
         riemanntensor_13 = self.get_riemanntensor()

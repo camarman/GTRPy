@@ -1,9 +1,9 @@
 from itertools import product
-
 from numpy import einsum, zeros
+from sympy import Array, MutableDenseNDimArray, diff
+
 from objects.grtensors.metrictensor import MetricTensor
 from objects.simplify_objects import Simplify
-from sympy import Array, MutableDenseNDimArray, diff
 
 
 def derivative_of_metric(coord_sys, metric_tensor, k, i, j):

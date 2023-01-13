@@ -1,9 +1,9 @@
 from itertools import product
-
 from numpy import einsum, zeros
+from sympy import Array, MutableDenseNDimArray
+
 from objects.grtensors.ricciscalar import RicciScalar
 from objects.simplify_objects import Simplify
-from sympy import Array, MutableDenseNDimArray
 
 
 class EinsteinTensor(RicciScalar):

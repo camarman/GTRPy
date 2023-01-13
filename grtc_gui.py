@@ -1,17 +1,19 @@
-#---------- GRTC GUI ----------#
-
+# ========== GRTC GUI ==========
 import PySimpleGUI as sg
 
-from display3D.mainpage import grtc_gui3d
-from display4D.mainpage import grtc_gui4d
+from display.display3D.mainpage import grtc_gui3d
+from display.display4D.mainpage import grtc_gui4d
 
 
-# Color theme option, provided by the PySimpleGUI
+# ========== PySimpleGUI Color Theme ==========
+
+# Color theme option, provided by the PySimpleGUI. You can look at themes from:
+# https://www.pysimplegui.org/en/latest/#themes-automatic-coloring-of-your-windows
+
 sg.ChangeLookAndFeel('SandyBeach')
 
 
-#---------- GRTC GUI - DIMENSIONS PAGE ----------#
-
+# ========== DIMENSIONS ==========
 
 layout_dimension = [
                         [sg.Text('General Relativity Tensor Calculator (GRTC)', font=('Georgia', 14))],
@@ -33,7 +35,8 @@ if event == 'Submit':
         grtc_gui3d()   # if the dimension is 3
 
 
-# The below code block will delete all the .pyc files and __pycache__ directories.
+# ====================
+# The code block below will delete all the .pyc files and __pycache__ directories.
 # If you want to try it, download the pyclean package, and uncomment the lines below
 
 # try:

@@ -1,9 +1,9 @@
 from itertools import product
-
 from numpy import einsum, zeros
+from sympy import Array, MutableDenseNDimArray
+
 from objects.grtensors.riemanntensor import RiemannTensor
 from objects.simplify_objects import Simplify
-from sympy import Array, MutableDenseNDimArray
 
 
 class RicciTensor(RiemannTensor):
@@ -71,7 +71,7 @@ class RicciTensor(RiemannTensor):
         Args:
             xricci_tensor [sympy.tensor]: Given Ricci tensor
             new_type      [str]         : The new type of the Ricci tensor.
-                                        It should be given in terms of
+                                        It should be given in terms of:
                                         'u': contravariant (upper-indices)
                                         'd': covariant (lower-indices)
 

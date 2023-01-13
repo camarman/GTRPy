@@ -1,9 +1,10 @@
 from numpy import einsum, zeros
+from sympy import Array, MutableDenseNDimArray, diff
+
 from objects.fields.tensorfield import TensorField
 from objects.grtensors.christoffelsymbol import ChristoffelSymbol
 from objects.grtensors.metrictensor import MetricTensor
 from objects.simplify_objects import Simplify
-from sympy import Array, MutableDenseNDimArray, diff
 
 
 class VectorField():
@@ -15,7 +16,8 @@ class VectorField():
             metric_tensor     [list]: The metric tensor, provided by the user
             coord_sys         [list]: The coordinate system given as a list (e.g., [t,x,y,z])
             vector_field      [list]: The vector field, provided by the user
-            vector_field_type [str]: Type of the vector field. It should be given in terms of:
+            vector_field_type [str] : Type of the vector field.
+                                    It should be given in terms of:
                                     'u': contravariant (upper-indices)
                                     'd': covariant (lower-indices)
         """
@@ -104,24 +106,16 @@ class VectorField():
         return False
 
 
-    def vary_vectorfield_type(self, xvector_field, new_type):
+    def vary_vectorfield_type(self):
         """
         Varying the type of the vector field
 
         Args:
             xvector_field [list]: Given vector field
-            new_type      [str] : The new type of the vector field.
-                                It should be given in terms of:
-                                'u': contravariant (upper-indices)
-                                'd': covariant (lower-indices)
-
-        Returns:
-            The new vector field for a given type
         """
-        self.vector_field_type = new_type
-        if new_type == 'u':
+        if self.vector_field_type == 'u':
+            return Simplify(Array(einsum('i,ij->j', self.vector_field, self.metric_obj, optimize='optimal')))
+        elif self.vector_field_type == 'd':
             mt = MetricTensor(self.metric_obj, self.coord_sys)
             inverse_metric = mt.get_inverse()
-            return Simplify(Array(einsum('ij,i->j', inverse_metric, xvector_field, optimize='optimal')))
-        elif new_type == 'd':
-            return Simplify(Array(einsum('ij,i->j', self.metric_obj, xvector_field, optimize='optimal')))
+            return Simplify(Array(einsum('i,ij->j', self.vector_field, inverse_metric, optimize='optimal')))

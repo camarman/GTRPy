@@ -1,7 +1,7 @@
 from itertools import product
+from sympy import simplify
 
 from objects.grtensors.riccitensor import RicciTensor
-from sympy import simplify
 
 
 class RicciScalar(RicciTensor):

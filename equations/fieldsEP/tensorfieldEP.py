@@ -1,7 +1,7 @@
-#---------- PRODUCING EQUATIONS FOR TENSOR FIELDS ----------#
+# ========== PRODUCING EQUATIONS FOR TENSOR FIELDS ==========
+from sympy import latex
 
 from objects.fields.tensorfield import TensorField
-from sympy import latex
 
 
 def cd_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, index_symbol):
@@ -9,10 +9,10 @@ def cd_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, index_symbol):
     Producing equations of covariant derivative for type (2,0) tensor field
 
     Args:
-        metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        tensor_field [list]: The tensor field, provided by the user
-        index_symbol [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
+        metric_tensor [list]        : The metric tensor, provided by the user
+        coord_sys     [list]        : The coordinate system given as a list (e.g., [t,x,y,z])
+        tensor_field  [list]        : The tensor field, provided by the user
+        index_symbol  [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
     """
     ndim = len(coord_sys)
     tf = TensorField(metric_tensor, coord_sys, tensor_field, 'uu')
@@ -27,13 +27,13 @@ def cd_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, index_symbol):
 
 def ld_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, X):
     """
-    Producing equations of lie derivative of type (2,0) tensor field with respect to vector field, X
+    Producing equations of Lie derivative of type (2,0) tensor field with respect to vector field, X
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        tensor_field [list]: The tensor field, provided by the user
-        X [list]: Given vector field that the lie derivative is taken w.r.t
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        tensor_field  [list]: The tensor field, provided by the user
+        X             [list]: Given vector field that the Lie derivative is taken w.r.t
     """
     ndim = len(coord_sys)
     tf = TensorField(metric_tensor, coord_sys, tensor_field, 'uu')
@@ -49,10 +49,10 @@ def cd_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, index_symbol):
     Producing equations of covariant derivative for type (1,1) tensor field
 
     Args:
-        metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        tensor_field [list]: The tensor field, provided by the user
-        index_symbol [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
+        metric_tensor [list]        : The metric tensor, provided by the user
+        coord_sys     [list]        : The coordinate system given as a list (e.g., [t,x,y,z])
+        tensor_field  [list]        : The tensor field, provided by the user
+        index_symbol  [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
     """
     ndim = len(coord_sys)
     tf = TensorField(metric_tensor, coord_sys, tensor_field, 'ud')
@@ -67,13 +67,13 @@ def cd_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, index_symbol):
 
 def ld_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, X):
     """
-    Producing equations of lie derivative of type (1,1) tensor field with respect to vector field, X
+    Producing equations of Lie derivative of type (1,1) tensor field with respect to vector field, X
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        tensor_field [list]: The tensor field, provided by the user
-        X [list]: Given vector field that the lie derivative is taken w.r.t
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        tensor_field  [list]: The tensor field, provided by the user
+        X             [list]: Given vector field that the Lie derivative is taken w.r.t
     """
     ndim = len(coord_sys)
     tf = TensorField(metric_tensor, coord_sys, tensor_field, 'ud')
@@ -89,10 +89,10 @@ def cd_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, index_symbol):
     Producing equations of covariant derivative for type (0,2) tensor field
 
     Args:
-        metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        tensor_field [list]: The tensor field, provided by the user
-        index_symbol [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
+        metric_tensor [list]        : The metric tensor, provided by the user
+        coord_sys     [list]        : The coordinate system given as a list (e.g., [t,x,y,z])
+        tensor_field  [list]        : The tensor field, provided by the user
+        index_symbol  [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
     """
     ndim = len(coord_sys)
     tf = TensorField(metric_tensor, coord_sys, tensor_field, 'dd')
@@ -107,13 +107,13 @@ def cd_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, index_symbol):
 
 def ld_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, X):
     """
-    Producing equations of lie derivative of type (0,2) tensor field with respect to vector field, X
+    Producing equations of Lie derivative of type (0,2) tensor field with respect to vector field, X
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        tensor_field [list]: The tensor field, provided by the user
-        X [list]: Given vector field that the lie derivative is taken w.r.t
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        tensor_field  [list]: The tensor field, provided by the user
+        X             [list]: Given vector field that the Lie derivative is taken w.r.t
     """
     ndim = len(coord_sys)
     tf = TensorField(metric_tensor, coord_sys, tensor_field, 'dd')

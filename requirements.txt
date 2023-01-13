@@ -1,9 +1,9 @@
-# requirements
 numpy
 Pillow
 pysimplegui
 sympy
 # pyclean
+
 
 # fonts (optional)
 # Tahoma, Verdana, & Georgia

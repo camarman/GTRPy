@@ -48,3 +48,4 @@ Please take a look at `docs/user_guide.md` for a summary of the GRTC-GUI. To see
 2) Gradient, Divergence, Curl and Laplace operations on fields
 3) Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, Ricci Tensor, Einstein Tensor etc.)
 4) Including more coordinate systems for both 3D and 4D
+5) Adding a button that also prints the LaTeX version of the equations

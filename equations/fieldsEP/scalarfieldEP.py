@@ -1,7 +1,7 @@
-#---------- PRODUCING EQUATIONS FOR SCALAR FIELDS ----------#
+# ========== PRODUCING EQUATIONS FOR SCALAR FIELDS ==========
+from sympy import latex
 
 from objects.fields.scalarfield import ScalarField
-from sympy import latex
 
 
 def cd_scalarfield_ep(coord_sys, scalar_field, index_symbol):
@@ -9,7 +9,7 @@ def cd_scalarfield_ep(coord_sys, scalar_field, index_symbol):
     Producing equations of covariant derivative for a scalar field
 
     Args:
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        coord_sys    [list]        : The coordinate system given as a list (e.g., [t,x,y,z])
         scalar_field [sympy.symbol]: The scalar field, provided by the user
         index_symbol [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
     """
@@ -22,12 +22,12 @@ def cd_scalarfield_ep(coord_sys, scalar_field, index_symbol):
 
 def ld_scalarfield_ep(coord_sys, scalar_field, X):
     """
-    Producing equations of lie derivative of a scalar field with respect to a vector field, X
+    Producing equations of Lie derivative of a scalar field with respect to a vector field, X
 
     Args:
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        coord_sys    [list]        : The coordinate system given as a list (e.g., [t,x,y,z])
         scalar_field [sympy.symbol]: The scalar field, provided by the user
-        X [list]: Given vector field that the lie derivative is taken w.r.t
+        X            [list]        : Given vector field that the Lie derivative is taken w.r.t
     """
     sf = ScalarField(coord_sys, scalar_field)
     ld_eqn = latex(sf.cal_lie_derivative(X))

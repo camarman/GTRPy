@@ -1,5 +1,6 @@
-from objects.simplify_objects import Simplify
 from sympy import diff
+
+from objects.simplify_objects import Simplify
 
 
 class ScalarField():
@@ -35,10 +36,10 @@ class ScalarField():
 
     def cal_lie_derivative(self, X):
         """
-        The lie derivative of a scalar field with respect to vector field, X
+        The Lie derivative of a scalar field with respect to vector field, X
 
         Args:
-            X [list]: Given vector field that the lie derivative is taken w.r.t
+            X [list]: Given vector field that the Lie derivative is taken w.r.t
         """
         ld_scalar_field = 0
         for i in range(self.ndim):

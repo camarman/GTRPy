@@ -1,7 +1,7 @@
-#---------- PRODUCING EQUATIONS FOR GR-TENSORS ----------#
+# ========== PRODUCING EQUATIONS FOR GR-TENSORS ==========
+from sympy import latex
 
 from objects.grtensors import *
-from sympy import latex
 
 
 def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
@@ -10,84 +10,86 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        tensor_object [str]: The name of the grtensor object (metric tensor, riemann tensor, etc.)
-        tensor_type [str]: The type of the tensor. Given in terms of 'u': contravariant
-        and 'd': covariant
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        tensor_object [str] : The name of the grtensor object (metric tensor, Riemann tensor, etc.)
+        tensor_type   [str] : Type of the tensor.
+                            It should be given in terms of:
+                            'u': contravariant
+                            'd': covariant
     """
     if tensor_object == 'Metric Tensor':
         mt = MetricTensor(metric_tensor, coord_sys)
         metric_tensor = mt.get_metrictensor()
         if tensor_type == '':   # default type of the given tensor
-            return '$$' + latex(metric_tensor) + '$$'
+            return '$${}$$'.format(latex(metric_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$$' + latex(mt.vary_metrictensor_type(metric_tensor, tensor_type)) + '$$'
+            return '$${}$$'.format(latex(mt.vary_metrictensor_type(metric_tensor, tensor_type)))
 
     elif tensor_object == 'Inverse Metric Tensor':
         mt = MetricTensor(metric_tensor, coord_sys)
         inverse_metric_tensor = mt.get_inverse()
-        return '$$' + latex(inverse_metric_tensor) + '$$'
+        return '$${}$$'.format(latex(inverse_metric_tensor))
 
     elif tensor_object == 'Christoffel Symbol':
         cs = ChristoffelSymbol(metric_tensor, coord_sys)
         chris_symbol = cs.get_christoffelsymbol()
         if tensor_type == '':   # default type of the given tensor
-            return '$$' + latex(chris_symbol) + '$$'
+            return '$${}$$'.format(latex(chris_symbol))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$$' + latex(cs.vary_christoffelsymbol_type(chris_symbol, tensor_type)) + '$$'
+            return '$${}$$'.format(latex(cs.vary_christoffelsymbol_type(chris_symbol, tensor_type)))
 
     elif tensor_object == 'Riemann Tensor':
         rt = RiemannTensor(metric_tensor, coord_sys)
         riemann_tensor = rt.get_riemanntensor()
         if tensor_type == '':   # default type of the given tensor
-            return '$$' + latex(riemann_tensor) + '$$'
+            return '$${}$$'.format(latex(riemann_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$$' + latex(rt.vary_riemanntensor_type(riemann_tensor, tensor_type)) + '$$'
+            return '$${}$$'.format(latex(rt.vary_riemanntensor_type(riemann_tensor, tensor_type)))
 
     elif tensor_object == 'Ricci Tensor':
         rit = RicciTensor(metric_tensor, coord_sys)
         ricci_tensor = rit.get_riccitensor()
         if tensor_type == '':   # default type of the given tensor
-            return '$$' + latex(ricci_tensor) + '$$'
+            return '$${}$$'.format(latex(ricci_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$$' + latex(rit.vary_riccitensor_type(ricci_tensor, tensor_type)) + '$$'
+            return '$${}$$'.format(latex(rit.vary_riccitensor_type(ricci_tensor, tensor_type)))
 
     elif tensor_object == 'Ricci Scalar':
         rs = RicciScalar(metric_tensor, coord_sys)
         ricci_scalar = rs.get_ricciscalar()
-        return '$$R = ' + latex(ricci_scalar) + '$$'
+        return '$$R = {}$$'.format(latex(ricci_scalar))
 
     elif tensor_object == 'Traceless Ricci Tensor':
         trt = TracelessRicciTensor(metric_tensor, coord_sys)
         traceless_ricci_tensor = trt.get_trclss_riccitensor()
         if tensor_type == '':   # default type of the given tensor
-            return '$$' + latex(traceless_ricci_tensor) + '$$'
+            return '$${}$$'.format(latex(traceless_ricci_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$$' + latex(trt.vary_trclss_riccitensor_type(traceless_ricci_tensor, tensor_type)) + '$$'
+            return '$${}$$'.format(latex(trt.vary_trclss_riccitensor_type(traceless_ricci_tensor, tensor_type)))
 
     elif tensor_object == 'Weyl Tensor':
         wyl = WeylTensor(metric_tensor, coord_sys)
         weyl_tensor = wyl.get_weyltensor()
         if tensor_type == '':   # default type of the given tensor
-            return '$$' + latex(weyl_tensor) + '$$'
+            return '$${}$$'.format(latex(weyl_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$$' + latex(wyl.vary_weyltensor_type(weyl_tensor, tensor_type)) + '$$'
+            return '$${}$$'.format(latex(wyl.vary_weyltensor_type(weyl_tensor, tensor_type)))
 
     elif tensor_object == 'Einstein Tensor':
         et = EinsteinTensor(metric_tensor, coord_sys)
         einstein_tensor = et.get_einsteintensor()
         if tensor_type == '':   # default type of the given tensor
-            return '$$' + latex(einstein_tensor) + '$$'
+            return '$${}$$'.format(latex(einstein_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$$' + latex(et.vary_einsteintensor_type(einstein_tensor, tensor_type)) + '$$'
+            return '$${}$$'.format(latex(et.vary_einsteintensor_type(einstein_tensor, tensor_type)))
 
     elif tensor_object == 'Kretschmann Scalar':
         ks = KretschmannScalar(metric_tensor, coord_sys)
         kret_scalar = ks.get_kretschmannscalar()
-        return '$$K = ' + latex(kret_scalar) + '$$'
+        return '$$K = {}$$'.format(latex(kret_scalar))
 
 
-#---------- PRODUCING EQUATIONS OF TENSOR COMPONENTS ----------#
+# ========== PRODUCING EQUATIONS OF TENSOR COMPONENTS ==========
 
 
 def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='', component=''):
@@ -95,12 +97,14 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
     Producing equations of tensor components for a given metric, tensor type and component
 
     Args:
-        metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        tensor_object [str]: The name of the grtensor object (metric tensor, riemann tensor, etc.)
-        tensor_type [str]: Type of the tensor. Given in terms of 'u': contravariant
-        and 'd': covariant
+        metric_tensor     [list]: The metric tensor, provided by the user
+        coord_sys         [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        tensor_object     [str] : The name of the grtensor object (metric tensor, Riemann tensor, etc.)
         component [sympy.symbol]: The component of the tensor (e.g., g_{tt})
+        tensor_type       [str] : Type of the tensor.
+                                It should be given in terms of:
+                                'u': contravariant
+                                'd': covariant
     """
     if tensor_object == 'Metric Tensor':
         mt = MetricTensor(metric_tensor, coord_sys)

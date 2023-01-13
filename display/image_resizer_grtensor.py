@@ -6,11 +6,12 @@ def resize_tensor_image(tensor_object, tensor_type=''):
     Re-sizing the image of a tensor
 
     Args:
-        tensor_object [str]: The name of the grtensor object (metric tensor, riemann tensor, etc.)
-        tensor_type [str]: The type of the tensor. Given in terms of 'u': contravariant
-        and 'd': covariant
+        tensor_object [str]: The name of the grtensor object (metric tensor, Riemann tensor, etc.)
+        tensor_type   [str]: The type of the tensor. Given in terms of
+                            'u': contravariant
+                            'd': covariant
     """
-    im = Image.open(r'display4D/output images/tensor.png')
+    im = Image.open(r'display/display4D/output_images/tensor.png')
     if tensor_object == 'Metric Tensor' and tensor_type == 'ud':
         size = (400, 400)
 
@@ -45,7 +46,7 @@ def resize_tensor_image(tensor_object, tensor_type=''):
         size = (500, 500)
     im.thumbnail(size, Image.ANTIALIAS)
     out_dim = im.size
-    out_name = r'display4D/output images/tensor.png'
+    out_name = r'display/display4D/output_images/tensor.png'
     im.save(out_name, "PNG")
     im.close()
 
@@ -54,10 +55,10 @@ def resize_tensor_component_image():
     """
     Re-sizing the image of a tensor component
     """
-    im = Image.open(r'display4D/output images/tensor_component.png')
+    im = Image.open(r'display/display4D/output_images/tensor_component.png')
     size = (200, 200)
     im.thumbnail(size, Image.ANTIALIAS)
     out_dim = im.size
-    out_name = r'display4D/output images/tensor_component.png'
+    out_name = r'display/display4D/output_images/tensor_component.png'
     im.save(out_name, "PNG")
     im.close()

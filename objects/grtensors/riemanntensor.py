@@ -1,9 +1,9 @@
 from itertools import product
-
 from numpy import einsum, zeros
+from sympy import Array, MutableDenseNDimArray, diff
+
 from objects.grtensors.christoffelsymbol import ChristoffelSymbol
 from objects.simplify_objects import Simplify
-from sympy import Array, MutableDenseNDimArray, diff
 
 
 def derivative_of_chris(coord_sys, chris_symb, l, k, i, j):

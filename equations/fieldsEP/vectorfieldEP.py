@@ -1,47 +1,41 @@
-#---------- PRODUCING EQUATIONS FOR VECTOR FIELDS ----------#
+# ========== PRODUCING EQUATIONS FOR VECTOR FIELDS ==========
+from sympy import latex
 
 from objects.fields.vectorfield import VectorField
-from sympy import latex
 
 
 def vry_vectorfield10_ep(metric_tensor, coord_sys, vector_field):
     """
-    Varying the type of the vector field from 'u' (contravariant)
-    to 'd' (covariant)
+    Varying the type of the vector field from 'u' (contravariant) to 'd' (covariant)
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        vector_field [list]: The vector field, provided by the user
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field  [list]: The vector field, provided by the user
     """
     ndim = len(coord_sys)
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'u')
-    vector_field = vf.get_vectorfield()
-    new_vf = vf.vary_vectorfield_type(vector_field, 'd')
     if ndim == 4:
-        return '$$V_{{\\alpha}}={0}$$'.format(latex(new_vf))
+        return '$$V_{{\\alpha}}={0}$$'.format(latex(vf.vary_vectorfield_type()))
     elif ndim == 3:
-        return '$$V_{{a}}={0}$$'.format(latex(new_vf))
+        return '$$V_{{a}}={0}$$'.format(latex(vf.vary_vectorfield_type()))
 
 
 def vry_vectorfield01_ep(metric_tensor, coord_sys, vector_field):
     """
-    Varying the type of the vector field from 'd' (covariant)
-    to 'u' (contravariant)
+    Varying the type of the vector field from 'd' (covariant) to 'u' (contravariant)
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        vector_field [list]: The vector field, provided by the user
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field  [list]: The vector field, provided by the user
     """
     ndim = len(coord_sys)
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'd')
-    vector_field = vf.get_vectorfield()
-    new_vf = vf.vary_vectorfield_type(vector_field, 'u')
     if ndim == 4:
-        return '$$V^{{\\alpha}}={0}$$'.format(latex(new_vf))
+        return '$$V^{{\\alpha}}={0}$$'.format(latex(vf.vary_vectorfield_type()))
     elif ndim == 3:
-        return '$$V^{{a}}={0}$$'.format(latex(new_vf))
+        return '$$V^{{a}}={0}$$'.format(latex(vf.vary_vectorfield_type()))
 
 
 def cd_vectorfield10_ep(metric_tensor, coord_sys, vector_field, index_symbol):
@@ -49,10 +43,10 @@ def cd_vectorfield10_ep(metric_tensor, coord_sys, vector_field, index_symbol):
     Producing equations of covariant derivative for type (1,0) vector field
 
     Args:
-        metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        vector_field [list]: The vector field, provided by the user
-        index_symbol [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
+        metric_tensor [list]        : The metric tensor, provided by the user
+        coord_sys     [list]        : The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field  [list]        : The vector field, provided by the user
+        index_symbol  [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
     """
     ndim = len(coord_sys)
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'u')
@@ -67,13 +61,14 @@ def cd_vectorfield10_ep(metric_tensor, coord_sys, vector_field, index_symbol):
 
 def ld_vectorfield10_ep(metric_tensor, coord_sys, vector_field, X):
     """
-    Producing equations of lie derivative of type (1,0) vector field with respect to another vector field, X
+    Producing equations of Lie derivative of type (1,0) vector field with respect to
+    another vector field, X
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        vector_field [list]: The vector field, provided by the user
-        X [list]: Given vector field that the lie derivative is taken w.r.t
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field  [list]: The vector field, provided by the user
+        X             [list]: Given vector field that the Lie derivative is taken w.r.t
     """
     ndim = len(coord_sys)
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'u')
@@ -89,10 +84,10 @@ def cd_vectorfield01_ep(metric_tensor, coord_sys, vector_field, index_symbol):
     Producing equations of covariant derivative for type (0,1) vector field
 
     Args:
-        metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        vector_field [list]: The vector field, provided by the user
-        index_symbol [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
+        metric_tensor [list]        : The metric tensor, provided by the user
+        coord_sys     [list]        : The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field  [list]        : The vector field, provided by the user
+        index_symbol  [sympy.symbol]: The index of the coordinate system given as a symbol (e.g., t, r, theta or phi)
     """
     ndim = len(coord_sys)
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'd')
@@ -107,13 +102,14 @@ def cd_vectorfield01_ep(metric_tensor, coord_sys, vector_field, index_symbol):
 
 def ld_vectorfield01_ep(metric_tensor, coord_sys, vector_field, X):
     """
-    Producing equations of lie derivative of type (0,1) vector field with respect to another vector field, X
+    Producing equations of Lie derivative of type (0,1) vector field with respect to
+    another vector field, X
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        vector_field [list]: The vector field, provided by the user
-        X [list]: Given vector field that the lie derivative is taken w.r.t
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field  [list]: The vector field, provided by the user
+        X             [list]: Given vector field that the Lie derivative is taken w.r.t
     """
     ndim = len(coord_sys)
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'd')
@@ -126,33 +122,33 @@ def ld_vectorfield01_ep(metric_tensor, coord_sys, vector_field, X):
 
 def killingfield10_ep(metric_tensor, coord_sys, vector_field):
     """
-    Producing equation of a killing field for type (1,0) vector field
+    Producing equation of a Killing field for type (1,0) vector field
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        vector_field [list]: The vector field, provided by the user
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field  [list]: The vector field, provided by the user
     """
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'u')
     if vf.isKillingField(vector_field) == True:
-        return '$$V^{{\\alpha}}={0}~\\text{{is a killing field}}$$'.format(latex(vector_field))
+        return '$$V^{{\\alpha}}={0}~\\text{{is a Killing field}}$$'.format(latex(vector_field))
     else:
-        return '$$V^{{\\alpha}}={0}~\\text{{is not a killing field}}$$'.format(latex(vector_field))
+        return '$$V^{{\\alpha}}={0}~\\text{{is not a Killing field}}$$'.format(latex(vector_field))
 
 
 def killingfield01_ep(metric_tensor, coord_sys, vector_field):
     """
-    Producing equation of a killing field for type (0,1) vector field
+    Producing equation of a Killing field for type (0,1) vector field
 
     Args:
         metric_tensor [list]: The metric tensor, provided by the user
-        coord_sys [list]: The coordinate system given as a list (e.g., [t,x,y,z])
-        vector_field [list]: The vector field, provided by the user
+        coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
+        vector_field  [list]: The vector field, provided by the user
     """
     vf = VectorField(metric_tensor, coord_sys, vector_field, 'd')
-    vector_field_raised = vf.vary_vectorfield_type(vector_field, 'u')
-    # since the lie derivative in the killing vector equation only takes upper indices
+    # since the Lie derivative in the Killing vector equation only takes upper indices
+    vector_field_raised = vf.vary_vectorfield_type()
     if vf.isKillingField(vector_field_raised) == True:
-        return '$$V_{{\\alpha}}={0}~\\text{{is a killing field}}$$'.format(latex(vector_field))
+        return '$$V_{{\\alpha}}={0}~\\text{{is a Killing field}}$$'.format(latex(vector_field))
     else:
-        return '$$V_{{\\alpha}}={0}~\\text{{is not a killing field}}$$'.format(latex(vector_field))
+        return '$$V_{{\\alpha}}={0}~\\text{{is not a Killing field}}$$'.format(latex(vector_field))

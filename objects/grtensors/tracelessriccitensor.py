@@ -1,9 +1,9 @@
 from itertools import product
-
 from numpy import einsum, zeros
+from sympy import Array, MutableDenseNDimArray
+
 from objects.grtensors.ricciscalar import RicciScalar
 from objects.simplify_objects import Simplify
-from sympy import Array, MutableDenseNDimArray
 
 
 class TracelessRicciTensor(RicciScalar):
@@ -64,7 +64,7 @@ class TracelessRicciTensor(RicciScalar):
 
     def vary_trclss_riccitensor_type(self, xtrclss_riccitensor, new_type):
         """
-        Varying the type of the Traceless Ricci  tensor
+        Varying the type of the Traceless Ricci tensor
 
         Args:
             xtrclss_ricci_tensor [sympy.tensor]: Given Traceless Ricci tensor
