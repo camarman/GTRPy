@@ -4,7 +4,7 @@ This is the list of the all equations used in the program. Now, you can easily c
 
 ## Tensors
 
-### Metric Tensor ($g_{ij}$)
+### Metric Tensor
 
 $$
 g^{k}_{~~i} = g_{ij}g^{jk}
@@ -14,7 +14,7 @@ $$
 g^{kl} = g^{k}_{~~i}g^{il}
 $$
 
-### Christoffel Symbol ($\Gamma^{k}_{~~ij}$)
+### Christoffel Symbol
 
 $$
     \Gamma^{k}_{~~ij} := \frac{1}{2}g^{kl}(g_{li,j}+g_{lj,i}-g_{ij,l})
@@ -32,7 +32,7 @@ $$
     \Gamma^{klm} = \Gamma^{kl}_{~~~j}g^{jm}
 $$
 
-### Riemann Tensor ($R^l_{~ijk}$)
+### Riemann Tensor
 
 $$
     R^l_{~ijk} := \Gamma^{l}_{~ik,j} - \Gamma^{l}_{~ij,k} + \Gamma^{l}_{~mj}\Gamma^{m}_{~ik} - \Gamma^{l}_{~mk}\Gamma^{m}_{~ij}
@@ -54,7 +54,7 @@ $$
     R^{lmnp}=R^{lmn}_{~~~~~~~k}g^{kp}
 $$
 
-### Weyl Tensor ($C_{ijkl}$)
+### Weyl Tensor
 
 $$
     C_{ijkl} := R_{ijkl} + \frac{1}{n-2}(g_{il}R_{kj}+g_{jk}R_{li}-g_{ik}R_{lj}-g_{jl}R_{ki}) + \frac{1}{(n-1)(n-2)}(g_{ik}g_{lj}-g_{il}g_{kj})R
@@ -76,7 +76,7 @@ $$
 C^{mnpr} = C^{mnp}_{~~~~~~~~l}g^{lr}
 $$
 
-### Ricci Tensor ($R_{ij}$)
+### Ricci Tensor
 
 $$
 R_{ij} := R^{k}_{~~ikj}
@@ -90,7 +90,7 @@ $$
 R^{kl} = R^{k}_{~~i}g^{il}
 $$
 
-### Traceless Ricci tensor ($Z_{ij}$)
+### Traceless Ricci tensor
 
 $$
 Z_{ij} := R_{ij} - \frac{1}{n}g_{ij}R
@@ -104,13 +104,13 @@ $$
 Z^{kl} = Z^{k}_{~~i}g^{il}
 $$
 
-### Ricci Scalar ($R$)
+### Ricci Scalar
 
 $$
 R := g^{ij}R_{ij}
 $$
 
-### Einstein Tensor ($G_{ij}$)
+### Einstein Tensor
 
 $$
 G_{ij} := R_{ij} - \frac{1}{2}g_{ij}R
@@ -124,7 +124,7 @@ $$
 G^{kl} = G^{k}_{~~i}g^{il}
 $$
 
-### Kretschmann Scalar ($K$)
+### Kretschmann Scalar
 
 $$
 K := R_{ijkl}R^{ijkl}
