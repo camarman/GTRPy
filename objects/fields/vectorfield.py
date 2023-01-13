@@ -17,9 +17,9 @@ class VectorField():
             coord_sys         [list]: The coordinate system given as a list (e.g., [t,x,y,z])
             vector_field      [list]: The vector field, provided by the user
             vector_field_type [str] : Type of the vector field.
-                                    It should be given in terms of:
-                                    'u': contravariant (upper-indices)
-                                    'd': covariant (lower-indices)
+                                      It should be given in terms of:
+                                      'u': contravariant (upper-indices)
+                                      'd': covariant (lower-indices)
         """
         self.metric_obj = metric_tensor
         self.coord_sys = coord_sys

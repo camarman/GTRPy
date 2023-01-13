@@ -13,9 +13,9 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
         coord_sys     [list]: The coordinate system given as a list (e.g., [t,x,y,z])
         tensor_object [str] : The name of the grtensor object (metric tensor, Riemann tensor, etc.)
         tensor_type   [str] : Type of the tensor.
-                            It should be given in terms of:
-                            'u': contravariant
-                            'd': covariant
+                              It should be given in terms of:
+                              'u': contravariant
+                              'd': covariant
     """
     if tensor_object == 'Metric Tensor':
         mt = MetricTensor(metric_tensor, coord_sys)
@@ -102,9 +102,9 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
         tensor_object     [str] : The name of the grtensor object (metric tensor, Riemann tensor, etc.)
         component [sympy.symbol]: The component of the tensor (e.g., g_{tt})
         tensor_type       [str] : Type of the tensor.
-                                It should be given in terms of:
-                                'u': contravariant
-                                'd': covariant
+                                  It should be given in terms of:
+                                  'u': contravariant
+                                  'd': covariant
     """
     if tensor_object == 'Metric Tensor':
         mt = MetricTensor(metric_tensor, coord_sys)

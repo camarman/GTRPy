@@ -8,8 +8,8 @@ def resize_tensor_image(tensor_object, tensor_type=''):
     Args:
         tensor_object [str]: The name of the grtensor object (metric tensor, Riemann tensor, etc.)
         tensor_type   [str]: The type of the tensor. Given in terms of
-                            'u': contravariant
-                            'd': covariant
+                             'u': contravariant
+                             'd': covariant
     """
     im = Image.open(r'display/display4D/output_images/tensor.png')
     if tensor_object == 'Metric Tensor' and tensor_type == 'ud':

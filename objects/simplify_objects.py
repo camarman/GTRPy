@@ -11,7 +11,7 @@ def Simplify(xobject):
     Returns:
         Simplified version of the object
     """
-    try:   # if all components of the tensor (or field) are 0, nsimplify produces error
+    try:   # if all components of the tensor (or field) are 0, nsimplify raises error
         return simplify(nsimplify(xobject))
     except:
         return xobject
