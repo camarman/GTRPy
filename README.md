@@ -8,7 +8,17 @@ GRTC-GUI allows you to calculate the well-known tensors in general relativity, w
 
 ### GR Tensor Objects
 
-Either by using predefined coordinates or by defining the coordinate system yourself, you can calculate the Inverse Metric Tensor, Christoffel Symbol, Riemann Tensor, Ricci Tensor, Ricci Scalar, Weyl Tensor, Traceless Ricci Tensor, Einstein Tensor and Kretschmann Scalar.
+Either by using predefined coordinates or by defining the coordinate system yourself, you can calculate;
+
+1. Inverse Metric Tensor
+2. Christoffel Symbol
+3. Riemann Tensor
+4. Ricci Tensor
+5. Ricci Scalar
+6. Weyl Tensor
+7. Traceless Ricci Tensor
+8. Einstein Tensor
+9. Kretschmann Scalar
 
 ### Field Objects
 
@@ -24,7 +34,7 @@ Currently, there are 6 different field objects that you can carry out operations
 #### Operations on Fields
 
 1. Varying the type of the vector field
-2. Calculating the covariant and Lie derivatives of each field object (scalar, vector and tensor)
+2. Calculating the covariant and Lie derivative of each field object (scalar, vector and tensor)
 3. Check the Killing field condition for a given vector field
 
 ## Installation
@@ -49,7 +59,7 @@ and uncomment the lines in the file.
 
 ## User Guide
 
-Please take a look at `docs/user_guide.md` for a summary of the GRTC-GUI. To see more detailed usage of the GRTC-GUI, you can look at the `demos` directory.
+Please take a look at the `docs/user_guide.md` file for a summary of the GRTC-GUI. To see a more detailed usage, you can look at the `demos` directory.
 
 ## Upcoming Features
 
