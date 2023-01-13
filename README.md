@@ -51,7 +51,7 @@ to install the requirements.
 
 ### pyclean support
 
-I have added an optional code block in `grtc_gui.py` that will delete all the `.pyc` files and `__pycache__` directories. If you want to try it, install the pyclean via
+I have added an optional code block in `grtc_gui.py` that will delete all the `.pyc` files and `__pycache__` directories (these are created after the program starts and can be annoying for some people). If you want to try it, install [pyclean](https://pypi.org/project/pyclean/) via
 
     python3 -m pip install pyclean
 
