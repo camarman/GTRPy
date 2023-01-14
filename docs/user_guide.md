@@ -4,15 +4,17 @@ You can run the program by simply typing
 
     python3 grtc_gui.py
 
-![greetings_page](https://user-images.githubusercontent.com/45866787/198973226-3cb1b794-15ca-4926-9b5f-55743dac78bd.png)
+in the terminal from the grtc_gui directory
+
+![greetings_page](https://user-images.githubusercontent.com/45866787/212466253-fb0e42e4-dc88-4550-bf19-b901b5008a25.png)
 
 Later on choose a suitable dimension from the GUI. If you choose four dimensions, you'll see a page in this form
 
-![4d](https://user-images.githubusercontent.com/45866787/198973300-ac36cd0f-1b01-4530-80c3-7c6d0da3ccf8.png)
+![4d_main_grt](https://user-images.githubusercontent.com/45866787/212466258-6e10713a-6235-45a0-babe-010e1f0444be.png)
 
 similarly, for three dimensions
 
-![3d](https://user-images.githubusercontent.com/45866787/198973467-1391e0ba-be1f-438c-a5bf-40a4d7494978.png)
+![3d_main](https://user-images.githubusercontent.com/45866787/212466276-ced0e2eb-ce5e-4f3a-966a-f5f286252e72.png)
 
 Later on you can define the coordinate system and create your own metric tensor. While defining the coordinate system you can choose from the given coordinate system symbols
 
@@ -34,30 +36,35 @@ and in 3D;
     2. Cylindrical Coordinates
     3. Spherical Coordinates
 
-Let us study the Schwarzschild Coordinates as an example.
 
 > For more detailed usage with examples, take a look at the `demos` directory.
 
 ## Tensors, Tensor Types, Index Lowering and Raising
 
+Let us study the Schwarzschild Coordinates as an example.
+
+![4d_sch](https://user-images.githubusercontent.com/45866787/212466334-b20ba860-9463-4bba-91de-5ee8e1898e53.png)
+
 Just click one of the tensor buttons, which will lead you to the default page of the choosen tensor.
 
-![chris_1](https://user-images.githubusercontent.com/45866787/198973666-7b8e5607-0591-449a-8244-cdcac9bbca58.png)
+![chris_def](https://user-images.githubusercontent.com/45866787/212466296-99805e6a-92b7-47d0-a21d-602cbdb75dce.png)
 
 Later on, you can change the type of the tensor and get any component from the given page.
 
-![chris_2](https://user-images.githubusercontent.com/45866787/198973890-22bed6aa-c5fa-4238-89bb-72a29ea82e85.png)
+![chris_upper](https://user-images.githubusercontent.com/45866787/212466303-581df35a-3b44-4349-92f1-a02ed282f57b.png)
 
 ## Fields
 
 If you click on the Fields tab you'll see the 6 available fields.
 
-![fields_tab](https://user-images.githubusercontent.com/45866787/198974014-29cd448d-9a8c-4c3c-ae4e-1de98e862a86.png)
+![4d_main_fields](https://user-images.githubusercontent.com/45866787/212466308-024668ae-c44b-46d5-a488-96efe8437e23.png)
 
 From there, you can pick the field that you want to calculate. After typing your field, you can perform any available operation.
 
-![scalar](https://user-images.githubusercontent.com/45866787/198974191-763724b2-22cb-4196-b39e-87b52f509f52.png)
+![scalar_field](https://user-images.githubusercontent.com/45866787/212466315-315a6269-d84f-4bd3-92a1-e0d64e21742e.png)
 
-![vector](https://user-images.githubusercontent.com/45866787/200797025-53bd0b2f-eed2-435a-a05c-9722f153579b.png)
+![vector_field](https://user-images.githubusercontent.com/45866787/212466320-5d5e31a0-8c1d-49d6-a928-f844c7cf04c1.png)
 
-![tensor](https://user-images.githubusercontent.com/45866787/198974166-7b9e7941-582f-485b-911a-1b7a8a01194e.png)
+![tensor_field](https://user-images.githubusercontent.com/45866787/212466322-8f25f5a5-8345-4b71-98ef-721c7eaa0c92.png)
+
+
