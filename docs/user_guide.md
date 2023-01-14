@@ -1,10 +1,10 @@
 # User Guide
 
-To run the program type
+You can run the program by simply typing
 
     python3 grtc_gui.py
 
-![greeting_page](https://user-images.githubusercontent.com/45866787/198973226-3cb1b794-15ca-4926-9b5f-55743dac78bd.png)
+![greetings_page](https://user-images.githubusercontent.com/45866787/198973226-3cb1b794-15ca-4926-9b5f-55743dac78bd.png)
 
 Later on choose a suitable dimension from the GUI. If you choose four dimensions, you'll see a page in this form
 
