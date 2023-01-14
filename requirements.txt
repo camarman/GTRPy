@@ -4,7 +4,7 @@ pysimplegui
 sympy
 
 
-# fonts (optional)
+# --- fonts (optional)
 # Tahoma, Verdana, & Georgia
 
 # These are the standard fonts in many OS's, but if they are missing,

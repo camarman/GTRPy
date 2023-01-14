@@ -49,7 +49,7 @@ or via downloading as ZIP. Later on, you can simply run
 
 to install the requirements.
 
-### pyclean support
+### pyclean support (optional)
 
 I have added an optional code block in `grtc_gui.py` that will delete all the `.pyc` files and `__pycache__` directories (these are created after the program starts and can be annoying for some people). If you want to try it, install [pyclean](https://pypi.org/project/pyclean/) via
 

@@ -20,19 +20,19 @@ Later on you can define the coordinate system and create your own metric tensor.
 
 Or you can simply choose one of the predefined coordinate systems. Currently predefined coordinates in 4D are;
 
-    1) Cartesian Coordinates
-    2) Cylindrical Coordinates
-    3) Spherical Coordinates
-    4) Conform-Compactified Coordinates
-    5) Rindler Coordinates
-    6) Schwarzschild Coordinates
-    7) Eddington-Finkelstein Coordinates
+    1. Cartesian Coordinates
+    2. Cylindrical Coordinates
+    3. Spherical Coordinates
+    4. Conform-Compactified Coordinates
+    5. Rindler Coordinates
+    6. Schwarzschild Coordinates
+    7. Eddington-Finkelstein Coordinates
 
 and in 3D;
 
-    1) Cartesian Coordinates
-    2) Cylindrical Coordinates
-    3) Spherical Coordinates
+    1. Cartesian Coordinates
+    2. Cylindrical Coordinates
+    3. Spherical Coordinates
 
 Let us study the Schwarzschild Coordinates as an example.
 

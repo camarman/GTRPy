@@ -1,7 +1,7 @@
 # ========== PRODUCING EQUATIONS FOR GR-TENSORS ==========
 from sympy import latex
 
-from objects.grtensors import *
+from src.grtensors import *
 
 
 def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):

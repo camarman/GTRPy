@@ -1,6 +1,6 @@
 # Equations
 
-This is the list of the all equations used in the program. Now, you can easily compare the written equations with the code (under the `objects` directory).
+This is the list of the all equations used in the program. Now, you can easily compare the written equations with the code (under the `src` directory).
 
 ## Tensors
 

@@ -1,8 +1,8 @@
 # ========== GRTC GUI ==========
 import PySimpleGUI as sg
 
-from display.display3D.mainpage import grtc_gui3d
-from display.display4D.mainpage import grtc_gui4d
+from screen.screen3D.mainpage import grtc_gui3d
+from screen.screen4D.mainpage import grtc_gui4d
 
 
 # ========== PySimpleGUI Color Theme ==========
