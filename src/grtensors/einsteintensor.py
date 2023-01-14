@@ -61,16 +61,15 @@ class EinsteinTensor(RicciScalar):
         return Array(einsum('ki,il->kl', xeinstein_tensor, self.inverse_metric_obj, optimize='optimal'))
 
 
-    def vary_einsteintensor_type(self, xeinstein_tensor, new_type):
+    def vary_einsteintensor_type(self, new_type):
         """
         Varying the type of the Einstein tensor
 
         Args:
-            xeinstein_tensor [sympy.tensor]: Given Einstein tensor
-            new_type         [str]         : The new type of the Einstein tensor.
-                                             It should be given in terms of:
-                                             'u': contravariant (upper-indices)
-                                             'd': covariant (lower-indices)
+            new_type [str]: The new type of the Einstein tensor.
+                            It should be given in terms of:
+                            'u': contravariant (upper-indices)
+                            'd': covariant (lower-indices)
 
         Returns:
             The new Einstein tensor for a given type
@@ -79,6 +78,6 @@ class EinsteinTensor(RicciScalar):
         if new_type == 'dd':
             return Simplify(self.einsteintensor_obj)
         elif new_type == 'ud':
-            return Simplify(self.raise_index(xeinstein_tensor))
+            return Simplify(self.raise_index(self.einsteintensor_obj))
         elif new_type == 'uu':
-            return Simplify(self.raise_index1(self.raise_index(xeinstein_tensor)))
+            return Simplify(self.raise_index1(self.raise_index(self.einsteintensor_obj)))

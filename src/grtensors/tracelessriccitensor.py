@@ -62,16 +62,15 @@ class TracelessRicciTensor(RicciScalar):
         return Array(einsum('ki,il->kl', xtrclss_riccitensor, self.inverse_metric_obj, optimize='optimal'))
 
 
-    def vary_trclss_riccitensor_type(self, xtrclss_riccitensor, new_type):
+    def vary_trclss_riccitensor_type(self, new_type):
         """
         Varying the type of the Traceless Ricci tensor
 
         Args:
-            xtrclss_ricci_tensor [sympy.tensor]: Given Traceless Ricci tensor
-            new_type             [str]         : The new type of the Traceless Ricci tensor.
-                                                 It should be given in terms of:
-                                                 'u': contravariant (upper-indices)
-                                                 'd': covariant (lower-indices)
+            new_type [str]: The new type of the Traceless Ricci tensor.
+                            It should be given in terms of:
+                            'u': contravariant (upper-indices)
+                            'd': covariant (lower-indices)
 
         Returns:
             The new Traceless Ricci tensor for a given type
@@ -80,6 +79,6 @@ class TracelessRicciTensor(RicciScalar):
         if new_type == 'dd':
             return Simplify(self.trclss_riccitensor_obj)
         elif new_type == 'ud':
-            return Simplify(self.raise_index(xtrclss_riccitensor))
+            return Simplify(self.raise_index(self.trclss_riccitensor_obj))
         elif new_type == 'uu':
-            return Simplify(self.raise_index1(self.raise_index(xtrclss_riccitensor)))
+            return Simplify(self.raise_index1(self.raise_index(self.trclss_riccitensor_obj)))

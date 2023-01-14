@@ -64,16 +64,15 @@ class RicciTensor(RiemannTensor):
         return Array(einsum('ki,il->kl', xricci_tensor, self.inverse_metric_obj, optimize='optimal'))
 
 
-    def vary_riccitensor_type(self, xricci_tensor, new_type):
+    def vary_riccitensor_type(self, new_type):
         """
         Varying the type of the Ricci tensor
 
         Args:
-            xricci_tensor [sympy.tensor]: Given Ricci tensor
-            new_type      [str]         : The new type of the Ricci tensor.
-                                          It should be given in terms of:
-                                          'u': contravariant (upper-indices)
-                                          'd': covariant (lower-indices)
+            new_type [str]: The new type of the Ricci tensor.
+                            It should be given in terms of:
+                            'u': contravariant (upper-indices)
+                            'd': covariant (lower-indices)
 
         Returns:
             The new Ricci tensor for a given type
@@ -82,6 +81,6 @@ class RicciTensor(RiemannTensor):
         if new_type == 'dd':
             return Simplify(self.riccitensor_obj)
         elif new_type == 'ud':
-            return Simplify(self.raise_index(xricci_tensor))
+            return Simplify(self.raise_index(self.riccitensor_obj))
         elif new_type == 'uu':
-            return Simplify(self.raise_index1(self.raise_index(xricci_tensor)))
+            return Simplify(self.raise_index1(self.raise_index(self.riccitensor_obj)))

@@ -101,28 +101,27 @@ class RiemannTensor(ChristoffelSymbol):
         return Array(einsum('lmnk,kp->lmnp', xriemann_tensor, self.inverse_metric_obj, optimize='optimal'))
 
 
-    def vary_riemanntensor_type(self, xriemann_tensor, new_type):
+    def vary_riemanntensor_type(self, new_type):
         """
         Varying the type of the Riemann tensor
 
         Args:
-            xriemann_tensor [sympy.tensor]: Given Riemann tensor
-            new_type        [str]         : The new type of the Riemann tensor.
-                                            It should be given in terms of:
-                                            'u': contravariant (upper-indices)
-                                            'd': covariant (lower-indices)
+            new_type [str]: The new type of the Riemann tensor.
+                            It should be given in terms of:
+                            'u': contravariant (upper-indices)
+                            'd': covariant (lower-indices)
 
         Returns:
             The new Riemann tensor for a given type
         """
         self.riemann_type = new_type
         if new_type == 'dddd':
-            return Simplify(self.lower_index(xriemann_tensor))
+            return Simplify(self.lower_index(self.riemann_obj))
         elif new_type == 'uddd':
             return Simplify(self.riemann_obj)
         elif new_type == 'uudd':
-            return Simplify(self.raise_index(xriemann_tensor))
+            return Simplify(self.raise_index(self.riemann_obj))
         elif new_type == 'uuud':
-            return Simplify(self.raise_index1(self.raise_index(xriemann_tensor)))
+            return Simplify(self.raise_index1(self.raise_index(self.riemann_obj)))
         elif new_type == 'uuuu':
-            return Simplify(self.raise_index2(self.raise_index1(self.raise_index(xriemann_tensor))))
+            return Simplify(self.raise_index2(self.raise_index1(self.raise_index(self.riemann_obj))))

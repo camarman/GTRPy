@@ -68,16 +68,15 @@ class MetricTensor(object):
         return Array(einsum('ki,il->kl', xmetric_tensor, self.inverse_metric_obj, optimize='optimal'))
 
 
-    def vary_metrictensor_type(self, xmetric_tensor, new_type):
+    def vary_metrictensor_type(self, new_type):
         """
         Varying the type of the metric tensor
 
         Args:
-            xmetric_tensor [sympy.tensor]: Given metric tensor
-            new_type       [str]         : The new type of the metric tensor.
-                                           It should be given in terms of:
-                                           'u': contravariant (upper-indices)
-                                           'd': covariant (lower-indices)
+            new_type [str]: The new type of the metric tensor.
+                            It should be given in terms of:
+                            'u': contravariant (upper-indices)
+                            'd': covariant (lower-indices)
 
         Returns:
             The new metric tensor for a given type
@@ -86,6 +85,6 @@ class MetricTensor(object):
         if new_type == 'dd':
             return Simplify(self.metric_obj)
         elif new_type == 'ud':
-            return Simplify(self.raise_index(xmetric_tensor))
+            return Simplify(self.raise_index(self.metric_obj))
         elif new_type == 'uu':
-            return Simplify(self.raise_index1(self.raise_index(xmetric_tensor)))
+            return Simplify(self.raise_index1(self.raise_index(self.metric_obj)))

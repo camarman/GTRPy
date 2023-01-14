@@ -109,9 +109,6 @@ class VectorField():
     def vary_vectorfield_type(self):
         """
         Varying the type of the vector field
-
-        Args:
-            xvector_field [list]: Given vector field
         """
         if self.vector_field_type == 'u':
             return Simplify(Array(einsum('i,ij->j', self.vector_field, self.metric_obj, optimize='optimal')))

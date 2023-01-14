@@ -23,7 +23,7 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
         if tensor_type == '':   # default type of the given tensor
             return '$${}$$'.format(latex(metric_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$${}$$'.format(latex(mt.vary_metrictensor_type(metric_tensor, tensor_type)))
+            return '$${}$$'.format(latex(mt.vary_metrictensor_type(tensor_type)))
 
     elif tensor_object == 'Inverse Metric Tensor':
         mt = MetricTensor(metric_tensor, coord_sys)
@@ -36,7 +36,7 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
         if tensor_type == '':   # default type of the given tensor
             return '$${}$$'.format(latex(chris_symbol))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$${}$$'.format(latex(cs.vary_christoffelsymbol_type(chris_symbol, tensor_type)))
+            return '$${}$$'.format(latex(cs.vary_christoffelsymbol_type(tensor_type)))
 
     elif tensor_object == 'Riemann Tensor':
         rt = RiemannTensor(metric_tensor, coord_sys)
@@ -44,7 +44,7 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
         if tensor_type == '':   # default type of the given tensor
             return '$${}$$'.format(latex(riemann_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$${}$$'.format(latex(rt.vary_riemanntensor_type(riemann_tensor, tensor_type)))
+            return '$${}$$'.format(latex(rt.vary_riemanntensor_type(tensor_type)))
 
     elif tensor_object == 'Ricci Tensor':
         rit = RicciTensor(metric_tensor, coord_sys)
@@ -52,7 +52,7 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
         if tensor_type == '':   # default type of the given tensor
             return '$${}$$'.format(latex(ricci_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$${}$$'.format(latex(rit.vary_riccitensor_type(ricci_tensor, tensor_type)))
+            return '$${}$$'.format(latex(rit.vary_riccitensor_type(tensor_type)))
 
     elif tensor_object == 'Ricci Scalar':
         rs = RicciScalar(metric_tensor, coord_sys)
@@ -65,7 +65,7 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
         if tensor_type == '':   # default type of the given tensor
             return '$${}$$'.format(latex(traceless_ricci_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$${}$$'.format(latex(trt.vary_trclss_riccitensor_type(traceless_ricci_tensor, tensor_type)))
+            return '$${}$$'.format(latex(trt.vary_trclss_riccitensor_type(tensor_type)))
 
     elif tensor_object == 'Weyl Tensor':
         wyl = WeylTensor(metric_tensor, coord_sys)
@@ -73,7 +73,7 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
         if tensor_type == '':   # default type of the given tensor
             return '$${}$$'.format(latex(weyl_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$${}$$'.format(latex(wyl.vary_weyltensor_type(weyl_tensor, tensor_type)))
+            return '$${}$$'.format(latex(wyl.vary_weyltensor_type(tensor_type)))
 
     elif tensor_object == 'Einstein Tensor':
         et = EinsteinTensor(metric_tensor, coord_sys)
@@ -81,7 +81,7 @@ def tensor_ep(metric_tensor, coord_sys, tensor_object, tensor_type=''):
         if tensor_type == '':   # default type of the given tensor
             return '$${}$$'.format(latex(einstein_tensor))
         else:   # changing the type of the tensor and hence the equation as well
-            return '$${}$$'.format(latex(et.vary_einsteintensor_type(einstein_tensor, tensor_type)))
+            return '$${}$$'.format(latex(et.vary_einsteintensor_type(tensor_type)))
 
     elif tensor_object == 'Kretschmann Scalar':
         ks = KretschmannScalar(metric_tensor, coord_sys)
@@ -113,8 +113,7 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
         if component == '':   # default case
             return '$$^{{({0})}}g_{{{1} {2}}} = {3}$$'.format(ndim, latex(coord_sys[0]), latex(coord_sys[0]), latex(metric_tensor[0][0]))
         else:
-            new_metric_tensor = mt.vary_metrictensor_type(
-                metric_tensor, tensor_type)
+            new_metric_tensor = mt.vary_metrictensor_type(tensor_type)
             i = coord_sys.index(component[0])
             j = coord_sys.index(component[1])
             if tensor_type == 'dd':
@@ -140,8 +139,7 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
         if component == '':   # default case
             return '$$^{{({0})}}\\Gamma^{{{1}}}{{}}_{{{2} {3}}} = {4}$$'.format(ndim, latex(coord_sys[0]), latex(coord_sys[0]), latex(coord_sys[0]), latex(chris_symbol[0][0][0]))
         else:
-            new_chris_symbol = cs.vary_christoffelsymbol_type(
-                chris_symbol, tensor_type)
+            new_chris_symbol = cs.vary_christoffelsymbol_type(tensor_type)
             i = coord_sys.index(component[0])
             j = coord_sys.index(component[1])
             k = coord_sys.index(component[2])
@@ -160,8 +158,7 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
         if component == '':   # default case
             return '$$^{{({0})}}R^{{{1}}}{{}}_{{{2} {3} {4}}} = {5}$$'.format(ndim, latex(coord_sys[0]), latex(coord_sys[0]), latex(coord_sys[0]), latex(coord_sys[0]), latex(riemann_tensor[0][0][0][0]))
         else:
-            new_riemann_tensor = rt.vary_riemanntensor_type(
-                riemann_tensor, tensor_type)
+            new_riemann_tensor = rt.vary_riemanntensor_type(tensor_type)
             i = coord_sys.index(component[0])
             j = coord_sys.index(component[1])
             k = coord_sys.index(component[2])
@@ -183,8 +180,7 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
         if component == '':   # default case
             return '$$^{{({0})}}R_{{{1} {2}}} = {3}$$'.format(ndim, latex(coord_sys[0]), latex(coord_sys[0]), latex(ricci_tensor[0][0]))
         else:
-            new_ricci_tensor = rit.vary_riccitensor_type(
-                ricci_tensor, tensor_type)
+            new_ricci_tensor = rit.vary_riccitensor_type(tensor_type)
             i = coord_sys.index(component[0])
             j = coord_sys.index(component[1])
             if tensor_type == 'dd':
@@ -200,8 +196,7 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
         if component == '':   # default case
             return '$$^{{({0})}}Z_{{{1} {2}}} = {3}$$'.format(ndim, latex(coord_sys[0]), latex(coord_sys[0]), latex(traceless_ricci_tensor[0][0]))
         else:
-            new_traceless_ricci_tensor = trt.vary_trclss_riccitensor_type(
-                traceless_ricci_tensor, tensor_type)
+            new_traceless_ricci_tensor = trt.vary_trclss_riccitensor_type(tensor_type)
             i = coord_sys.index(component[0])
             j = coord_sys.index(component[1])
             if tensor_type == 'dd':
@@ -217,8 +212,7 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
         if component == '':   # default case
             return '$$^{{({0})}}G_{{{1} {2}}} = {3}$$'.format(ndim, latex(coord_sys[0]), latex(coord_sys[0]), latex(einstein_tensor[0][0]))
         else:
-            new_einstein_tensor = et.vary_einsteintensor_type(
-                einstein_tensor, tensor_type)
+            new_einstein_tensor = et.vary_einsteintensor_type(tensor_type)
             i = coord_sys.index(component[0])
             j = coord_sys.index(component[1])
             if tensor_type == 'dd':
@@ -234,8 +228,7 @@ def tensor_component_ep(metric_tensor, coord_sys, tensor_object, tensor_type='',
         if component == '':   # default case
             return '$$^{{({0})}}C_{{{1} {2} {3} {4}}} = {5}$$'.format(ndim, latex(coord_sys[0]), latex(coord_sys[0]), latex(coord_sys[0]), latex(coord_sys[0]), latex(weyl_tensor[0][0][0][0]))
         else:
-            new_weyl_tensor = wyl.vary_weyltensor_type(
-                weyl_tensor, tensor_type)
+            new_weyl_tensor = wyl.vary_weyltensor_type(tensor_type)
             i = coord_sys.index(component[0])
             j = coord_sys.index(component[1])
             k = coord_sys.index(component[2])

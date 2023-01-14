@@ -23,7 +23,7 @@ class WeylTensor(RicciScalar):
         self.weyltensor_type = 'dddd'
         weyl_tensor = MutableDenseNDimArray(zeros((self.ndim,)*4))
         riemanntensor_13 = self.get_riemanntensor()
-        riemanntensor_04 = self.vary_riemanntensor_type(riemanntensor_13, 'dddd')
+        riemanntensor_04 = self.vary_riemanntensor_type('dddd')
         for i, j, k, l in product(range(self.ndim), repeat=4):
             I_11 = self.metric_obj[i, l]*self.riccitensor_obj[k, j]
             I_12 = self.metric_obj[j, k]*self.riccitensor_obj[l, i]
@@ -93,16 +93,15 @@ class WeylTensor(RicciScalar):
         return Array(einsum('mnpl,lr->mnpr', xweyl_tensor, self.inverse_metric_obj, optimize='optimal'))
 
 
-    def vary_weyltensor_type(self, xweyl_tensor, new_type):
+    def vary_weyltensor_type(self, new_type):
         """
         Varying the type of the Weyl tensor
 
         Args:
-            xweyl_tensor [sympy.tensor]: Given Weyl tensor
-            new_type     [str]         : The new type of the Weyl tensor.
-                                         It should be given in terms of:
-                                         'u': contravariant (upper-indices)
-                                         'd': covariant (lower-indices)
+            new_type [str]: The new type of the Weyl tensor.
+                            It should be given in terms of:
+                            'u': contravariant (upper-indices)
+                            'd': covariant (lower-indices)
 
         Returns:
             The new Weyl tensor for a given type
@@ -111,10 +110,10 @@ class WeylTensor(RicciScalar):
         if new_type == 'dddd':
             return Simplify(self.weyltensor_obj)
         elif new_type == 'uddd':
-            return Simplify(self.raise_index(xweyl_tensor))
+            return Simplify(self.raise_index(self.weyltensor_obj))
         elif new_type == 'uudd':
-            return Simplify(self.raise_index1(self.raise_index(xweyl_tensor)))
+            return Simplify(self.raise_index1(self.raise_index(self.weyltensor_obj)))
         elif new_type == 'uuud':
-            return Simplify(self.raise_index2(self.raise_index1(self.raise_index(xweyl_tensor))))
+            return Simplify(self.raise_index2(self.raise_index1(self.raise_index(self.weyltensor_obj))))
         elif new_type == 'uuuu':
-            return Simplify(self.raise_index3(self.raise_index2(self.raise_index1(self.raise_index(xweyl_tensor)))))
+            return Simplify(self.raise_index3(self.raise_index2(self.raise_index1(self.raise_index(self.weyltensor_obj)))))

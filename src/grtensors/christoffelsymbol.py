@@ -91,26 +91,25 @@ class ChristoffelSymbol(MetricTensor):
         return Array(einsum('klj,jm->klm', xchris_symbol, self.inverse_metric_obj, optimize='optimal'))
 
 
-    def vary_christoffelsymbol_type(self, xchris_symbol, new_type):
+    def vary_christoffelsymbol_type(self, new_type):
         """
         Varying the type of the Christoffel symbol
 
         Args:
-            xchris_symbol [sympy.tensor]: Given Christoffel symbol
-            new_type      [str]         : The new type of the Christoffel symbol.
-                                          It should be given in terms of:
-                                          'u': contravariant (upper-indices)
-                                          'd': covariant (lower-indices)
+            new_type [str]: The new type of the Christoffel symbol.
+                            It should be given in terms of:
+                            'u': contravariant (upper-indices)
+                            'd': covariant (lower-indices)
 
         Returns:
             The new Christoffel symbol for a given type
         """
         self.chris_type = new_type
         if new_type == 'ddd':
-            return Simplify(self.lower_index(xchris_symbol))
+            return Simplify(self.lower_index(self.chris_obj))
         elif new_type == 'udd':
             return Simplify(self.chris_obj)
         elif new_type == 'uud':
-            return Simplify(self.raise_index(xchris_symbol))
+            return Simplify(self.raise_index(self.chris_obj))
         elif new_type == 'uuu':
-            return Simplify(self.raise_index1(self.raise_index(xchris_symbol)))
+            return Simplify(self.raise_index1(self.raise_index(self.chris_obj)))
