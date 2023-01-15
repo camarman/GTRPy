@@ -1,14 +1,14 @@
 # General Relativity Tensor Calculator by Graphical User Interface (GRTC-GUI)
 
-GRTC-GUI allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
+GRTC-GUI allows you to calculate the well-known tensors in general relativity without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
 
-> It's tested for GNU/Linux but it should also work in Windows and Mac OS (if you encounter with a problem, feel free to create an issue).
+> It's tested for GNU/Linux. However, it should also work in Windows and Mac OS. If you ever encounter with a problem, feel free to create an issue.
 
 ## Current Features
 
 ### GR Tensor Objects
 
-Either by using predefined coordinates or by defining the coordinate system yourself, you can calculate;
+Either by using predefined coordinates, or by defining the coordinate system yourself, you can calculate:
 
 1. Inverse Metric Tensor
 2. Christoffel Symbol
@@ -22,7 +22,7 @@ Either by using predefined coordinates or by defining the coordinate system your
 
 ### Field Objects
 
-Currently, there are 6 different field objects that you can carry out operations. These fields are;
+Currently, there are 6 different field objects that you can carry out operations. These are:
 
 1. Scalar Field
 2. Type (1,0) Vector Field
@@ -33,11 +33,11 @@ Currently, there are 6 different field objects that you can carry out operations
 
 #### Operations on Fields
 
-1. Varying the type of the vector field
-2. Calculating the covariant and Lie derivative of each field object (scalar, vector and tensor)
-3. Check the Killing field condition for a given vector field
+1. Varying the type of a given vector field
+2. Calculating covariant and Lie derivatives for each field object (scalar, vector and tensor)
+3. Checking the Killing field condition for a given vector field
 
-## Overview of GRTC-GUI
+## Overview
 
 4D/Main Page          |  3D/Main Page
 :-------------------------:|:-------------------------:
@@ -53,7 +53,7 @@ Currently, there are 6 different field objects that you can carry out operations
 
 ## Installation
 
-You can easily install GRTC-GUI by either cloning the repository:
+You can easily install GRTC-GUI by either cloning the repository
 
     git clone https://github.com/seVenVo1d/grtc_gui
 
@@ -65,7 +65,7 @@ to install the requirements.
 
 ### pyclean support (optional)
 
-I have added an optional code block in `grtc_gui.py` that will delete all the `.pyc` files and `__pycache__` directories (these are created after the program starts and can be annoying for some people). If you want to try it, install [pyclean](https://pypi.org/project/pyclean/) via
+I have added an optional code block in `grtc_gui.py`, that will delete all the `.pyc` files and `__pycache__` directories. These are created after the program starts and can be annoying for some people. If you want to try it, install [pyclean](https://pypi.org/project/pyclean/) via
 
     python3 -m pip install pyclean
 
@@ -73,7 +73,7 @@ and uncomment the lines in the file.
 
 ## User Guide
 
-Please take a look at the `docs/user_guide.md` for a summary of the GRTC-GUI. To see a more detailed usage, you can look at the `demos` directory.
+Please take a look at the `docs/user_guide.md` for a summary of the GRTC-GUI. To see more detailed examples, you can look at the `demos` directory.
 
 ## Upcoming Features
 

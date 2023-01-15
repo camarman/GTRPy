@@ -1,6 +1,6 @@
 # Image Size Data
 
-Storing the size of the images, used in `res` directory.
+Storing the size of the images used in `res` directory. These values are meant to use in `tools/latex_image_producer.py`
 
 ## Main Page
 
