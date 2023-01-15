@@ -37,6 +37,10 @@ Currently, there are 6 different field objects that you can carry out operations
 2. Calculating the covariant and Lie derivative of each field object (scalar, vector and tensor)
 3. Check the Killing field condition for a given vector field
 
+4D - GR TENSORS TAB          |  4D - FIELDS TAB
+:-------------------------:|:-------------------------:
+![](https://user-images.githubusercontent.com/45866787/212466258-6e10713a-6235-45a0-babe-010e1f0444be.png)  |  ![](https://user-images.githubusercontent.com/45866787/212466308-024668ae-c44b-46d5-a488-96efe8437e23.png)
+
 ## Installation
 
 You can easily install GRTC-GUI by either cloning the repository:
