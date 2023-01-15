@@ -1,6 +1,6 @@
 # General Relativity Tensor Calculator by Graphical User Interface (GRTC-GUI)
 
-GRTC-GUI allows you to calculate the well-known tensors in general relativity *in both 4D and 3D*, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields.
+GRTC-GUI allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
 
 > It's tested for GNU/Linux but it should also work in Windows and Mac OS (if you encounter with a problem, feel free to create an issue).
 
@@ -37,14 +37,19 @@ Currently, there are 6 different field objects that you can carry out operations
 2. Calculating the covariant and Lie derivative of each field object (scalar, vector and tensor)
 3. Check the Killing field condition for a given vector field
 
+## Overview of GRTC-GUI
+
 4D/Main Page          |  3D/Main Page
 :-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/45866787/212466258-6e10713a-6235-45a0-babe-010e1f0444be.png)  |  ![](https://user-images.githubusercontent.com/45866787/212466276-ced0e2eb-ce5e-4f3a-966a-f5f286252e72.png)
+![4d_main_page](https://user-images.githubusercontent.com/45866787/212466258-6e10713a-6235-45a0-babe-010e1f0444be.png)  |  ![3d_main_page](https://user-images.githubusercontent.com/45866787/212466276-ced0e2eb-ce5e-4f3a-966a-f5f286252e72.png)
 
-
-Scalar Field Operations        |  Vector Field Operations       | Tensor Field Operations
+4D/Scalar Field Operations        |  4D/Vector Field Operations       | 4D/Tensor Field Operations
 :-------------------------:|:-------------------------:|:-------------------------:
-![](https://user-images.githubusercontent.com/45866787/212466315-315a6269-d84f-4bd3-92a1-e0d64e21742e.png)  |  ![](https://user-images.githubusercontent.com/45866787/212466320-5d5e31a0-8c1d-49d6-a928-f844c7cf04c1.png)   |  ![](https://user-images.githubusercontent.com/45866787/212466322-8f25f5a5-8345-4b71-98ef-721c7eaa0c92.png)
+![4d_scalar](https://user-images.githubusercontent.com/45866787/212466315-315a6269-d84f-4bd3-92a1-e0d64e21742e.png)  |  ![4d_vector](https://user-images.githubusercontent.com/45866787/212466320-5d5e31a0-8c1d-49d6-a928-f844c7cf04c1.png)   |  ![4d_tensor](https://user-images.githubusercontent.com/45866787/212466322-8f25f5a5-8345-4b71-98ef-721c7eaa0c92.png)
+
+3D/Scalar Field Operations        |  3D/Vector Field Operations       | 3D/Tensor Field Operations
+:-------------------------:|:-------------------------:|:-------------------------:
+![3d_scalar](https://user-images.githubusercontent.com/45866787/212533742-ed8e4dba-4274-4fe0-8006-3394c81df32f.png) | ![3d_vector](https://user-images.githubusercontent.com/45866787/212533751-feb4b063-5923-4536-bcc1-708a9a6b22be.png) | ![3d_tensor](https://user-images.githubusercontent.com/45866787/212533758-36e05917-8753-4aa0-931f-9a66c8c7f6f5.png)
 
 ## Installation
 
