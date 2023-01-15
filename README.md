@@ -73,7 +73,7 @@ and uncomment the lines in the file.
 
 ## User Guide
 
-Please take a look at the `docs/user_guide.md` file for a summary of the GRTC-GUI. To see a more detailed usage, you can look at the `demos` directory.
+Please take a look at the `docs/user_guide.md` for a summary of the GRTC-GUI. To see a more detailed usage, you can look at the `demos` directory.
 
 ## Upcoming Features
 
