@@ -47,13 +47,15 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Type (p,q):', font=('Tahoma', 11)),
                                      sg.InputCombo(tensor_type2, size=(10, 1), default_value='(0,2)')],
-                                    [sg.Image(r'logs/tensor.png', key='-TENSOR-')]], title = tensor_object, font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
+                                title = tensor_object, font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Component:', font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
-                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]], title=tensor_object + ' Component', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
+                                title=tensor_object + ' Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Submit(button_color='blue')]
                             ]
@@ -80,13 +82,15 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
     elif tensor_object == 'Inverse Metric Tensor':
         layout_tensor_type = [
                                 [sg.Frame(layout=[
-                                    [sg.Image(r'logs/tensor.png')]], title='Inverse Metric Tensor', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor.png')]], 
+                                title='Inverse Metric Tensor', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Component:', font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
-                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]], title='Inverse Metric Tensor Component', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
+                                title='Inverse Metric Tensor Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Submit(button_color='blue')]
                              ]
@@ -108,14 +112,16 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                 [sg.Frame(layout=[
                                     [sg.Text('Type (p,q):', font=('Tahoma', 11)),
                                      sg.InputCombo(tensor_type3, size=(10, 1), default_value='(1,2)', font=('Tahoma', 11))],
-                                    [sg.Image(r'logs/tensor.png', key='-TENSOR-')]], title='Christoffel Symbol', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
+                                title='Christoffel Symbol', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout = [
                                     [sg.Text('Component:', font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
-                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]], title='Christoffel Symbol Component', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
+                                title='Christoffel Symbol Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Submit(button_color='blue')]
                             ]
@@ -143,7 +149,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Type (p,q):', font=('Tahoma', 11)),
                                      sg.InputCombo(tensor_type4, size=(10, 1), default_value='(1,3)', font=('Tahoma', 11))],
-                                    [sg.Image(r'logs/tensor.png', key='-TENSOR-')]], title = 'Riemann Tensor', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
+                                title = 'Riemann Tensor', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout = [
                                     [sg.Text('Tensor Component:', font=('Tahoma', 11)),
@@ -151,7 +158,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
-                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]], title='Riemann Tensor Component', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
+                                title='Riemann Tensor Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Submit(button_color='blue')]
                             ]
@@ -179,7 +187,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Type (p,q):', font=('Tahoma', 11)),
                                      sg.InputCombo(tensor_type4, size=(10, 1), default_value='(0,4)', font=('Tahoma', 11))],
-                                    [sg.Image(r'logs/tensor.png', key='-TENSOR-')]], title='Weyl Tensor', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
+                                title='Weyl Tensor', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Component:', font=('Tahoma', 11)),
@@ -187,7 +196,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
-                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]], title='Weyl Tensor Component', font=('Verdana', 14))],
+                                    [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
+                                title='Weyl Tensor Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
 
                                 [sg.Submit(button_color='blue')]
                             ]
@@ -212,7 +222,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
 
     elif tensor_object in scalar_objects:
         layout_tensor_type = [
-                                [sg.Frame(layout=[[sg.Image(r'logs/tensor.png', key='-TENSOR-')]], title=tensor_object, font=('Verdana', 14))]
+                                [sg.Frame(layout=[[sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
+                                title=tensor_object, font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')]
                             ]
         window_tensor_type = sg.Window('GRPy', layout_tensor_type)
         while True:

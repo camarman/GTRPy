@@ -35,7 +35,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.Image(r'res/images3D/cov_tensorfield_20.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(r'res/images3D/e.png'),
-                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])]], title='Covariant Derivative', font=('Verdana', 12))],
+                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(r'res/images3D/LX0.png'),
@@ -45,7 +46,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         [sg.Image(r'res/images3D/LX2.png'),
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
-                                        sg.Image(r'res/images3D/LX_tensorfield_20.png')]], title='Lie Derivative', font=('Verdana', 12))]
+                                        sg.Image(r'res/images3D/LX_tensorfield_20.png')]],
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
                                 ]
         windows_tensor_field = sg.Window('Tensor Field', tensor_field_20_layout)
         while True:
@@ -107,7 +109,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.Image(r'res/images3D/cov_tensorfield_11.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(r'res/images3D/e.png'),
-                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])]], title='Covariant Derivative', font=('Verdana', 12))],
+                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(r'res/images3D/LX0.png'),
@@ -117,7 +120,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         [sg.Image(r'res/images3D/LX2.png'),
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
-                                        sg.Image(r'res/images3D/LX_tensorfield_11.png')]], title='Lie Derivative', font=('Verdana', 12))]
+                                        sg.Image(r'res/images3D/LX_tensorfield_11.png')]],
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
                                     ]
         windows_tensor_field = sg.Window('Tensor Field', tensor_field_11_layout)
         while True:
@@ -178,7 +182,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.Image(r'res/images3D/cov_tensorfield_02.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(r'res/images3D/e.png'),
-                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])]], title='Covariant Derivative', font=('Verdana', 12))],
+                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(r'res/images3D/LX0.png'),
@@ -188,7 +193,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         [sg.Image(r'res/images3D/LX2.png'),
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
-                                        sg.Image(r'res/images3D/LX_tensorfield_02.png')]], title='Lie Derivative', font=('Verdana', 12))]
+                                        sg.Image(r'res/images3D/LX_tensorfield_02.png')]],
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
                                     ]
         windows_tensor_field = sg.Window('Tensor Field', tensor_field_02_layout)
         while True:

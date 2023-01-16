@@ -26,16 +26,16 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
-                                        sg.Image(r'res/images3D/vectorfield_01.png')
-                                        ]], title='Vary Type', font=('Verdana', 12))],
+                                        sg.Image(r'res/images3D/vectorfield_01.png')]],
+                                    title='Vary Type', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(r'res/images3D/cov_vectorfield_10.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(r'res/images3D/e.png'),
-                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])
-                                        ]], title='Covariant Derivative', font=('Verdana', 12))],
+                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(r'res/images3D/LX0.png'),
@@ -45,7 +45,8 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
                                         [sg.Image(r'res/images3D/LX2.png'),
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
-                                        sg.Image(r'res/images3D/LX_vectorfield_10.png')]], title='Lie Derivative', font=('Verdana', 12))]
+                                        sg.Image(r'res/images3D/LX_vectorfield_10.png')]],
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
                                     ]
         windows_vector_field = sg.Window('Vector Field', vector_field_10_layout)
         while True:
@@ -112,16 +113,16 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
 
                                     [sg.Frame(layout=[
                                             [sg.Button('Calculate', button_color='purple'),
-                                            sg.Image(r'res/images3D/vectorfield_10.png')
-                                            ]], title='Vary Type', font=('Verdana', 12))],
+                                            sg.Image(r'res/images3D/vectorfield_10.png')]],
+                                    title='Vary Type', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(r'res/images3D/cov_vectorfield_01.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(r'res/images3D/e.png'),
-                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])
-                                        ]], title='Covariant Derivative', font=('Verdana', 12))],
+                                        sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(r'res/images3D/LX0.png'),
@@ -131,7 +132,8 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
                                         [sg.Image(r'res/images3D/LX2.png'),
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
-                                        sg.Image(r'res/images3D/LX_vectorfield_01.png')]], title='Lie Derivative', font=('Verdana', 12))]
+                                        sg.Image(r'res/images3D/LX_vectorfield_01.png')]],
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
                                 ]
         windows_vector_field = sg.Window('Vector Field', vector_field_01_layout)
         while True:

@@ -22,8 +22,8 @@ def scalarfield_gui4d(coord_sys):
                                     sg.Image(r'res/images4D/cov_scalarfield.png'),
                                     sg.Text('for', font=('Verdana', 11)),
                                     sg.Image(r'res/images4D/gamma.png'),
-                                    sg.InputCombo(coord_sys, default_value=coord_sys[0])
-                                    ]], title='Covariant Derivative', font=('Verdana', 12))],
+                                    sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
+                            title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
 
                             [sg.Frame(layout=[
                                 [sg.Image(r'res/images4D/LX0.png'),
@@ -35,7 +35,8 @@ def scalarfield_gui4d(coord_sys):
                                 [sg.Image(r'res/images4D/LX3.png'),
                                     sg.InputText(default_text='0', font=('Tahoma', 11))],
                                 [sg.Button('Calculate', button_color='purple'),
-                                    sg.Image(r'res/images4D/LX_scalarfield.png')]], title='Lie Derivative', font=('Verdana', 12))]
+                                    sg.Image(r'res/images4D/LX_scalarfield.png')]],
+                            title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
                             ]
     windows_scalar_field = sg.Window('Scalar Field', scalar_field_layout)
     while True:

@@ -44,46 +44,46 @@ def grpy_3d(coordinate_type='Spherical Coordinates'):
     new_coord_sys = new_coordinate[1]      # the new coordinate system that accompanies the metric tensor
 
     GRTensors_col1 = [
-                        [sg.Button('Metric Tensor', button_color='purple'),
+                        [sg.Button('Metric Tensor', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/metrictensor.png')],
-                        [sg.Button('Inverse Metric Tensor', button_color='purple'),
+                        [sg.Button('Inverse Metric Tensor', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/inversemetrictensor.png')],
-                        [sg.Button('Christoffel Symbol', button_color='purple'),
+                        [sg.Button('Christoffel Symbol', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/chrissymbol.png')],
-                        [sg.Button('Riemann Tensor', button_color='purple'),
+                        [sg.Button('Riemann Tensor', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/riemanntensor.png')],
-                        [sg.Button('Ricci Tensor', button_color='purple'),
+                        [sg.Button('Ricci Tensor', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/riccitensor.png')]
                     ]
 
     GRTensors_col2 = [
-                        [sg.Button('Ricci Scalar', button_color='purple'),
+                        [sg.Button('Ricci Scalar', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/ricciscalar.png')],
-                        [sg.Button('Weyl Tensor', button_color='purple'),
+                        [sg.Button('Weyl Tensor', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/weyltensor.png')],
-                        [sg.Button('Traceless Ricci Tensor', button_color='purple'),
+                        [sg.Button('Traceless Ricci Tensor', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/tracelessriccitensor.png')],
-                        [sg.Button('Einstein Tensor', button_color='purple'),
+                        [sg.Button('Einstein Tensor', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/einsteintensor.png')],
-                        [sg.Button('Kretschmann Scalar', button_color='purple'),
+                        [sg.Button('Kretschmann Scalar', button_color='purple', size=(20, 1)),
                             sg.Image(r'res/images3D/kretschmannscalar.png')]
                     ]
 
     Fields_col1 = [
-                    [sg.Button('Scalar Field', button_color='purple'),
+                    [sg.Button('Scalar Field', button_color='purple', size=(20, 1)),
                         sg.Image(r'res/images3D/scalarfield.png')],
-                    [sg.Button('Type (1,0) Vector Field', button_color='purple'),
+                    [sg.Button('Type (1,0) Vector Field', button_color='purple', size=(20, 1)),
                         sg.Image(r'res/images3D/vectorfield_10.png')],
-                    [sg.Button('Type (0,1) Vector Field', button_color='purple'),
+                    [sg.Button('Type (0,1) Vector Field', button_color='purple', size=(20, 1)),
                         sg.Image(r'res/images3D/vectorfield_01.png')]
                     ]
 
     Fields_col2 = [
-                    [sg.Button('Type (2,0) Tensor Field', button_color='purple'),
+                    [sg.Button('Type (2,0) Tensor Field', button_color='purple', size=(20, 1)),
                         sg.Image(r'res/images3D/tensorfield_20.png')],
-                    [sg.Button('Type (1,1) Tensor Field', button_color='purple'),
+                    [sg.Button('Type (1,1) Tensor Field', button_color='purple', size=(20, 1)),
                         sg.Image(r'res/images3D/tensorfield_11.png')],
-                    [sg.Button('Type (0,2) Tensor Field', button_color='purple'),
+                    [sg.Button('Type (0,2) Tensor Field', button_color='purple', size=(20, 1)),
                         sg.Image(r'res/images3D/tensorfield_02.png')]
                 ]
 
@@ -100,7 +100,8 @@ def grpy_3d(coordinate_type='Spherical Coordinates'):
     layout_4dim = [
                     [sg.Frame(layout=[
                         [sg.InputCombo(available_coord_sys, default_value=coordinate_type, font=('Tahoma', 11)),
-                        sg.Button('Change Coordinate System', button_color='blue')]], title='Predefined Coordinates', font=('Georgia', 14))],
+                        sg.Button('Change Coordinate System', button_color='blue')]],
+                    title='Predefined Coordinates', font=('Georgia', 14), expand_x=True, element_justification='center', title_location='n')],
 
                     [sg.Frame(layout=[
                         [sg.Image(r'res/images3D/x0.png'),
@@ -108,7 +109,8 @@ def grpy_3d(coordinate_type='Spherical Coordinates'):
                         sg.Image(r'res/images3D/x1.png'),
                         sg.InputCombo(coordinate_symbols, size=(6, 1), default_value=new_coord_sys[1], font=('Tahoma', 11)),
                         sg.Image(r'res/images3D/x2.png'),
-                        sg.InputCombo(coordinate_symbols, size=(6, 1), default_value=new_coord_sys[2], font=('Tahoma', 11))]], title='Coordinate System', font=('Georgia', 14))],
+                        sg.InputCombo(coordinate_symbols, size=(6, 1), default_value=new_coord_sys[2], font=('Tahoma', 11))]],
+                    title='Coordinate System', font=('Georgia', 14), expand_x=True, element_justification='center', title_location='n')],
 
                     [sg.Frame(layout = [
                         [sg.Image(r'res/images3D/g0b.png'),
@@ -122,12 +124,14 @@ def grpy_3d(coordinate_type='Spherical Coordinates'):
                         [sg.Image(r'res/images3D/g2b.png'),
                             sg.InputText(default_text=new_metric_tensor[2][0], size=(15, 1),  font=('Tahoma', 11)),
                             sg.InputText(default_text=new_metric_tensor[2][1], size=(15, 1),  font=('Tahoma', 11)),
-                            sg.InputText(default_text=new_metric_tensor[2][2], size=(15, 1), font=('Tahoma', 11))],], title='Metric Tensor', font=('Georgia', 14))],
+                            sg.InputText(default_text=new_metric_tensor[2][2], size=(15, 1), font=('Tahoma', 11))],],
+                    title='Metric Tensor', font=('Georgia', 14), expand_x=True, element_justification='center', title_location='n')],
 
                     [sg.Frame(layout=[
                         [sg.TabGroup([
                             [sg.Tab('GR Tensors', GRTensors_tab, font=('Georgia', 12)),
-                                sg.Tab('Fields', Fields_tab, font=('Georgia', 12))]])]], title = 'Operations', font=('Georgia', 14))],
+                                sg.Tab('Fields', Fields_tab, font=('Georgia', 12))]])]],
+                    title = 'Operations', font=('Georgia', 14), expand_x=True, element_justification='center', title_location='n')],
                     [sg.Exit(button_color='red')]
                 ]
     window_3dim = sg.Window('GRPy', layout_4dim)
