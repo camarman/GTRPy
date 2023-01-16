@@ -37,12 +37,12 @@ available_coord_sys = [
                       ]
 
 
-# ========== GRTC GUI - MAIN PAGE ==========
+# ========== GRPy - MAIN PAGE ==========
 
 
-def grtc_gui4d(coordinate_type='Spherical Coordinates'):
+def grpy_4d(coordinate_type='Spherical Coordinates'):
     """
-    The main page of the GRTC, for the case of 4D
+    The main page of the GRPy, for the case of 4D
 
     Args:
         coordinate_type (str, optional): The name of the coordinate. Defaults to 'Spherical Coordinates'
@@ -148,7 +148,7 @@ def grtc_gui4d(coordinate_type='Spherical Coordinates'):
                                 sg.Tab('Fields', Fields_tab, font=('Georgia', 12))]])]], title = 'Operations', font=('Georgia', 14))],
                     [sg.Exit(button_color='red')]
                 ]
-    window_4dim = sg.Window('GRTC', layout_4dim)
+    window_4dim = sg.Window('GRPy', layout_4dim)
     while True:
         event, values = window_4dim.read()
         if event == sg.WIN_CLOSED or event == 'Exit':
@@ -156,7 +156,7 @@ def grtc_gui4d(coordinate_type='Spherical Coordinates'):
 
         elif event == 'Change Coordinate System':
             window_4dim.close()
-            grtc_gui4d(coordinate_type=values[0])   # new coordinates chosen by the user
+            grpy_4d(coordinate_type=values[0])   # new coordinates chosen by the user
 
         else:
             # Obtaining the metric tensor

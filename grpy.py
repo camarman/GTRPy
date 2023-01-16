@@ -1,8 +1,8 @@
-# ========== GRTC GUI ==========
+# ========== GRPy ==========
 import PySimpleGUI as sg
 
-from screen.screen3D.mainpage import grtc_gui3d
-from screen.screen4D.mainpage import grtc_gui4d
+from screen.screen3D.mainpage import grpy_3d
+from screen.screen4D.mainpage import grpy_4d
 
 
 # ========== PySimpleGUI Color Theme ==========
@@ -14,13 +14,13 @@ sg.ChangeLookAndFeel('SandyBeach')
 
 # ========== DIMENSIONS ==========
 layout_dimension = [
-                        [sg.Text('General Relativity Tensor Calculator (GRTC)', font=('Georgia', 14))],
+                        [sg.Text('Welcome to GRPy', font=('Georgia', 14))],
                         [sg.Text('Please choose the number of dimensions:', font=('Tahoma', 11)),
                             sg.InputCombo([3, 4], size=(8, 1), default_value='4', font=('Tahoma', 11))],
                         [sg.Submit(button_color='blue'), sg.Exit(button_color='red')]
                     ]
 
-window_dim = sg.Window('GRTC', layout_dimension)
+window_dim = sg.Window('GRPy', layout_dimension)
 event, values = window_dim.read()
 ndim = values[0]
 if event == sg.WIN_CLOSED or event == 'Exit':
@@ -28,9 +28,9 @@ if event == sg.WIN_CLOSED or event == 'Exit':
 if event == 'Submit':
     window_dim.close()
     if ndim == 4:
-        grtc_gui4d()
+        grpy_4d()
     else:
-        grtc_gui3d()
+        grpy_3d()
 
 
 #  ========== pyclean support ==========

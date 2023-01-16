@@ -1,8 +1,8 @@
-# General Relativity Tensor Calculator by Graphical User Interface (GRTC-GUI)
+# GRPy
 
-GRTC-GUI allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
+GRPy is a python library that allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
 
-> It's tested for GNU/Linux. However, it should also work in Windows and Mac OS. If you ever encounter with a problem, feel free to create an issue.
+> It's tested for GNU/Linux, however it should also work in Windows and Mac. If you ever encounter with a problem, feel free to create an issue.
 
 ## Current Features
 
@@ -53,9 +53,7 @@ Currently, there are 6 different field objects that you can carry out operations
 
 ## Installation
 
-You can easily install GRTC-GUI by either cloning the repository
-
-    git clone https://github.com/seVenVo1d/grtc_gui
+You can easily install GRPy by either cloning the repository
 
 or via downloading as ZIP. Later on, you can simply run
 
@@ -65,7 +63,7 @@ to install the requirements.
 
 ### pyclean support (optional)
 
-I have added an optional code block in `grtc_gui.py`, that will delete all the `.pyc` files and `__pycache__` directories. These are created after the program starts and can be annoying for some people. If you want to try it, install [pyclean](https://pypi.org/project/pyclean/) via
+I have added an optional code block in `grpy.py`, that will delete all the `.pyc` files and `__pycache__` directories. These are created after the program starts and can be annoying for some people. If you want to try it, install [pyclean](https://pypi.org/project/pyclean/) via
 
     python3 -m pip install pyclean
 
@@ -73,7 +71,7 @@ and uncomment the lines in the file.
 
 ## User Guide
 
-Please take a look at the `docs/user_guide.md` for a summary of the GRTC-GUI. To see more detailed examples, you can look at the `demos` directory.
+Please take a look at the `docs/user_guide.md` for a summary of the GRPy. To see more detailed examples, you can look at the `demos` directory.
 
 ## Upcoming Features
 

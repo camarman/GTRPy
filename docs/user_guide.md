@@ -2,9 +2,7 @@
 
 You can run the program by simply typing
 
-    python3 grtc_gui.py
-
-in the terminal from the grtc_gui directory
+    python3 grpy.py
 
 ![greetings_page](https://user-images.githubusercontent.com/45866787/212466253-fb0e42e4-dc88-4550-bf19-b901b5008a25.png)
 
@@ -20,7 +18,7 @@ Later on you can define the coordinate system and create your own metric tensor.
 
     t, x, y, z, r, v, r, theta, phi, rho, sigma, psi, eta, tau, xi, T, X
 
-Or you can simply choose one of the predefined coordinate systems. Currently predefined coordinates in 4D are;
+Or you can simply choose one of the predefined coordinate systems. Currently predefined coordinates in 4D are:
 
     1. Cartesian Coordinates
     2. Cylindrical Coordinates
@@ -30,12 +28,11 @@ Or you can simply choose one of the predefined coordinate systems. Currently pre
     6. Schwarzschild Coordinates
     7. Eddington-Finkelstein Coordinates
 
-and in 3D;
+and in 3D:
 
     1. Cartesian Coordinates
     2. Cylindrical Coordinates
     3. Spherical Coordinates
-
 
 > For more detailed usage with examples, take a look at the `demos` directory.
 
@@ -66,5 +63,3 @@ From there, you can pick the field that you want to calculate. After typing your
 ![vector_field](https://user-images.githubusercontent.com/45866787/212466320-5d5e31a0-8c1d-49d6-a928-f844c7cf04c1.png)
 
 ![tensor_field](https://user-images.githubusercontent.com/45866787/212466322-8f25f5a5-8345-4b71-98ef-721c7eaa0c92.png)
-
-

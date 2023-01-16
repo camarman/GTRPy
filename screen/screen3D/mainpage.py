@@ -29,12 +29,12 @@ coordinate_symbols = ['t', 'x', 'y', 'z', 'r', 'v', 'r', 'theta', 'phi', 'rho', 
 available_coord_sys = [ 'Cartesian Coordinates', 'Cylindrical Coordinates', 'Spherical Coordinates']
 
 
-# ========== GRTC GUI - MAIN PAGE ==========
+# ========== GRPy - MAIN PAGE ==========
 
 
-def grtc_gui3d(coordinate_type='Spherical Coordinates'):
+def grpy_3d(coordinate_type='Spherical Coordinates'):
     """
-    The main page of the GRTC, for the case of 3D
+    The main page of the GRPy, for the case of 3D
 
     Args:
         coordinate_type (str, optional): The name of the coordinate. Defaults to 'Spherical Coordinates'
@@ -130,7 +130,7 @@ def grtc_gui3d(coordinate_type='Spherical Coordinates'):
                                 sg.Tab('Fields', Fields_tab, font=('Georgia', 12))]])]], title = 'Operations', font=('Georgia', 14))],
                     [sg.Exit(button_color='red')]
                 ]
-    window_3dim = sg.Window('GRTC', layout_4dim)
+    window_3dim = sg.Window('GRPy', layout_4dim)
     while True:
         event, values = window_3dim.read()
         if event == sg.WIN_CLOSED or event == 'Exit':
@@ -138,7 +138,7 @@ def grtc_gui3d(coordinate_type='Spherical Coordinates'):
 
         elif event == 'Change Coordinate System':
             window_3dim.close()
-            grtc_gui3d(coordinate_type=values[0])   # new coordinates chosen by the user
+            grpy_3d(coordinate_type=values[0])   # new coordinates chosen by the user
 
         else:
             # Obtaining the metric tensor
