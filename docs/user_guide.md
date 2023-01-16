@@ -4,15 +4,15 @@ You can run the program by simply typing
 
     python3 grpy.py
 
-![greetings](https://user-images.githubusercontent.com/45866787/212614821-2523d6c3-cd96-4b38-adbd-c406cf5708b9.png)
+![greetings](https://user-images.githubusercontent.com/45866787/212770215-87e7f60e-54cd-4dcd-b625-31a13ab2ded0.png)
 
 Later on choose a suitable dimension from the GUI. If you choose four dimensions, you'll see a page in this form
 
-![4d_main](https://user-images.githubusercontent.com/45866787/212614841-2d541989-f21c-4de6-820b-ca7ee08b75c6.png)
+![4d_main](https://user-images.githubusercontent.com/45866787/212770239-3229dd1f-2ba9-4549-a230-7682a702127f.png)
 
 similarly, for three dimensions
 
-![3d_main](https://user-images.githubusercontent.com/45866787/212614862-2424dd1c-7f4f-409a-9bf4-8153002b460d.png)
+![3d_main](https://user-images.githubusercontent.com/45866787/212770264-54d0455c-54b9-4a07-ba9b-fe1cd6e3efa9.png)
 
 Later on you can define the coordinate system and create your own metric tensor. While defining the coordinate system you can choose from the given coordinate system symbols
 
@@ -40,26 +40,26 @@ and in 3D:
 
 Let us study the Schwarzschild Coordinates as an example.
 
-![4d_sch](https://user-images.githubusercontent.com/45866787/212614878-170f3623-0802-4a33-9b7d-475c473c82d5.png)
+![sch](https://user-images.githubusercontent.com/45866787/212770513-d3462d10-504e-44fd-88dd-746dc4a847a1.png)
 
 Just click one of the tensor buttons, which will lead you to the default page of the choosen tensor.
 
-![chris](https://user-images.githubusercontent.com/45866787/212614905-cab05894-1c04-407f-9edd-4da4ae06d4d4.png)
+![chris](https://user-images.githubusercontent.com/45866787/212770634-f5c2c0b1-3da1-45ea-8358-6c4f0686ca31.png)
 
 Later on, you can change the type of the tensor and get any component from the given page.
 
-![chris_upper](https://user-images.githubusercontent.com/45866787/212615198-6b21be13-2386-4126-9abc-63df977ae12d.png)
+![chris_up](https://user-images.githubusercontent.com/45866787/212770640-f51587e7-ad06-487b-89a1-03edf70209bd.png)
 
 ## Fields
 
 If you click on the Fields tab you'll see the 6 available fields.
 
-![4d_field](https://user-images.githubusercontent.com/45866787/212614966-59cc5614-d454-47b0-89c7-0b3738c620d1.png)
+![fields_tab](https://user-images.githubusercontent.com/45866787/212770355-8acf8252-ba73-43c0-9de8-5e81e2495cd7.png)
 
 From there, you can pick the field that you want to calculate. After typing your field, you can perform any available operation.
 
-![scalar_field](https://user-images.githubusercontent.com/45866787/212466315-315a6269-d84f-4bd3-92a1-e0d64e21742e.png)
+![4d_scalar](https://user-images.githubusercontent.com/45866787/212770367-d406ed7b-8e1d-43b1-b6fd-61ec167b15a1.png)
 
-![vector_field](https://user-images.githubusercontent.com/45866787/212466320-5d5e31a0-8c1d-49d6-a928-f844c7cf04c1.png)
+![4d_vector](https://user-images.githubusercontent.com/45866787/212770377-e4cb3a62-87de-4ca3-85f7-4a6afb69ac8c.png)
 
-![tensor_field](https://user-images.githubusercontent.com/45866787/212466322-8f25f5a5-8345-4b71-98ef-721c7eaa0c92.png)
+![4d_tensor](https://user-images.githubusercontent.com/45866787/212770390-8cff92d8-5db4-4b7b-8965-5a5ef5ac20a1.png)
