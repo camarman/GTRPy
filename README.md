@@ -41,7 +41,8 @@ Currently, there are 6 different field objects that you can carry out operations
 
 4D/Main Page          |  3D/Main Page
 :-------------------------:|:-------------------------:
-![4d_main_page](https://user-images.githubusercontent.com/45866787/212466258-6e10713a-6235-45a0-babe-010e1f0444be.png)  |  ![3d_main_page](https://user-images.githubusercontent.com/45866787/212466276-ced0e2eb-ce5e-4f3a-966a-f5f286252e72.png)
+![4d_main](https://user-images.githubusercontent.com/45866787/212613908-7e862a76-c88e-4b42-90a9-085ac560437f.png) | ![3d_main](https://user-images.githubusercontent.com/45866787/212613923-a3594715-ecfd-4b82-bcc0-8577328cbbd7.png)
+
 
 4D/Scalar Field Operations        |  4D/Vector Field Operations       | 4D/Tensor Field Operations
 :-------------------------:|:-------------------------:|:-------------------------:
@@ -54,6 +55,8 @@ Currently, there are 6 different field objects that you can carry out operations
 ## Installation
 
 You can easily install GRPy by either cloning the repository
+
+    git clone https://github.com/seVenVo1d/grpy.git
 
 or via downloading as ZIP. Later on, you can simply run
 
