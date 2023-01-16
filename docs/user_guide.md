@@ -48,7 +48,7 @@ Just click one of the tensor buttons, which will lead you to the default page of
 
 Later on, you can change the type of the tensor and get any component from the given page.
 
-![chris_upper](https://user-images.githubusercontent.com/45866787/212614942-277dc99c-6978-4814-9f28-7b2e3cabf832.png)
+![chris_upper](https://user-images.githubusercontent.com/45866787/212615198-6b21be13-2386-4126-9abc-63df977ae12d.png)
 
 ## Fields
 
