@@ -1,6 +1,6 @@
 # GTRPy
 
-GTRPy is a python package that allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
+GTRPy is a python package that allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
 
 > It's tested for GNU/Linux, however it should also work in MacOS. If you ever encounter with a problem, feel free to create an issue.
 
@@ -10,17 +10,20 @@ You can easily install GTRPy via
 
     python3 -m pip install gtrpy
 
-Later on, run
+### Requirements
 
-    python3 -m pip install nump Pillow pysimplegui sympy
+The **base** requirements can be downloaded by running
 
-to install the requirements. If you want to you can also just clone the repository via
+    python3 -m pip install numpy Pillow pysimplegui sympy
 
-    git clone https://github.com/seVenVo1d/GTRPy.git
+However, you also need `tkinter` and `LaTeX` to properly run the GTRPy. In Fedora, these can be easily installed by running
 
-and install the requirements via
+    sudo dnf install python3-tkinter
+    sudo dnf install texlive-scheme-full
 
-    python3 -m pip install -r requirements.txt
+> Note that *texlive-scheme-full* is about 2-4GB and it may take some time to download.
+
+You can look for your distributions package manager and search for an equivalent installation method.
 
 ## User Guide
 
@@ -30,7 +33,7 @@ To start *GTRPy*, simply run
 
 This will create `logs` directory, which will contain the outputs of the performed operations.
 
-Please take a look at the `docs/user_guide.md` for a summary of the GRPy. To see more detailed examples, you can look at the `demos` directory.
+Please take a look at the `docs/user_guide.md` for a summary of the GTRPy. To see more detailed examples, you can look at the `demos` directory.
 
 ## Current Features
 
