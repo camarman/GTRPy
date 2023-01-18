@@ -1,14 +1,14 @@
-# GRPy
+# GTRPy
 
-GRPy is a python package that allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
+GTRPy is a python package that allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
 
 > It's tested for GNU/Linux, however it should also work in MacOS. If you ever encounter with a problem, feel free to create an issue.
 
 ## Installation
 
-You can easily install GRPy via
+You can easily install GTRPy via
 
-    python3 -m pip install grpy
+    python3 -m pip install gtrpy
 
 Later on, run
 
@@ -16,7 +16,7 @@ Later on, run
 
 to install the requirements. If you want to you can also just clone the repository via
 
-    git clone https://github.com/seVenVo1d/GRPy.git
+    git clone https://github.com/seVenVo1d/GTRPy.git
 
 and install the requirements via
 
@@ -24,9 +24,9 @@ and install the requirements via
 
 ## User Guide
 
-To start *GRPy*, simply run
+To start *GTRPy*, simply run
 
-    python3 -m grpy.run
+    python3 -m gtrpy.run
 
 This will create `logs` directory, which will contain the outputs of the performed operations.
 

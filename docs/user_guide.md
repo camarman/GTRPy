@@ -2,7 +2,7 @@
 
 You can run the program by simply typing
 
-    python3 -m grpy.run
+    python3 -m gtrpy.run
 
 ![greetings](https://user-images.githubusercontent.com/45866787/212770215-87e7f60e-54cd-4dcd-b625-31a13ab2ded0.png)
 
