@@ -59,7 +59,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
 
                                 [sg.Submit(button_color='blue')]
                             ]
-        window_tensor_type = sg.Window('GRPy', layout_tensor_type)
+        window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
             event, values = window_tensor_type.read()
             if event == sg.WIN_CLOSED:
@@ -94,7 +94,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
 
                                 [sg.Submit(button_color='blue')]
                              ]
-        window_tensor_type = sg.Window('GRPy', layout_tensor_type)
+        window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
             event, values = window_tensor_type.read()
             if event == sg.WIN_CLOSED:
@@ -125,7 +125,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
 
                                 [sg.Submit(button_color='blue')]
                             ]
-        window_tensor_type = sg.Window('GRPy', layout_tensor_type)
+        window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
             event, values = window_tensor_type.read()
             if event == sg.WIN_CLOSED:
@@ -163,7 +163,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
 
                                 [sg.Submit(button_color='blue')]
                             ]
-        window_tensor_type = sg.Window('GRPy', layout_tensor_type)
+        window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
             event, values = window_tensor_type.read()
             if event == sg.WIN_CLOSED:
@@ -201,7 +201,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
 
                                 [sg.Submit(button_color='blue')]
                             ]
-        window_tensor_type = sg.Window('GRPy', layout_tensor_type)
+        window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
             event, values = window_tensor_type.read()
             if event == sg.WIN_CLOSED:
@@ -225,7 +225,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                 [sg.Frame(layout=[[sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
                                 title=tensor_object, font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')]
                             ]
-        window_tensor_type = sg.Window('GRPy', layout_tensor_type)
+        window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
             event, values = window_tensor_type.read()
             if event == sg.WIN_CLOSED:

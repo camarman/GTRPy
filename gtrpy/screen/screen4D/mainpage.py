@@ -41,11 +41,11 @@ available_coord_sys = [
 resPATH = importlib.machinery.PathFinder().find_module("gtrpy").get_filename()[:-11] + 'res'
 
 
-# ========== GRPy - MAIN PAGE ==========
+# ========== GTRPy - MAIN PAGE ==========
 
-def grpy_4d(coordinate_type='Spherical Coordinates'):
+def gtrpy_4d(coordinate_type='Spherical Coordinates'):
     """
-    The main page of the GRPy, for the case of 4D
+    The main page of the GTRPy, for the case of 4D
 
     Args:
         coordinate_type (str, optional): The name of the coordinate. Defaults to 'Spherical Coordinates'
@@ -155,7 +155,7 @@ def grpy_4d(coordinate_type='Spherical Coordinates'):
                     title='Operations', font=('Georgia', 14), expand_x=True, element_justification='center', title_location='n')],
                     [sg.Exit(button_color='red')]
                 ]
-    window_4dim = sg.Window('GRPy', layout_4dim)
+    window_4dim = sg.Window('GTRPy', layout_4dim)
     while True:
         event, values = window_4dim.read()
         if event == sg.WIN_CLOSED or event == 'Exit':
@@ -163,7 +163,7 @@ def grpy_4d(coordinate_type='Spherical Coordinates'):
 
         elif event == 'Change Coordinate System':
             window_4dim.close()
-            grpy_4d(coordinate_type=values[0])   # new coordinates chosen by the user
+            gtrpy_4d(coordinate_type=values[0])   # new coordinates chosen by the user
 
         else:
             # Obtaining the metric tensor

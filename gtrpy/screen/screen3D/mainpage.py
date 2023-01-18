@@ -33,11 +33,11 @@ available_coord_sys = [ 'Cartesian Coordinates', 'Cylindrical Coordinates', 'Sph
 resPATH = importlib.machinery.PathFinder().find_module("gtrpy").get_filename()[:-11] + 'res'
 
 
-# ========== GRPy - MAIN PAGE ==========
+# ========== GTRPy - MAIN PAGE ==========
 
-def grpy_3d(coordinate_type='Spherical Coordinates'):
+def gtrpy_3d(coordinate_type='Spherical Coordinates'):
     """
-    The main page of the GRPy, for the case of 3D
+    The main page of the GTRPy, for the case of 3D
 
     Args:
         coordinate_type (str, optional): The name of the coordinate. Defaults to 'Spherical Coordinates'
@@ -137,7 +137,7 @@ def grpy_3d(coordinate_type='Spherical Coordinates'):
                     title = 'Operations', font=('Georgia', 14), expand_x=True, element_justification='center', title_location='n')],
                     [sg.Exit(button_color='red')]
                 ]
-    window_3dim = sg.Window('GRPy', layout_4dim)
+    window_3dim = sg.Window('GTRPy', layout_4dim)
     while True:
         event, values = window_3dim.read()
         if event == sg.WIN_CLOSED or event == 'Exit':
@@ -145,7 +145,7 @@ def grpy_3d(coordinate_type='Spherical Coordinates'):
 
         elif event == 'Change Coordinate System':
             window_3dim.close()
-            grpy_3d(coordinate_type=values[0])   # new coordinates chosen by the user
+            gtrpy_3d(coordinate_type=values[0])   # new coordinates chosen by the user
 
         else:
             # Obtaining the metric tensor
