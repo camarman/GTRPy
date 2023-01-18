@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "grpy"
+name = "gtrpy"
 version = "1.2"
 authors = [
   { name="Arman Çam", email="cam.arman7@gmail.com" },
