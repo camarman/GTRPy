@@ -4,15 +4,15 @@ You can run the program by simply typing
 
     python3 -m gtrpy.run
 
-![greetings](https://user-images.githubusercontent.com/45866787/212770215-87e7f60e-54cd-4dcd-b625-31a13ab2ded0.png)
+![greetings](https://user-images.githubusercontent.com/45866787/213306039-51dd652a-d99e-41b5-9ca9-6fe6a4f7aa35.png)
 
 Later on choose a suitable dimension from the GUI. If you choose four dimensions, you'll see a page in this form
 
-![4d_main](https://user-images.githubusercontent.com/45866787/212770239-3229dd1f-2ba9-4549-a230-7682a702127f.png)
+![4d_main](https://user-images.githubusercontent.com/45866787/213306076-9153466c-6aeb-4776-9208-10c953a80e4a.png)
 
 similarly, for three dimensions
 
-![3d_main](https://user-images.githubusercontent.com/45866787/212770264-54d0455c-54b9-4a07-ba9b-fe1cd6e3efa9.png)
+![3d_main](https://user-images.githubusercontent.com/45866787/213306145-6212f979-c4fc-45c1-8bf4-d2d4ecf96758.png)
 
 Later on you can define the coordinate system and create your own metric tensor. While defining the coordinate system you can choose from the given coordinate system symbols
 
@@ -40,21 +40,21 @@ and in 3D:
 
 Let us study the Schwarzschild Coordinates as an example.
 
-![sch](https://user-images.githubusercontent.com/45866787/212770513-d3462d10-504e-44fd-88dd-746dc4a847a1.png)
+![sch](https://user-images.githubusercontent.com/45866787/213306169-1fa3f7fd-20ee-408f-b840-9ad27f26a495.png)
 
 Just click one of the tensor buttons, which will lead you to the default page of the choosen tensor.
 
-![chris](https://user-images.githubusercontent.com/45866787/212770634-f5c2c0b1-3da1-45ea-8358-6c4f0686ca31.png)
+![chris](https://user-images.githubusercontent.com/45866787/213306212-08e35f80-14ea-48fc-8600-a940de20cb89.png)
 
 Later on, you can change the type of the tensor and get any component from the given page.
 
-![chris_up](https://user-images.githubusercontent.com/45866787/212770640-f51587e7-ad06-487b-89a1-03edf70209bd.png)
+![chris_up](https://user-images.githubusercontent.com/45866787/213306230-b9501d32-92a7-4129-8a87-a1b0ed366c05.png)
 
 ## Fields
 
 If you click on the Fields tab you'll see the 6 available fields.
 
-![fields_tab](https://user-images.githubusercontent.com/45866787/212770355-8acf8252-ba73-43c0-9de8-5e81e2495cd7.png)
+![fields_tab](https://user-images.githubusercontent.com/45866787/213306249-d90a9635-e07a-42db-8098-6a3d24000986.png)
 
 From there, you can pick the field that you want to calculate. After typing your field, you can perform any available operation.
 
