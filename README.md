@@ -2,7 +2,35 @@
 
 GRPy is a python package that allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. In addition, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
 
-> It's tested for GNU/Linux, however it should also work in Windows and Mac. If you ever encounter with a problem, feel free to create an issue.
+> It's tested for GNU/Linux, however it should also work in MacOS. If you ever encounter with a problem, feel free to create an issue.
+
+## Installation
+
+You can easily install GRPy via
+
+    python3 -m pip install grpy
+
+Later on, run
+
+    python3 -m pip install nump Pillow pysimplegui sympy
+
+to install the requirements. If you want to you can also just clone the repository via
+
+    git clone https://github.com/seVenVo1d/GRPy.git
+
+and install the requirements via
+
+    python3 -m pip install -r requirements.txt
+
+## User Guide
+
+To start *GRPy*, simply run
+
+    python3 -m grpy.run
+
+This will create `logs` directory, which will contain the outputs of the performed operations.
+
+Please take a look at the `docs/user_guide.md` for a summary of the GRPy. To see more detailed examples, you can look at the `demos` directory.
 
 ## Current Features
 
@@ -50,30 +78,6 @@ Currently, there are 6 different field objects that you can carry out operations
 3D/Scalar Field Operations        |  3D/Vector Field Operations       | 3D/Tensor Field Operations
 :-------------------------:|:-------------------------:|:-------------------------:
 ![3d_scalar](https://user-images.githubusercontent.com/45866787/212769736-171c0a1f-63a2-44f4-96ab-b86bf6eeef8f.png) |![3d_vector](https://user-images.githubusercontent.com/45866787/212769750-de725b69-0a9f-460f-b451-5e03ecd758c5.png) | ![3d_tensor](https://user-images.githubusercontent.com/45866787/212769770-1679b3c4-1b11-48c8-805e-0e51bb4a177b.png)
-
-## Installation
-
-You can easily install GRPy by either cloning the repository
-
-    git clone https://github.com/seVenVo1d/grpy.git
-
-or via downloading as ZIP. Later on, you can simply run
-
-    python3 -m pip install -r requirements.txt
-
-to install the requirements.
-
-### pyclean support (optional)
-
-I have added an optional code block in `grpy.py`, that will delete all the `.pyc` files and `__pycache__` directories. These are created after the program starts and can be annoying for some people. If you want to try it, install [pyclean](https://pypi.org/project/pyclean/) via
-
-    python3 -m pip install pyclean
-
-and uncomment the lines in the file.
-
-## User Guide
-
-Please take a look at the `docs/user_guide.md` for a summary of the GRPy. To see more detailed examples, you can look at the `demos` directory.
 
 ## Upcoming Features
 

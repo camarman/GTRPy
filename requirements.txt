@@ -2,13 +2,3 @@ numpy
 Pillow
 pysimplegui
 sympy
-
-
-# --- fonts (optional)
-# Tahoma, Verdana, & Georgia
-
-# These are the standard fonts in many OS's, but if they are missing,
-# you can download them online or change the font manually from the source code.
-# It seems that when one of the fonts is missing, the PySimpleGUI runs
-# with the default font without giving an error. If there any errors occur
-# related to the fonts, feel free to create an issue.
