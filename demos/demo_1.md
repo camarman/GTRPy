@@ -24,24 +24,81 @@ As you can see most of the greek alphabet will be converted to its corresponding
 
 $$
 {\rm alpha} - \alpha \\
+$$
+
+$$
 {\rm delta} - \delta \\
+$$
+
+$$
 {\rm epsilon} - \epsilon \\
+$$
+
+$$
 {\rm theta} -\theta \\
+$$
+
+$$
 {\rm iota} - \iota \\
+$$
+
+$$
 {\rm kappa} - \kappa \\
+$$
+
+$$
 {\rm lamda} - \lambda \\
+$$
+
+$$
 {\rm mu} - \mu \\
+$$
+
+$$
 {\rm nu} - \nu \\
+$$
+
+$$
 {\rm xi} - \xi \\
+$$
+
+$$
 {\rm omicron} - \omicron \\
+$$
+
+$$
 {\rm pi} - \pi \\
+$$
+
+$$
 {\rm rho} - \rho \\
+$$
+
+$$
 {\rm sigma} - \sigma \\
+$$
+
+$$
 {\rm tau} - \tau \\
+$$
+
+$$
 {\rm upsilon} - \upsilon \\
+$$
+
+$$
 {\rm phi} - \phi \\
+$$
+
+$$
 {\rm chi} - \chi \\
+$$
+
+$$
 {\rm psi} - \psi \\
+$$
+
+$$
 {\rm omega} - \omega \\
 $$
 
