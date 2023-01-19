@@ -39,9 +39,7 @@ To start GTRPy, simply run
 
     python3 -m gtrpy.run
 
-from the terminal (it does not matter what directory you are in).
-
-This will create `logs` directory under your current directory, which will contain the outputs of the performed operations.
+from the terminal (it does not matter what directory you are in, *if* you are installed it via `pip`). This will create `logs` directory under your current directory, which will contain the outputs of the performed operations.
 
 > Please take a look at the `docs/user_guide.md` for a summary of the GTRPy. To see more detailed examples, you can look at the `demos` directory.
 
