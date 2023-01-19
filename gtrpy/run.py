@@ -5,13 +5,11 @@ import PySimpleGUI as sg
 from gtrpy.screen.screen3D.mainpage import gtrpy_3d
 from gtrpy.screen.screen4D.mainpage import gtrpy_4d
 
-
 # ========== Creating logs directory ==========
 current_directory = os.getcwd()
 final_directory = os.path.join(current_directory, r'logs')
 if not os.path.exists(final_directory):
     os.makedirs(final_directory)
-
 
 # ========== PySimpleGUI Color Theme ==========
 # Color theme option, provided by the PySimpleGUI. You can look at themes from:
@@ -19,8 +17,7 @@ if not os.path.exists(final_directory):
 
 sg.ChangeLookAndFeel('SandyBeach')
 
-
-# ========== DIMENSIONS ==========
+# ========== Welcome Page ==========
 layout_dimension = [
                         [sg.Text('Welcome to GTRPy', font=('Georgia', 14))],
                         [sg.Text('Please choose the number of dimensions:', font=('Tahoma', 11)),

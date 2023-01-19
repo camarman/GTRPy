@@ -1,39 +1,49 @@
 # GTRPy
 
-GTRPy is a python package that allows you to calculate the well-known tensors in general relativity, without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
+GTRPy is a python package that allows you to calculate the well-known tensors in General Theory of Relativity, without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
 
 > It's tested for GNU/Linux, however it should also work in MacOS. If you ever encounter with a problem, feel free to create an issue.
 
-## Installation
+## Installation (via pip)
 
 You can easily install GTRPy via
 
     python3 -m pip install gtrpy
 
-### Requirements
-
-The **base** requirements can be downloaded by running
+later on you can install the requirements by running
 
     python3 -m pip install numpy Pillow pysimplegui sympy
 
-However, you also need `tkinter` and `LaTeX` to properly run the GTRPy. In Fedora, these can be easily installed by running
+## Installation (via git)
+
+If you want, you can also directly clone the repository via
+
+    git clone https://github.com/seVenVo1d/GTRPy.git
+
+and install the requirements by running
+
+    python3 -m pip install -r requirements.txt
+
+## Requirements (Extra)
+
+Additionally, you will also need `tkinter` and `LaTeX` to properly run the GTRPy. In Fedora, these can be easily installed by running
 
     sudo dnf install python3-tkinter
     sudo dnf install texlive-scheme-full
-
-> Note that *texlive-scheme-full* is about 2-4GB and it may take some time to download.
 
 You can look for your distributions package manager and search for an equivalent installation method.
 
 ## User Guide
 
-To start *GTRPy*, simply run
+To start GTRPy, simply run
 
     python3 -m gtrpy.run
 
-This will create `logs` directory, which will contain the outputs of the performed operations.
+from the terminal (it does not matter what directory you are in).
 
-Please take a look at the `docs/user_guide.md` for a summary of the GTRPy. To see more detailed examples, you can look at the `demos` directory.
+This will create `logs` directory under your current directory, which will contain the outputs of the performed operations.
+
+> Please take a look at the `docs/user_guide.md` for a summary of the GTRPy. To see more detailed examples, you can look at the `demos` directory.
 
 ## Current Features
 

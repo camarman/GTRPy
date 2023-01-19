@@ -1,12 +1,11 @@
 import PySimpleGUI as sg
+
 from sympy import preview
 
 from gtrpy.equations.grtensorsEP import *
 from gtrpy.tools.image_resizer_grtensor import *
 
-
 # ========== IMPORTANT VARIABLES ==========
-
 
 # Turning {'u','d'} tensor type notation into (p, q)
 type_dict = {

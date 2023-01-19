@@ -1,5 +1,6 @@
 import importlib
 import PySimpleGUI as sg
+
 from sympy import preview, sympify
 
 from gtrpy.equations.vectorfieldEP import *

@@ -9,7 +9,6 @@ from gtrpy.screen.screen4D.scalarfieldGUI import *
 from gtrpy.screen.screen4D.vectorfieldGUI import *
 from gtrpy.screen.screen4D.tensorfieldGUI import *
 
-
 # ========== INPUT VARIABLES ==========
 
 # GRTensor objects
@@ -39,7 +38,6 @@ available_coord_sys = [
 
 # Image Path
 resPATH = importlib.machinery.PathFinder().find_module("gtrpy").get_filename()[:-11] + 'res'
-
 
 # ========== GTRPy - MAIN PAGE ==========
 

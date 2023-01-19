@@ -4,6 +4,8 @@ You can run the program by simply typing
 
     python3 -m gtrpy.run
 
+from the terminal
+
 ![greetings](https://user-images.githubusercontent.com/45866787/213306039-51dd652a-d99e-41b5-9ca9-6fe6a4f7aa35.png)
 
 Later on choose a suitable dimension from the GUI. If you choose four dimensions, you'll see a page in this form
@@ -38,7 +40,7 @@ and in 3D:
 
 ## Tensors, Tensor Types, Index Lowering and Raising
 
-Let us study the Schwarzschild Coordinates as an example.
+Let us study the **Schwarzschild Coordinate System** as an example.
 
 ![sch](https://user-images.githubusercontent.com/45866787/213306169-1fa3f7fd-20ee-408f-b840-9ad27f26a495.png)
 
