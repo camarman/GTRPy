@@ -42,8 +42,7 @@ $$
 {\rm phi} - \phi \\
 {\rm chi} - \chi \\
 {\rm psi} - \psi \\
-{\rm omega} - \omega \\
-
+{\rm omega} - \omega
 $$
 
 > Note 1: For some reason, `beta` and `gamma` letters do not work in GTRPy. If your calculations involve those letters, please convert them to another letter.
