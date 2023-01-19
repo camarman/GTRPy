@@ -5,17 +5,21 @@ In this demo, we will explore the usage of the LaTeX in the GTRPy. By following 
 ## Mathematical Operations and Greek Letters
 
 In GRTPy, the metric tensor and field components can be written by using LaTeX rules. For instance, if you want to write;
+
 $$
 \alpha^2(r_s)^3(sin^2(\theta))
 $$
+
 you can directly write it as
 
     alpha^2*r_s^3*sin(theta)^2
 
 and the `sympy` will interpret it as it is. In exponential expressions, you can both use `^` and `**`. You can also write `log` as usual, such as `log(10)` etc. For instance, if you want to write;
+
 $$
 \log(10)r_s^2\psi^{\eta}
 $$
+
 you can directly write it as
 
     log(10)^2*r_s^2*psi^(eta)
