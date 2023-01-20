@@ -98,6 +98,6 @@ Currently, there are 6 different field objects that you can carry out operations
 4. Including more coordinate systems
 5. Adding a button that prints the equations in LaTeX form
 
-## Contributions
+## Contributing
 
 I am looking for developers who would like to contribute to the project. If you are interested, feel free to create an issue by stating how would you like to contribute. Any help or idea is welcomed.
