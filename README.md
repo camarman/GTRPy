@@ -2,7 +2,7 @@
 
 GTRPy is a python package that allows you to calculate the well-known tensors in General Theory of Relativity, without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
 
-> It's tested for GNU/Linux, however it should also work in MacOS. If you ever encounter with a problem, feel free to create an issue.
+> It's tested for GNU/Linux, however it should also work in macOS. If you ever encounter with a problem, feel free to create an issue.
 
 ## Installation (via pip)
 
@@ -39,7 +39,7 @@ To start GTRPy, simply run
 
     python3 -m gtrpy.run
 
-from the terminal (it does not matter what directory you are in, *if* you are installed it via `pip`). This will create `logs` directory under your current directory, which will contain the outputs of the performed operations.
+from the terminal (it does not matter what directory you are in, *if* you installed it via `pip`). This will create the `logs` directory, under your current directory, which will contain the outputs of the performed operations.
 
 > Please take a look at the `docs/user_guide.md` for a summary of the GTRPy. To see more detailed examples, you can look at the `demos` directory.
 
@@ -96,7 +96,6 @@ Currently, there are 6 different field objects that you can carry out operations
 2. Gradient, Divergence, Curl and Laplace operations on fields
 3. Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, etc.)
 4. Including more coordinate systems
-5. Adding a button that prints the equations in LaTeX form
 
 ## Contributing
 
