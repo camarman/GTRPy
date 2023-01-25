@@ -81,12 +81,12 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 window_tensor_type.Element('-TENSOR-').Update(r'logs/tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
             if event == 'Get LaTeX':
-                latex_output(tensor_object, tensor_eqn)
+                latex_output_grtensor(tensor_object, tensor_eqn)
 
     elif tensor_object == 'Inverse Metric Tensor':
         layout_tensor_type = [
                                 [sg.Frame(layout=[
-                                    [sg.Image(r'logs/tensor.png')]], 
+                                    [sg.Image(r'logs/tensor.png')]],
                                 title='Inverse Metric Tensor', font=('Verdana', 14), expand_x=True,
                                 element_justification='center', title_location='n')],
 
@@ -113,7 +113,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 resize_tensor_component_image()
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
             if event == 'Get LaTeX':
-                latex_output(tensor_object, tensor_eqn)
+                latex_output_grtensor(tensor_object, tensor_eqn)
 
     elif tensor_object == 'Christoffel Symbol':
         layout_tensor_type = [
@@ -154,7 +154,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 window_tensor_type.Element('-TENSOR-').Update(r'logs/tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
             if event == 'Get LaTeX':
-                latex_output(tensor_object, tensor_eqn)
+                latex_output_grtensor(tensor_object, tensor_eqn)
 
     elif tensor_object == 'Riemann Tensor':
         layout_tensor_type = [
@@ -196,7 +196,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 window_tensor_type.Element('-TENSOR-').Update(r'logs/tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
             if event == 'Get LaTeX':
-                latex_output(tensor_object, tensor_eqn)
+                latex_output_grtensor(tensor_object, tensor_eqn)
 
     elif tensor_object == 'Weyl Tensor':
         layout_tensor_type = [
@@ -238,7 +238,7 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 window_tensor_type.Element('-TENSOR-').Update(r'logs/tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
             if event == 'Get LaTeX':
-                latex_output(tensor_object, tensor_eqn)
+                latex_output_grtensor(tensor_object, tensor_eqn)
 
     elif tensor_object in scalar_objects:
         layout_tensor_type = [
@@ -254,4 +254,4 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
             if event == sg.WIN_CLOSED:
                 break
             if event == 'Get LaTeX':
-                latex_output(tensor_object, tensor_eqn)
+                latex_output_grtensor(tensor_object, tensor_eqn)

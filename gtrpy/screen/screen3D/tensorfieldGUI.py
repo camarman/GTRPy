@@ -5,6 +5,7 @@ from sympy import preview, sympify
 
 from gtrpy.equations.tensorfieldEP import *
 from gtrpy.tools.image_resizer_fields3D import *
+from gtrpy.tools.latex_output import *
 
 
 # Image Path
@@ -42,7 +43,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(resPATH + r'/images3D/e.png'),
                                         sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
-                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(resPATH + r'/images3D/LX0.png'),
@@ -53,7 +55,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images3D/LX_tensorfield_20.png')]],
-                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')]
                                 ]
         windows_tensor_field = sg.Window('Tensor Field', tensor_field_20_layout)
         while True:
@@ -72,12 +75,15 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                     resize_cd_image3d('Type (2,0) Tensor Field')
                     layout_cd_tensor_field_result = [
                                                         [sg.Image(r'logs/cd_tensor_field_20.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_cd_tensor_field_result = sg.Window('Tensor Field', layout_cd_tensor_field_result)
                     while True:
                         event, values = window_cd_tensor_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(cd_tensor_field_eqn)
 
                 # Calculation of the Lie derivative
                 elif event == 'Calculate0':
@@ -88,13 +94,15 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                     resize_ld_image3d('Type (2,0) Tensor Field')
                     layout_ld_tensor_field_result = [
                                                         [sg.Image(r'logs/ld_tensor_field_20.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_ld_tensor_field_result = sg.Window('Tensor Field', layout_ld_tensor_field_result)
                     while True:
                         event, values = window_ld_tensor_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
-
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(ld_tensor_field_eqn)
     elif event == 'Type (1,1) Tensor Field':
         tensor_field_11_layout =  [
                                     [sg.Image(resPATH + r'/images3D/tensorfield_11_0.png'),
@@ -116,7 +124,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(resPATH + r'/images3D/e.png'),
                                         sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
-                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(resPATH + r'/images3D/LX0.png'),
@@ -127,7 +136,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images3D/LX_tensorfield_11.png')]],
-                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')]
                                     ]
         windows_tensor_field = sg.Window('Tensor Field', tensor_field_11_layout)
         while True:
@@ -146,12 +156,15 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                     resize_cd_image3d('Type (1,1) Tensor Field')
                     layout_cd_tensor_field_result = [
                                                         [sg.Image(r'logs/cd_tensor_field_11.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_cd_tensor_field_result = sg.Window('Tensor Field', layout_cd_tensor_field_result)
                     while True:
                         event, values = window_cd_tensor_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(cd_tensor_field_eqn)
 
                 # Calculation of the Lie derivative
                 elif event == 'Calculate0':
@@ -162,12 +175,15 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                     resize_ld_image3d('Type (1,1) Tensor Field')
                     layout_ld_tensor_field_result = [
                                                         [sg.Image(r'logs/ld_tensor_field_11.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_ld_tensor_field_result = sg.Window('Tensor Field', layout_ld_tensor_field_result)
                     while True:
                         event, values = window_ld_tensor_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(ld_tensor_field_eqn)
     else:
         tensor_field_02_layout =  [
                                     [sg.Image(resPATH + r'/images3D/tensorfield_02_0.png'),
@@ -189,7 +205,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(resPATH + r'/images3D/e.png'),
                                         sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
-                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(resPATH + r'/images3D/LX0.png'),
@@ -200,7 +217,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images3D/LX_tensorfield_02.png')]],
-                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')]
                                     ]
         windows_tensor_field = sg.Window('Tensor Field', tensor_field_02_layout)
         while True:
@@ -219,12 +237,15 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                     resize_cd_image3d('Type (0,2) Tensor Field')
                     layout_cd_tensor_field_result = [
                                                         [sg.Image(r'logs/cd_tensor_field_02.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_cd_tensor_field_result = sg.Window('Tensor Field', layout_cd_tensor_field_result)
                     while True:
                         event, values = window_cd_tensor_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(cd_tensor_field_eqn)
 
                 # Calculation of the Lie derivative
                 elif event == 'Calculate0':
@@ -235,9 +256,12 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                     resize_ld_image3d('Type (0,2) Tensor Field')
                     layout_ld_tensor_field_result = [
                                                         [sg.Image(r'logs/ld_tensor_field_02.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_ld_tensor_field_result = sg.Window('Tensor Field', layout_ld_tensor_field_result)
                     while True:
                         event, values = window_ld_tensor_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(ld_tensor_field_eqn)

@@ -5,6 +5,7 @@ from sympy import preview, sympify
 
 from gtrpy.equations.scalarfieldEP import *
 from gtrpy.tools.image_resizer_fields3D import *
+from gtrpy.tools.latex_output import *
 
 
 # Image Path
@@ -29,7 +30,8 @@ def scalarfield_gui3d(coord_sys):
                                     sg.Text('for', font=('Verdana', 11)),
                                     sg.Image(resPATH + r'/images3D/e.png'),
                                     sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
-                            title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                            title='Covariant Derivative', font=('Verdana', 12), expand_x=True,
+                            element_justification='center', title_location='n')],
 
                             [sg.Frame(layout=[
                                 [sg.Image(resPATH + r'/images3D/LX0.png'),
@@ -40,7 +42,8 @@ def scalarfield_gui3d(coord_sys):
                                     sg.InputText(default_text='0', font=('Tahoma', 11))],
                                 [sg.Button('Calculate', button_color='purple'),
                                     sg.Image(resPATH + r'/images3D/LX_scalarfield.png')]],
-                            title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
+                            title='Lie Derivative', font=('Verdana', 12), expand_x=True,
+                            element_justification='center', title_location='n')]
                             ]
     windows_scalar_field = sg.Window('Scalar Field', scalar_field_layout)
     while True:
@@ -59,12 +62,15 @@ def scalarfield_gui3d(coord_sys):
                 resize_cd_image3d ('Scalar Field')
                 layout_cd_scalar_field_result = [
                                                     [sg.Image(r'logs/cd_scalar_field.png')],
+                                                    [sg.Button('Get LaTeX', button_color='orange')]
                                                 ]
                 window_cd_scalar_field_result = sg.Window('Scalar Field', layout_cd_scalar_field_result)
                 while True:
                     event, values = window_cd_scalar_field_result.read()
                     if event == sg.WIN_CLOSED:
                         break
+                    if event == 'Get LaTeX':
+                        latex_output_scalar_field(cd_scalar_field_eqn)
 
             # Calculation of the Lie derivative
             if event == 'Calculate0':
@@ -75,9 +81,12 @@ def scalarfield_gui3d(coord_sys):
                 resize_ld_image3d('Scalar Field')
                 layout_ld_scalar_field_result = [
                                                     [sg.Image(r'logs/ld_scalar_field.png')],
+                                                    [sg.Button('Get LaTeX', button_color='orange')]
                                                 ]
                 window_ld_scalar_field_result = sg.Window('Scalar Field', layout_ld_scalar_field_result)
                 while True:
                     event, values = window_ld_scalar_field_result.read()
                     if event == sg.WIN_CLOSED:
                         break
+                    if event == 'Get LaTeX':
+                        latex_output_scalar_field(ld_scalar_field_eqn)

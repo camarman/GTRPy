@@ -5,6 +5,7 @@ from sympy import preview, sympify
 
 from gtrpy.equations.vectorfieldEP import *
 from gtrpy.tools.image_resizer_fields4D import *
+from gtrpy.tools.latex_output import *
 
 
 # Image Path
@@ -35,7 +36,8 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images4D/vectorfield_01.png')]],
-                                    title='Vary Type', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Vary Type', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
@@ -43,7 +45,8 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(resPATH + r'/images4D/gamma.png'),
                                         sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
-                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(resPATH + r'/images4D/LX0.png'),
@@ -56,12 +59,14 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images4D/LX_vectorfield_10.png')]],
-                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Check', button_color='purple'),
                                             sg.Image(resPATH + r'/images4D/killingvector.png')]],
-                                    title='Killing Field Condition', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
+                                    title='Killing Field Condition', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')]
                                     ]
         windows_vector_field = sg.Window('Vector Field', vector_field_10_layout)
         while True:
@@ -79,12 +84,15 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                     resize_vry_image4d('Type (1,0) Vector Field')
                     layout_vry_vector_field_result = [
                                                         [sg.Image(r'logs/vry_vector_field_10.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_vry_vector_field_result = sg.Window('Vector Field', layout_vry_vector_field_result)
                     while True:
                         event, values = window_vry_vector_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_vector_field(vry_vector_field_eqn)
 
                 # Calculation of the covariant derivative
                 if event == 'Calculate0':
@@ -95,12 +103,15 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                     resize_cd_image4d('Type (1,0) Vector Field')
                     layout_cd_vector_field_result = [
                                                         [sg.Image(r'logs/cd_vector_field_10.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_cd_vector_field_result = sg.Window('Vector Field', layout_cd_vector_field_result)
                     while True:
                         event, values = window_cd_vector_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_vector_field(cd_vector_field_eqn)
 
                 # Calculation of the Lie derivative
                 elif event == 'Calculate1':
@@ -111,12 +122,15 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                     resize_ld_image4d('Type (1,0) Vector Field')
                     layout_ld_vector_field_result = [
                                                         [sg.Image(r'logs/ld_vector_field_10.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_ld_vector_field_result = sg.Window('Vector Field', layout_ld_vector_field_result)
                     while True:
                         event, values = window_ld_vector_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_vector_field(ld_vector_field_eqn)
 
                 # Checking Killing Field Condition
                 elif event == 'Check':
@@ -132,7 +146,6 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                         event, values = window_killing_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
-
     else:
         vector_field_01_layout = [
                                     [sg.Image(resPATH + r'/images4D/vectorfield_01_0.png'),
@@ -147,7 +160,8 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images4D/vectorfield_10.png')]],
-                                    title='Vary Type', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Vary Type', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
@@ -155,7 +169,8 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(resPATH + r'/images4D/gamma.png'),
                                         sg.InputCombo(coord_sys, default_value=coord_sys[0])]],
-                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Covariant Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Image(resPATH + r'/images4D/LX0.png'),
@@ -168,12 +183,14 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                                         sg.InputText(default_text='0', font=('Tahoma', 11))],
                                         [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images4D/LX_vectorfield_01.png')]],
-                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')],
+                                    title='Lie Derivative', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Check', button_color='purple'),
                                         sg.Image(resPATH + r'/images4D/killingvector.png')]],
-                                    title='Killing Field Condition', font=('Verdana', 12), expand_x=True, element_justification='center', title_location='n')]
+                                    title='Killing Field Condition', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')]
                                 ]
         windows_vector_field = sg.Window('Vector Field', vector_field_01_layout)
         while True:
@@ -191,12 +208,15 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                     resize_vry_image4d('Type (0,1) Vector Field')
                     layout_vry_vector_field_result = [
                                                         [sg.Image(r'logs/vry_vector_field_01.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_vry_vector_field_result = sg.Window('Vector Field', layout_vry_vector_field_result)
                     while True:
                         event, values = window_vry_vector_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_vector_field(vry_vector_field_eqn)
 
                 # Calculation of the covariant derivative
                 if event == 'Calculate0':
@@ -207,12 +227,15 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                     resize_cd_image4d('Type (0,1) Vector Field')
                     layout_cd_vector_field_result = [
                                                         [sg.Image(r'logs/cd_vector_field_01.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_cd_vector_field_result = sg.Window('Vector Field', layout_cd_vector_field_result)
                     while True:
                         event, values = window_cd_vector_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_vector_field(cd_vector_field_eqn)
 
                 # Calculation of the Lie derivative
                 elif event == 'Calculate1':
@@ -223,12 +246,15 @@ def vectorfield_gui4d(event, metric_tensor, coord_sys):
                     resize_ld_image4d('Type (0,1) Vector Field')
                     layout_ld_vector_field_result = [
                                                         [sg.Image(r'logs/ld_vector_field_01.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
                                                     ]
                     window_ld_vector_field_result = sg.Window('Vector Field', layout_ld_vector_field_result)
                     while True:
                         event, values = window_ld_vector_field_result.read()
                         if event == sg.WIN_CLOSED:
                             break
+                        if event == 'Get LaTeX':
+                            latex_output_vector_field(ld_vector_field_eqn)
 
                 # Checking Killing Field Condition
                 elif event == 'Check':
