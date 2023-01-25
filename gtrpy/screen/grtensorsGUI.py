@@ -4,6 +4,7 @@ from sympy import preview
 
 from gtrpy.equations.grtensorsEP import *
 from gtrpy.tools.image_resizer_grtensor import *
+from gtrpy.tools.latex_output import *
 
 # ========== IMPORTANT VARIABLES ==========
 
@@ -47,16 +48,18 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                     [sg.Text('Tensor Type (p,q):', font=('Tahoma', 11)),
                                      sg.InputCombo(tensor_type2, size=(10, 1), default_value='(0,2)')],
                                     [sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
-                                title = tensor_object, font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title = tensor_object, font=('Verdana', 14), expand_x=True,
+                                element_justification='center',title_location='n')],
 
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Component:', font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
                                     [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
-                                title=tensor_object + ' Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title=tensor_object + ' Component', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
-                                [sg.Submit(button_color='blue')]
+                                [sg.Submit(button_color='blue'), sg.Button('Get LaTeX', button_color='orange')]
                             ]
         window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
@@ -77,21 +80,25 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 # updating the images with the new ones
                 window_tensor_type.Element('-TENSOR-').Update(r'logs/tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
+            if event == 'Get LaTeX':
+                latex_output(tensor_object, tensor_eqn)
 
     elif tensor_object == 'Inverse Metric Tensor':
         layout_tensor_type = [
                                 [sg.Frame(layout=[
                                     [sg.Image(r'logs/tensor.png')]], 
-                                title='Inverse Metric Tensor', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title='Inverse Metric Tensor', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Component:', font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
                                     [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
-                                title='Inverse Metric Tensor Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title='Inverse Metric Tensor Component', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
-                                [sg.Submit(button_color='blue')]
+                                [sg.Submit(button_color='blue'), sg.Button('Get LaTeX', button_color='orange')]
                              ]
         window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
@@ -105,6 +112,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                         dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
                 resize_tensor_component_image()
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
+            if event == 'Get LaTeX':
+                latex_output(tensor_object, tensor_eqn)
 
     elif tensor_object == 'Christoffel Symbol':
         layout_tensor_type = [
@@ -112,7 +121,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                     [sg.Text('Type (p,q):', font=('Tahoma', 11)),
                                      sg.InputCombo(tensor_type3, size=(10, 1), default_value='(1,2)', font=('Tahoma', 11))],
                                     [sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
-                                title='Christoffel Symbol', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title='Christoffel Symbol', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout = [
                                     [sg.Text('Component:', font=('Tahoma', 11)),
@@ -120,9 +130,10 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
                                     [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
-                                title='Christoffel Symbol Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title='Christoffel Symbol Component', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
-                                [sg.Submit(button_color='blue')]
+                                [sg.Submit(button_color='blue'), sg.Button('Get LaTeX', button_color='orange')]
                             ]
         window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
@@ -142,6 +153,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 resize_tensor_component_image()
                 window_tensor_type.Element('-TENSOR-').Update(r'logs/tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
+            if event == 'Get LaTeX':
+                latex_output(tensor_object, tensor_eqn)
 
     elif tensor_object == 'Riemann Tensor':
         layout_tensor_type = [
@@ -149,7 +162,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                     [sg.Text('Tensor Type (p,q):', font=('Tahoma', 11)),
                                      sg.InputCombo(tensor_type4, size=(10, 1), default_value='(1,3)', font=('Tahoma', 11))],
                                     [sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
-                                title = 'Riemann Tensor', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title = 'Riemann Tensor', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout = [
                                     [sg.Text('Tensor Component:', font=('Tahoma', 11)),
@@ -158,9 +172,10 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
                                     [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
-                                title='Riemann Tensor Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title='Riemann Tensor Component', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
-                                [sg.Submit(button_color='blue')]
+                                [sg.Submit(button_color='blue'), sg.Button('Get LaTeX', button_color='orange')]
                             ]
         window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
@@ -180,6 +195,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 resize_tensor_component_image()
                 window_tensor_type.Element('-TENSOR-').Update(r'logs/tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
+            if event == 'Get LaTeX':
+                latex_output(tensor_object, tensor_eqn)
 
     elif tensor_object == 'Weyl Tensor':
         layout_tensor_type = [
@@ -187,7 +204,8 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                     [sg.Text('Tensor Type (p,q):', font=('Tahoma', 11)),
                                      sg.InputCombo(tensor_type4, size=(10, 1), default_value='(0,4)', font=('Tahoma', 11))],
                                     [sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
-                                title='Weyl Tensor', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title='Weyl Tensor', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
                                 [sg.Frame(layout=[
                                     [sg.Text('Tensor Component:', font=('Tahoma', 11)),
@@ -196,9 +214,10 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11)),
                                      sg.InputCombo(coord_sys, size = (6,1), default_value=coord_sys[0], font=('Tahoma', 11))],
                                     [sg.Image(r'logs/tensor_component.png', key='-TENSOR-COMP-')]],
-                                title='Weyl Tensor Component', font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')],
+                                title='Weyl Tensor Component', font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
 
-                                [sg.Submit(button_color='blue')]
+                                [sg.Submit(button_color='blue'), sg.Button('Get LaTeX', button_color='orange')]
                             ]
         window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
@@ -218,14 +237,21 @@ def grtensors_gui(metric_tensor, coord_sys, tensor_object):
                 resize_tensor_component_image()
                 window_tensor_type.Element('-TENSOR-').Update(r'logs/tensor.png')
                 window_tensor_type.Element('-TENSOR-COMP-').Update(r'logs/tensor_component.png')
+            if event == 'Get LaTeX':
+                latex_output(tensor_object, tensor_eqn)
 
     elif tensor_object in scalar_objects:
         layout_tensor_type = [
                                 [sg.Frame(layout=[[sg.Image(r'logs/tensor.png', key='-TENSOR-')]],
-                                title=tensor_object, font=('Verdana', 14), expand_x=True, element_justification='center', title_location='n')]
+                                title=tensor_object, font=('Verdana', 14), expand_x=True,
+                                element_justification='center', title_location='n')],
+
+                                [sg.Button('Get LaTeX', button_color='orange')]
                             ]
         window_tensor_type = sg.Window('GTRPy', layout_tensor_type)
         while True:
             event, values = window_tensor_type.read()
             if event == sg.WIN_CLOSED:
                 break
+            if event == 'Get LaTeX':
+                latex_output(tensor_object, tensor_eqn)
