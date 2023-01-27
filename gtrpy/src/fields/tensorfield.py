@@ -1,8 +1,9 @@
 from itertools import product
-from numpy import zeros
-from sympy import MutableDenseNDimArray, diff
+from numpy import einsum, zeros
+from sympy import Array, MutableDenseNDimArray, diff
 
 from gtrpy.src.grtensors.christoffelsymbol import ChristoffelSymbol
+from gtrpy.src.grtensors.metrictensor import MetricTensor
 from gtrpy.tools.simplify_objects import Simplify
 
 
@@ -118,3 +119,39 @@ class TensorField():
                     einstein_sum += S1 + S2 + S3
                 ld_tensor_field[i, j] = einstein_sum
         return Simplify(ld_tensor_field)
+
+
+    def vary_tensorfield_type(self, new_type):
+        """
+        Varying the type of the tensor field
+
+        Args:
+            new_type [str]: The new type of the tensor field.
+                            It should be given in terms of:
+                            'u': contravariant (upper-indices)
+                            'd': covariant (lower-indices)
+
+        Returns:
+            The new tensor field for a given type
+        """
+        # Defining the inverse metric for the calculations
+        mt = MetricTensor(self.metric_obj, self.coord_sys)
+        inverse_metric = mt.get_inverse()
+
+        if self.tensor_field_type == 'uu':
+            if new_type == 'ud':
+                return Simplify(Array(einsum('ij,jk->ik', self.tensor_field, self.metric_obj, optimize='optimal')))
+            if new_type == 'dd':
+                return Simplify(Array(einsum('ij,jk,il->kl', self.tensor_field, self.metric_obj, self.metric_obj, optimize='optimal')))
+
+        elif self.tensor_field_type == 'ud':
+            if new_type == 'uu':
+                return Simplify(Array(einsum('ij,jk->ik', self.tensor_field, inverse_metric, optimize='optimal')))
+            if new_type == 'dd':
+                return Simplify(Array(einsum('ij,ik->jk', self.tensor_field, self.metric_obj, optimize='optimal')))
+
+        elif self.tensor_field_type == 'dd':
+            if new_type == 'ud':
+                return Simplify(Array(einsum('ij,jk->ki', self.tensor_field, inverse_metric, optimize='optimal')))
+            if new_type == 'uu':
+                return Simplify(Array(einsum('ij,jk,il->kl', self.tensor_field, inverse_metric, inverse_metric, optimize='optimal')))

@@ -1,10 +1,10 @@
 # User Guide
 
-You can run the program by simply typing
+You can start the program by typing
 
     python3 -m gtrpy.run
 
-from the terminal
+in the terminal.
 
 ![greetings](https://user-images.githubusercontent.com/45866787/213306039-51dd652a-d99e-41b5-9ca9-6fe6a4f7aa35.png)
 
@@ -16,7 +16,7 @@ similarly, for three dimensions
 
 ![3d_main](https://user-images.githubusercontent.com/45866787/213306145-6212f979-c4fc-45c1-8bf4-d2d4ecf96758.png)
 
-Later on you can define the coordinate system and create your own metric tensor. While defining the coordinate system you can choose from the given coordinate system symbols
+Later on you can define the coordinate system and create your own metric tensor. While defining the coordinate system, you can choose from the given coordinate system symbols
 
     t, x, y, z, r, v, r, theta, phi, rho, sigma, psi, eta, tau, xi, T, X
 
@@ -40,7 +40,7 @@ and in 3D:
 
 ## Tensors, Tensor Types, Index Lowering and Raising
 
-Let us study the **Schwarzschild Coordinate System** as an example.
+Let us study the *Schwarzschild Coordinate System* as an example.
 
 ![sch](https://user-images.githubusercontent.com/45866787/213306169-1fa3f7fd-20ee-408f-b840-9ad27f26a495.png)
 

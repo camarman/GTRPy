@@ -76,6 +76,8 @@ Currently, there are 6 different field objects that you can carry out operations
 2. Calculating covariant and Lie derivatives for each field object (scalar, vector and tensor)
 3. Checking the Killing field condition for a given vector field
 
+Additionally, you can also print the LaTeX equations of each operation by clicking a single button.
+
 ## Overview
 
 4D/Main Page          |  3D/Main Page
@@ -99,4 +101,4 @@ Currently, there are 6 different field objects that you can carry out operations
 
 ## Contributing
 
-I am looking for developers who would like to contribute to the project. If you are interested, feel free to create an issue by stating how would you like to contribute. Any help or idea is welcomed.
+I am looking for developers who would like to contribute to the project. If you are interested, feel free to create an issue by stating how would you like to contribute. Any help or idea is welcomed. For more information you can also look at the `CONTRIBUTING.md`.

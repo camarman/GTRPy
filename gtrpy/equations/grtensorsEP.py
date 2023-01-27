@@ -1,4 +1,4 @@
-# ========== PRODUCING EQUATIONS FOR GR-TENSORS ==========
+# ========== PRODUCING EQUATIONS FOR GTR-TENSORS ==========
 from sympy import latex
 
 from gtrpy.src.grtensors import *

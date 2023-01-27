@@ -1,6 +1,6 @@
 # Equations
 
-This is the list of the all equations used in the program. Now, you can easily compare the written equations with the code (under the `gtrpy/src` directory).
+This is the list of the all equations used in the program. You can easily compare the written equations with the code (`gtrpy/src`).
 
 ## Tensors
 
@@ -172,7 +172,7 @@ $$
 \mathcal{L}_Vg = 0
 $$
 
-> Note that if the type of the V is (0,1), during the calculation of the Killing field condition, it's converted to type (0,1).
+> Note: Type (0,1) vector field is converted to type (1,0) during the calculation of the Killing field condition.
 
 ### Tensor Field
 
@@ -198,4 +198,34 @@ $$
 
 $$
 \mathcal{L}_XT_{ij} := X^k\partial_kT_{ij}+T_{kj}\partial_iX^k+T_{ik}\partial_jX^k
+$$
+
+#### Varying Type (0,2) Tensor Field
+
+$$
+T^{k}_{~~i} = T_{ij}g^{jk}
+$$
+
+$$
+T^{kl} = T_{ij}g^{jk}g^{il}
+$$
+
+#### Varying Type (1,1) Tensor Field
+
+$$
+T^{ik} = T^{i}_{~~j}g^{jk}
+$$
+
+$$
+T_{jk} = T^{i}_{~~j}g_{ik}
+$$
+
+#### Varying Type (2,0) Tensor Field
+
+$$
+T^{i}_{~~k} = T^{ij}g_{jk}
+$$
+
+$$
+T_{kl} = T^{ij}g_{jk}g_{il}
 $$
