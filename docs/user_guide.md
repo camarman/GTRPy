@@ -46,11 +46,11 @@ Let us study the *Schwarzschild Coordinate System* as an example.
 
 Just click one of the tensor buttons, which will lead you to the default page of the choosen tensor.
 
-![chris](https://user-images.githubusercontent.com/45866787/213306212-08e35f80-14ea-48fc-8600-a940de20cb89.png)
+![chris](https://user-images.githubusercontent.com/45866787/215287954-af722d40-3d3f-44e9-9fcb-8232becabe4c.png)
 
 Later on, you can change the type of the tensor and get any component from the given page.
 
-![chris_up](https://user-images.githubusercontent.com/45866787/213306230-b9501d32-92a7-4129-8a87-a1b0ed366c05.png)
+![chris_up](https://user-images.githubusercontent.com/45866787/215287959-cc4fb77c-43d4-4671-b3b4-2220e806ab9e.png)
 
 If you click on the `Get LaTeX` button, the program will produce the LaTeX equation of the image and save it under the `logs` directory.
 
@@ -66,4 +66,4 @@ From there, you can pick the field that you want to calculate. After typing your
 
 ![4d_vector](https://user-images.githubusercontent.com/45866787/212770377-e4cb3a62-87de-4ca3-85f7-4a6afb69ac8c.png)
 
-![4d_tensor](https://user-images.githubusercontent.com/45866787/212770390-8cff92d8-5db4-4b7b-8965-5a5ef5ac20a1.png)
+![4d-tensor](https://user-images.githubusercontent.com/45866787/215287979-c0499ecd-4d59-4643-9989-5ca5a2d4df30.png)
