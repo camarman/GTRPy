@@ -24,7 +24,7 @@ and in *four dimensions*:
 
 ## GTRPy in 4D
 
-Let us focus on the 4D case as an example.
+In this guide, let us focus on the 4D case as an example.
 
 ### Defining the Coordinate System
 
@@ -54,7 +54,7 @@ After choosing the coordinate system, just click on the **Change Coordinate Syst
 
 ### Defining the Metric Tensor
 
-To define the metric tensor, you can just fill the empty fields in the Metric Tensor Frame. In this guide, let us study the *Schwarzschild Coordinate System* as an example.
+To define the metric tensor, you can just fill the fields in the **Metric Tensor** frame. In this guide, let us study the *Schwarzschild Coordinate System* as an example.
 
 ![sch](https://user-images.githubusercontent.com/45866787/213306169-1fa3f7fd-20ee-408f-b840-9ad27f26a495.png)
 
@@ -62,7 +62,7 @@ To define the metric tensor, you can just fill the empty fields in the Metric Te
 
 ### GTR Tensors
 
-As we can see there are many different defined GTR tensors in GTRPy. Let us study the *Christoffel Symbol* as an example.
+As we can see, there are many different tensors in GTRPy. Let us study the *Christoffel Symbol* as an example.
 
 First click on the **Christoffel Symbol** button to start the calculation.
 
@@ -76,7 +76,7 @@ If you click on the **Get LaTeX** button, the program will produce the LaTeX equ
 
 ## Fields
 
-If you click on the Fields tab you'll see 6 different type of fields.
+If you click on the **Fields** tab you'll see 6 different type of fields.
 
 ![fields-tab](https://user-images.githubusercontent.com/45866787/215289114-da348b6b-2fd3-4c2d-aeea-11ff3d6d648a.png)
 
@@ -86,7 +86,7 @@ First, let us create a random vector field:
 
 ![random vector-field](https://user-images.githubusercontent.com/45866787/215289322-482a05b8-92c9-4531-a7e3-e56745866799.png)
 
-By clicking on the **Calculate** button under the Vary Type frame, you can easily change the type of the vector field and obtain the LaTeX equation.
+By clicking on the **Calculate** button under the **Vary Type** frame, you can easily change the type of the vector field and obtain the LaTeX equation.
 
 ![vary-type](https://user-images.githubusercontent.com/45866787/215289327-ea31e0a3-52cc-4ee1-89f3-7ad0469e708c.png)
 
