@@ -74,7 +74,7 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
             else:
                 tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 13, 4)]   # Obtaining the tensor field
 
-                # Varying type from 'uu' to 'ud'
+                # Varying tensor field type from 'uu' to 'ud'
                 if event == 'Calculate':
                     vry_tensor_field_eqn = vry_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, new_type='ud')
                     preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_20.png', euler=True,
@@ -92,7 +92,7 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                         if event == 'Get LaTeX':
                             latex_output_tensor_field(vry_tensor_field_eqn)
 
-                # Varying type from 'uu' to 'dd'
+                # Varying tensor field type from 'uu' to 'dd'
                 if event == 'Calculate0':
                     vry_tensor_field_eqn = vry_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, new_type='dd')
                     preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_20.png', euler=True,
@@ -199,7 +199,7 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
             else:
                 tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 13, 4)]   # Obtaining the tensor field
 
-                # Varying type from 'ud' to 'uu'
+                # Varying tensor field type from 'ud' to 'uu'
                 if event == 'Calculate':
                     vry_tensor_field_eqn = vry_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, new_type='uu')
                     preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_11.png', euler=True,
@@ -217,7 +217,7 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                         if event == 'Get LaTeX':
                             latex_output_tensor_field(vry_tensor_field_eqn)
 
-                # Varying type from 'ud' to 'dd'
+                # Varying tensor field type from 'ud' to 'dd'
                 if event == 'Calculate0':
                     vry_tensor_field_eqn = vry_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, new_type='dd')
                     preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_11.png', euler=True,
@@ -324,7 +324,7 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
             else:
                 tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 13, 4)]   # Obtaining the tensor field
 
-                # Varying type from 'dd' to 'ud'
+                # Varying tensor field type from 'dd' to 'ud'
                 if event == 'Calculate':
                     vry_tensor_field_eqn = vry_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, new_type='ud')
                     preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_02.png', euler=True,
@@ -342,7 +342,7 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                         if event == 'Get LaTeX':
                             latex_output_tensor_field(vry_tensor_field_eqn)
 
-                # Varying type from 'dd' to 'uu'
+                # Varying tensor field type from 'dd' to 'uu'
                 if event == 'Calculate0':
                     vry_tensor_field_eqn = vry_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, new_type='uu')
                     preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_02.png', euler=True,
