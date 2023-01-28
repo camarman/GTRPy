@@ -58,7 +58,7 @@ To define the metric tensor you can just fill the empty fields in the **Metric T
 
 ### GTR Tensors
 
-![4d_main](https://user-images.githubusercontent.com/45866787/213306076-9153466c-6aeb-4776-9208-10c953a80e4a.png)
+![Screenshot from 2023-01-28 23-40-31](https://user-images.githubusercontent.com/45866787/215290213-0a7d2332-2a45-445d-96e5-b73deaf4929b.png)
 
 As we can see there are many defined GTR tensors in GTRPy. Let us study the *Christoffel Symbol* as an example
 
