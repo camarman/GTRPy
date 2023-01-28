@@ -1,6 +1,6 @@
 # GTRPy
 
-GTRPy is a python package, that allows you to calculate the well-known tensors in General Theory of Relativity without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in 3D and 4D*.
+GTRPy is a python package, that allows you to calculate the well-known tensors in General Theory of Relativity without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in both 3D and 4D*.
 
 > It's tested for GNU/Linux, however it should also work in macOS. If you ever encounter with a problem, feel free to create an issue.
 
