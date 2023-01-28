@@ -1,6 +1,6 @@
 # Equations
 
-This is the list of the all equations used in the program. You can easily compare the written equations with the code (`gtrpy/src`).
+This is the list of the equations used by the GTRPy.
 
 ## Tensors
 

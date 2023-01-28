@@ -1,6 +1,6 @@
 # Image Size Data
 
-Storing the size of the images used in the `gtrpy/res` directory.
+Storing the size of the images, which are used in the `gtrpy/res` directory.
 
 ## Main Page
 

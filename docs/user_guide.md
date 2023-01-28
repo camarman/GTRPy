@@ -20,7 +20,7 @@ Later on you can define the coordinate system and create your own metric tensor.
 
     t, x, y, z, r, v, r, theta, phi, rho, sigma, psi, eta, tau, xi, T, X
 
-Or you can simply choose one of the predefined coordinate systems. Currently predefined coordinates in 4D are:
+or you can simply choose one of the predefined coordinate systems. Currently predefined coordinates in 4D are:
 
     1. Cartesian Coordinates
     2. Cylindrical Coordinates
@@ -51,6 +51,8 @@ Just click one of the tensor buttons, which will lead you to the default page of
 Later on, you can change the type of the tensor and get any component from the given page.
 
 ![chris_up](https://user-images.githubusercontent.com/45866787/213306230-b9501d32-92a7-4129-8a87-a1b0ed366c05.png)
+
+If you click on the `Get LaTeX` button, the program will produce the LaTeX equation of the image and save it under the `logs` directory.
 
 ## Fields
 
