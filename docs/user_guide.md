@@ -78,7 +78,7 @@ If you click on the `Get LaTeX` button, the program will produce the LaTeX equat
 
 If you click on the Fields tab you'll see the 6 available fields.
 
-![Screenshot from 2023-01-28 23-20-36](https://user-images.githubusercontent.com/45866787/215289114-da348b6b-2fd3-4c2d-aeea-11ff3d6d648a.png)
+![fields-tab](https://user-images.githubusercontent.com/45866787/215289114-da348b6b-2fd3-4c2d-aeea-11ff3d6d648a.png)
 
 From there, you can pick any field that you want to calculate. After typing your field component, you can perform any available operation.
 
@@ -86,29 +86,28 @@ From there, you can pick any field that you want to calculate. After typing your
 
 As an example let us study the `Type (1,0) Vector Field` under the *Schwarzschild Coordinate System*.
 
-![Screenshot from 2023-01-28 23-20-55](https://user-images.githubusercontent.com/45866787/215289122-0b35f931-4e3c-4cbc-97b4-7f09820c70f7.png)
+![vector-field](https://user-images.githubusercontent.com/45866787/215289122-0b35f931-4e3c-4cbc-97b4-7f09820c70f7.png)
 
 First, let us create a random vector field:
 
-![Screenshot from 2023-01-28 23-26-21](https://user-images.githubusercontent.com/45866787/215289322-482a05b8-92c9-4531-a7e3-e56745866799.png)
+![random vector-field](https://user-images.githubusercontent.com/45866787/215289322-482a05b8-92c9-4531-a7e3-e56745866799.png)
 
-By clicking on the `Calculate` button under the `Vary Type` frame, you can easily change the type of the vector field and get its LaTeX equation.
+By clicking on the *Calculate* button under the **Vary Type** frame, you can easily change the type of the vector field and obtain the LaTeX equation.
 
-![Screenshot from 2023-01-28 23-26-32](https://user-images.githubusercontent.com/45866787/215289327-ea31e0a3-52cc-4ee1-89f3-7ad0469e708c.png)
+![vary-type](https://user-images.githubusercontent.com/45866787/215289327-ea31e0a3-52cc-4ee1-89f3-7ad0469e708c.png)
 
 Later on you can calculate the Covariant derivative for any component
 
-![image](https://user-images.githubusercontent.com/45866787/215289336-f96cdf0e-a3bb-4f66-99d3-fc3eea53d54b.png)
+![cov-1](https://user-images.githubusercontent.com/45866787/215289336-f96cdf0e-a3bb-4f66-99d3-fc3eea53d54b.png)
 
-
-![Screenshot from 2023-01-28 23-27-00](https://user-images.githubusercontent.com/45866787/215289347-ab72ac84-ed88-4ed1-89dd-fb8bf076abbe.png)
+![cov-2](https://user-images.githubusercontent.com/45866787/215289347-ab72ac84-ed88-4ed1-89dd-fb8bf076abbe.png)
 
 or by providing the `X` vector field, you can calculate the Lie Derivative
 
-![Screenshot from 2023-01-28 23-28-03](https://user-images.githubusercontent.com/45866787/215289383-a2f208f6-8059-49fa-ab51-248b83add299.png)
+![X-vector](https://user-images.githubusercontent.com/45866787/215289383-a2f208f6-8059-49fa-ab51-248b83add299.png)
 
-![Screenshot from 2023-01-28 23-28-19](https://user-images.githubusercontent.com/45866787/215289391-0fcda443-30fd-42d2-8e99-3860d3ff562e.png)
+![lie-derivative](https://user-images.githubusercontent.com/45866787/215289391-0fcda443-30fd-42d2-8e99-3860d3ff562e.png)
 
-and Finally you can check if the given vector field is Killing Field or not
+and finally you can check if the given vector field is Killing Field or not
 
-![Screenshot from 2023-01-28 23-28-37](https://user-images.githubusercontent.com/45866787/215289404-bd8919a5-044b-42ee-974f-cd5c17d0e905.png)
+![killing-field](https://user-images.githubusercontent.com/45866787/215289404-bd8919a5-044b-42ee-974f-cd5c17d0e905.png)
