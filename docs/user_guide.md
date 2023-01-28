@@ -12,7 +12,9 @@ in the terminal.
 
 ![greetings](https://user-images.githubusercontent.com/45866787/213306039-51dd652a-d99e-41b5-9ca9-6fe6a4f7aa35.png)
 
-Later on choose a suitable dimension from the GUI. If you choose four dimensions, you'll see a page in this form
+Later on choose a suitable dimension from the GUI. If you choose 4D, you'll see a page in this form:
+
+![4d-main](https://user-images.githubusercontent.com/45866787/215288897-5f1e528d-539e-4237-b200-f126d9618037.png)
 
 ## GTRPy in 4D
 
@@ -38,7 +40,9 @@ and in 3D:
     2. Cylindrical Coordinates
     3. Spherical Coordinates
 
-To change the coordinate system you can choose from the available coordinate systems and later on just click on the `Change Coordinate System` button. In this guide, let us study the *Schwarzschild Coordinate System* as an example.
+To change the coordinate system you can choose from the available coordinate systems and later on just click on the `Change Coordinate System` button.
+
+In this guide, let us study the *Schwarzschild Coordinate System* as an example.
 
 ![sch](https://user-images.githubusercontent.com/45866787/213306169-1fa3f7fd-20ee-408f-b840-9ad27f26a495.png)
 
@@ -46,9 +50,11 @@ To change the coordinate system you can choose from the available coordinate sys
 
 ### Defining the Metric Tensor
 
-As we know the metric tensor is the key element in the GTR theory. By only defining the metric tensor one can calculate many of the important GTR tensors.
+As we know the metric tensor is the key element in the General Theory of Relativity. By only defining the metric tensor one can calculate many of the important GR tensors.
 
-To define the metric tensor you can just type any metric tensor you want. See `demos/demo_1.md` for more information about how to type math variables in GTRPy.
+To define the metric tensor you can just fill the empty fields in the **Metric Tensor** Frame.
+
+> See `demos/demo_1.md` for more information about how to type math variables in GTRPy.
 
 ### GTR Tensors
 
@@ -72,7 +78,7 @@ If you click on the `Get LaTeX` button, the program will produce the LaTeX equat
 
 If you click on the Fields tab you'll see the 6 available fields.
 
-![fields_tab](https://user-images.githubusercontent.com/45866787/213306249-d90a9635-e07a-42db-8098-6a3d24000986.png)
+![Screenshot from 2023-01-28 23-20-36](https://user-images.githubusercontent.com/45866787/215289114-da348b6b-2fd3-4c2d-aeea-11ff3d6d648a.png)
 
 From there, you can pick any field that you want to calculate. After typing your field component, you can perform any available operation.
 
@@ -80,16 +86,29 @@ From there, you can pick any field that you want to calculate. After typing your
 
 As an example let us study the `Type (1,0) Vector Field` under the *Schwarzschild Coordinate System*.
 
+![Screenshot from 2023-01-28 23-20-55](https://user-images.githubusercontent.com/45866787/215289122-0b35f931-4e3c-4cbc-97b4-7f09820c70f7.png)
+
 First, let us create a random vector field:
 
+![Screenshot from 2023-01-28 23-26-21](https://user-images.githubusercontent.com/45866787/215289322-482a05b8-92c9-4531-a7e3-e56745866799.png)
 
 By clicking on the `Calculate` button under the `Vary Type` frame, you can easily change the type of the vector field and get its LaTeX equation.
 
+![Screenshot from 2023-01-28 23-26-32](https://user-images.githubusercontent.com/45866787/215289327-ea31e0a3-52cc-4ee1-89f3-7ad0469e708c.png)
 
-Later on you can calculate the Covariant derivative
+Later on you can calculate the Covariant derivative for any component
 
+![image](https://user-images.githubusercontent.com/45866787/215289336-f96cdf0e-a3bb-4f66-99d3-fc3eea53d54b.png)
+
+
+![Screenshot from 2023-01-28 23-27-00](https://user-images.githubusercontent.com/45866787/215289347-ab72ac84-ed88-4ed1-89dd-fb8bf076abbe.png)
 
 or by providing the `X` vector field, you can calculate the Lie Derivative
 
+![Screenshot from 2023-01-28 23-28-03](https://user-images.githubusercontent.com/45866787/215289383-a2f208f6-8059-49fa-ab51-248b83add299.png)
 
-and Finally you can check if the given vector field is Killing Field or not.
+![Screenshot from 2023-01-28 23-28-19](https://user-images.githubusercontent.com/45866787/215289391-0fcda443-30fd-42d2-8e99-3860d3ff562e.png)
+
+and Finally you can check if the given vector field is Killing Field or not
+
+![Screenshot from 2023-01-28 23-28-37](https://user-images.githubusercontent.com/45866787/215289404-bd8919a5-044b-42ee-974f-cd5c17d0e905.png)
