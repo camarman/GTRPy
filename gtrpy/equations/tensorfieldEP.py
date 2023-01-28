@@ -148,7 +148,7 @@ def vry_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, new_type):
             return '$$T^{{\\alpha\\beta}}={0}$$'.format(latex(tf.vary_tensorfield_type('uu')))
     elif ndim == 3:
         if new_type == 'ud':
-            return '$$T^{{a}}_{{b}}}={0}$$'.format(latex(tf.vary_tensorfield_type('ud')))
+            return '$$T^{{a}}_{{b}}={0}$$'.format(latex(tf.vary_tensorfield_type('ud')))
         elif new_type == 'uu':
             return '$$T^{{ab}}={0}$$'.format(latex(tf.vary_tensorfield_type('uu')))
 
