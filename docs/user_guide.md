@@ -14,13 +14,13 @@ After you start the program, the first page will look like this:
 
 ![greetings](https://user-images.githubusercontent.com/45866787/213306039-51dd652a-d99e-41b5-9ca9-6fe6a4f7aa35.png)
 
-From there, you can choose a suitable dimension. If you choose four dimensions, you'll see a page in this form:
+From there, you can choose a suitable dimension. If you choose *three dimensions*, you'll see a page in this form:
+
+![3d-main](https://user-images.githubusercontent.com/45866787/215293214-763a46a9-5e25-42ff-acb3-3dbc51e3f9bb.png)
+
+and in *four dimensions*:
 
 ![4d-main](https://user-images.githubusercontent.com/45866787/215288897-5f1e528d-539e-4237-b200-f126d9618037.png)
-
-and in 3D:
-
-
 
 ## GTRPy in 4D
 
