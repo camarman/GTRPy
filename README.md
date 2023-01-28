@@ -1,6 +1,6 @@
 # GTRPy
 
-GTRPy is a python package that allows you to calculate the well-known tensors in General Theory of Relativity, without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in 3D and 4D*.
+GTRPy is a python package, that allows you to calculate the well-known tensors in General Theory of Relativity without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in 3D and 4D*.
 
 > It's tested for GNU/Linux, however it should also work in macOS. If you ever encounter with a problem, feel free to create an issue.
 
@@ -26,7 +26,7 @@ and install the requirements by running
 
 ## Requirements (Extra)
 
-Additionally, you will also need `tkinter` and `LaTeX` to properly run the GTRPy. In Fedora, these can be easily installed by running
+Additionally, you will also need `tkinter` and `LaTeX` to run the GTRPy. In Fedora Linux, these can be easily installed by running
 
     sudo dnf install python3-tkinter
     sudo dnf install texlive-scheme-full
@@ -83,12 +83,12 @@ Currently, there are 6 different type of fields that you can carry out operation
 :-------------------------:|:-------------------------:
 ![4d_main](https://user-images.githubusercontent.com/45866787/213305163-b6470289-e167-4ffd-ab18-d592ae19011e.png) | ![3d_main](https://user-images.githubusercontent.com/45866787/213305193-9efe501f-0347-4166-a487-2cbdee3fe24c.png)
 
-4D/Scalar Field Operations        |  4D/Vector Field Operations       | 4D/Tensor Field Operations
+4D/Scalar Field        |  4D/Vector Field       | 4D/Tensor Field
 :-------------------------:|:-------------------------:|:-------------------------:
 ![4d_scalar](https://user-images.githubusercontent.com/45866787/212769650-d55d3001-db4e-4c79-ada5-cfcc1d40efb3.png) | ![4d_vector](https://user-images.githubusercontent.com/45866787/212769667-082904c3-6e77-48ab-b787-8dda0aa7e0a8.png) | ![4d-tensor](https://user-images.githubusercontent.com/45866787/215287844-45bb7c97-3369-43b8-a4de-96e712216acb.png)
 
 
-3D/Scalar Field Operations        |  3D/Vector Field Operations       | 3D/Tensor Field Operations
+3D/Scalar Field        |  3D/Vector Field       | 3D/Tensor Field
 :-------------------------:|:-------------------------:|:-------------------------:
 ![3d_scalar](https://user-images.githubusercontent.com/45866787/212769736-171c0a1f-63a2-44f4-96ab-b86bf6eeef8f.png) |![3d_vector](https://user-images.githubusercontent.com/45866787/212769750-de725b69-0a9f-460f-b451-5e03ecd758c5.png) | ![Screenshot from 2023-01-28 22-47-14](https://user-images.githubusercontent.com/45866787/215287851-73694819-fb9e-4d14-88c8-36718a5e1f1d.png)
 

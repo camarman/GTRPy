@@ -1,6 +1,6 @@
 # Equations
 
-This is the list of the equations used by the GTRPy.
+This is the list of the all equations used by the GTRPy.
 
 ## Tensors
 

@@ -8,7 +8,7 @@ You can start the program by typing
 
 in the terminal.
 
-## Welcome Page and Choosing Dimension
+## Welcome Page and Choosing # of Dimensions
 
 ![greetings](https://user-images.githubusercontent.com/45866787/213306039-51dd652a-d99e-41b5-9ca9-6fe6a4f7aa35.png)
 
@@ -52,7 +52,7 @@ In this guide, let us study the *Schwarzschild Coordinate System* as an example.
 
 ### Defining the Metric Tensor
 
-As we know the metric tensor is the key element in the General Theory of Relativity. One can calculate many of the important GR tensors, by only defining the metric tensor.
+As we know the metric tensor is the key element in the General Theory of Relativity. One can calculate many of the important GTR tensors, by only defining the metric tensor.
 
 To define the metric tensor, you can just fill the empty fields in the Metric Tensor Frame.
 
