@@ -54,7 +54,7 @@ After choosing the coordinate system, just click on the **Change Coordinate Syst
 
 ### Defining the Metric Tensor
 
-To define the metric tensor, you can just fill the fields in the **Metric Tensor** frame. In this guide, let us study the *Schwarzschild Coordinate System* as an example.
+To define the metric tensor, just fill the fields in the **Metric Tensor** frame. In this guide, let us study the *Schwarzschild Coordinate System* as an example.
 
 ![sch](https://user-images.githubusercontent.com/45866787/213306169-1fa3f7fd-20ee-408f-b840-9ad27f26a495.png)
 
@@ -62,13 +62,13 @@ To define the metric tensor, you can just fill the fields in the **Metric Tensor
 
 ### GTR Tensors
 
-As we can see, there are many different tensors in GTRPy. Let us study the *Christoffel Symbol* as an example.
+As we can see, there are many different tensors that we can calculate in GTRPy. Let us calculate the *Christoffel Symbol* as an example.
 
 First click on the **Christoffel Symbol** button to start the calculation.
 
 ![chris](https://user-images.githubusercontent.com/45866787/215287954-af722d40-3d3f-44e9-9fcb-8232becabe4c.png)
 
-Later on, you can change the type of the *Christoffel Symbol* and get any component from the given page
+Later on, you can change the type of the *Christoffel Symbol* and/or get any component from the given page
 
 ![chris_up](https://user-images.githubusercontent.com/45866787/215287959-cc4fb77c-43d4-4671-b3b4-2220e806ab9e.png)
 
@@ -76,7 +76,7 @@ If you click on the **Get LaTeX** button, the program will produce the LaTeX equ
 
 ## Fields
 
-If you click on the **Fields** tab you'll see 6 different type of fields.
+If you click on the **Fields** tab you'll see 6 different type of fields
 
 ![fields-tab](https://user-images.githubusercontent.com/45866787/215289114-da348b6b-2fd3-4c2d-aeea-11ff3d6d648a.png)
 
