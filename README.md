@@ -1,6 +1,6 @@
 # GTRPy
 
-GTRPy is a python package that allows you to calculate the well-known tensors in General Theory of Relativity, without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in both 4D and 3D*.
+GTRPy is a python package that allows you to calculate the well-known tensors in General Theory of Relativity, without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in 3D and 4D*.
 
 > It's tested for GNU/Linux, however it should also work in macOS. If you ever encounter with a problem, feel free to create an issue.
 
@@ -39,13 +39,13 @@ To start GTRPy, simply run
 
     python3 -m gtrpy.run
 
-from the terminal (it does not matter what directory you are in, *if* you installed it via `pip`). This will create the `logs` directory, under your current directory, which will contain the outputs of the performed operations.
+from the terminal (it does not matter what directory you are in, *if* you installed it via `pip`). The program will create the `logs` directory, under your current directory, which will contain the outputs of the performed operations.
 
 > Please take a look at the `docs/user_guide.md` for a summary of the GTRPy. To see more detailed examples, you can look at the `demos` directory.
 
 ## Current Features
 
-### GR Tensor Objects
+### GTR Tensors
 
 Either by using predefined coordinates, or by defining the coordinate system yourself, you can calculate:
 
@@ -59,9 +59,9 @@ Either by using predefined coordinates, or by defining the coordinate system you
 8. Einstein Tensor
 9. Kretschmann Scalar
 
-### Field Objects
+### Fields
 
-Currently, there are 6 different field objects that you can carry out operations. These are:
+Currently, there are 6 different type of fields that you can carry out operations. These are:
 
 1. Scalar Field
 2. Type (1,0) Vector Field
@@ -70,13 +70,12 @@ Currently, there are 6 different field objects that you can carry out operations
 5. Type (1,1) Tensor Field
 6. Type (0,2) Tensor Field
 
-#### Operations on Fields
+### Available Operations in GTRPy
 
-1. Varying the type of a given vector field
-2. Calculating covariant and Lie derivatives for each field object (scalar, vector and tensor)
+1. Varying the type of a given vector and tensor field
+2. Calculating Covariant and Lie derivatives for each type of field (scalar, vector and tensor)
 3. Checking the Killing field condition for a given vector field
-
-Additionally, you can also print the LaTeX equations of each operation by clicking a single button.
+4. Print out the equations obtained from each operation by clicking a single button
 
 ## Overview
 
@@ -94,10 +93,9 @@ Additionally, you can also print the LaTeX equations of each operation by clicki
 
 ## Upcoming Features
 
-1. Raising and lowering indices for a given tensor field
-2. Gradient, Divergence, Curl and Laplace operations on fields
-3. Partial and Covariant derivatives of the GR Tensors (Christoffel Symbol, Riemann Tensor, etc.)
-4. Including more coordinate systems
+1. Gradient, Divergence, Curl and Laplace operations on fields
+2. Partial and Covariant derivatives of the GTR Tensors (Christoffel Symbol, Riemann Tensor, etc.)
+3. Including more coordinate systems
 
 ## Contributing
 
