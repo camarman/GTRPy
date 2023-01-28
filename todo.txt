@@ -1,3 +1,0 @@
-- Fix README.md images
-- Create Vary Tensor field GUI
-- Update User Guide
