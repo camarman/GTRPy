@@ -1,6 +1,6 @@
 # User Guide
 
-## Starting the Program
+## Starting the GTRPy
 
 You can start the program by typing
 
@@ -20,7 +20,9 @@ Later on choose a suitable dimension from the GUI. If you choose four dimensions
 
 ### Defining Coordinate System
 
-In GTRPy, you can define the coordinate system yourself. While defining the coordinate system, you can choose from the given coordinate system symbols
+In GTRPy, you can define the coordinate system yourself!
+
+While defining the coordinate system, you can choose from the given coordinate system symbols
 
     t, x, y, z, r, v, r, theta, phi, rho, sigma, psi, eta, tau, xi, T, X
 
@@ -40,7 +42,7 @@ and in 3D:
 2. Cylindrical Coordinates
 3. Spherical Coordinates
 
-To change the coordinate system you can choose from the available ones and later on just click on the **Change Coordinate System** button.
+After choosing the coordinate system, just click on the **Change Coordinate System** button, to activate the change.
 
 In this guide, let us study the *Schwarzschild Coordinate System* as an example.
 
@@ -50,9 +52,9 @@ In this guide, let us study the *Schwarzschild Coordinate System* as an example.
 
 ### Defining the Metric Tensor
 
-As we know the metric tensor is the key element in the General Theory of Relativity. By only defining the metric tensor one can calculate many of the important GR tensors.
+As we know the metric tensor is the key element in the General Theory of Relativity. One can calculate many of the important GR tensors, by only defining the metric tensor.
 
-To define the metric tensor you can just fill the empty fields in the **Metric Tensor** Frame.
+To define the metric tensor, you can just fill the empty fields in the Metric Tensor Frame.
 
 > See `demos/demo_1.md` for more information about how to define/type math variables in GTRPy.
 
@@ -76,17 +78,15 @@ If you click on the **Get LaTeX** button, the program will produce the LaTeX equ
 
 ## Fields
 
-If you click on the **Fields** tab you'll see the 6 different type of field.
+If you click on the Fields tab you'll see 6 different type of fields.
 
 ![fields-tab](https://user-images.githubusercontent.com/45866787/215289114-da348b6b-2fd3-4c2d-aeea-11ff3d6d648a.png)
 
-From there, you can pick any one of them and after typing your field component, you can perform any available operation.
+From there, you can pick one of them and perform any available operation.
 
 ### Operations on Fields
 
-As an example let us study the *Type (1,0) Vector Field* under the *Schwarzschild Coordinate System*.
-
-![vector-field](https://user-images.githubusercontent.com/45866787/215289122-0b35f931-4e3c-4cbc-97b4-7f09820c70f7.png)
+As an example, let us study *Type (1,0) Vector Field*, under the *Schwarzschild Coordinate System*
 
 First, let us create a random vector field:
 
@@ -97,8 +97,6 @@ By clicking on the **Calculate** button under the Vary Type frame, you can easil
 ![vary-type](https://user-images.githubusercontent.com/45866787/215289327-ea31e0a3-52cc-4ee1-89f3-7ad0469e708c.png)
 
 Later on you can calculate the *Covariant derivative* for any component
-
-![cov-1](https://user-images.githubusercontent.com/45866787/215289336-f96cdf0e-a3bb-4f66-99d3-fc3eea53d54b.png)
 
 ![cov-2](https://user-images.githubusercontent.com/45866787/215289347-ab72ac84-ed88-4ed1-89dd-fb8bf076abbe.png)
 
