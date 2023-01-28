@@ -1,5 +1,5 @@
 # Demo 2
 
-In this demo, we will explore the go through usage of the GTR Tensors and how to vary types.
+In this demo, we will explore the GTR Tensors and learn how to vary type.
 
 Will be available soon...
