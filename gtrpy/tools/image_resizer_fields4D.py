@@ -1,7 +1,7 @@
 from PIL import Image
 
 
-def resize_vry_image4d(field_object):
+def resize_vry_type_image4d(field_object):
     """
     Re-sizing the image of varied vector field type for the case of 4D
 

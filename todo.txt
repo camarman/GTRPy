@@ -1,5 +1,3 @@
-- Fill demos
 - Fix README.md images
-- Fill CONTRIBUTING.md
 - Create Vary Tensor field GUI
 - Update User Guide

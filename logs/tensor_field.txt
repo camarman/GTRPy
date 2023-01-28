@@ -1,0 +1,1 @@
+$$T_{ab}=\left[\begin{matrix}1 & r^{2} & r^{2} \sin^{2}{\left(\theta \right)}\\1 & r^{2} & r^{2} \sin^{2}{\left(\theta \right)}\\1 & r^{2} & r^{2} \sin^{2}{\left(\theta \right)}\end{matrix}\right]$$

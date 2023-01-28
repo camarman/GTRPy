@@ -71,7 +71,7 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
                     vry_vector_field_eqn = vry_vectorfield10_ep(metric_tensor, coord_sys, vector_field)
                     preview(vry_vector_field_eqn, viewer='file', filename=r'logs/vry_vector_field_10.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
-                    resize_vry_image3d('Type (1,0) Vector Field')
+                    resize_vry_type_image3d('Type (1,0) Vector Field')
                     layout_vry_vector_field_result = [
                                                         [sg.Image(r'logs/vry_vector_field_10.png')],
                                                         [sg.Button('Get LaTeX', button_color='orange')]
@@ -170,7 +170,7 @@ def vectorfield_gui3d(event, metric_tensor, coord_sys):
                     vry_vector_field_eqn = vry_vectorfield01_ep(metric_tensor, coord_sys, vector_field)
                     preview(vry_vector_field_eqn, viewer='file', filename=r'logs/vry_vector_field_01.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
-                    resize_vry_image3d('Type (0,1) Vector Field')
+                    resize_vry_type_image3d('Type (0,1) Vector Field')
                     layout_vry_vector_field_result = [
                                                         [sg.Image(r'logs/vry_vector_field_01.png')],
                                                         [sg.Button('Get LaTeX', button_color='orange')]

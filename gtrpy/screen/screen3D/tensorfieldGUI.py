@@ -39,6 +39,14 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
+                                        sg.Image(resPATH + r'/images3D/tensorfield_11.png'),
+                                        sg.Button('Calculate', button_color='purple'),
+                                        sg.Image(resPATH + r'/images3D/tensorfield_02.png')]],
+                                    title='Vary Type', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
+
+                                    [sg.Frame(layout=[
+                                        [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images3D/cov_tensorfield_20.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(resPATH + r'/images3D/e.png'),
@@ -66,9 +74,45 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
             else:
                 tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 13, 4)]   # Obtaining the tensor field
 
-                # Calculation of the covariant derivative
+                # Varying type from 'uu' to 'ud'
                 if event == 'Calculate':
-                    index_symbol = values[14]
+                    vry_tensor_field_eqn = vry_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, new_type='ud')
+                    preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_20.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_type_image3d('Type (2,0) Tensor Field')
+                    layout_vry_tensor_field_result = [
+                                                        [sg.Image(r'logs/vry_tensor_field_20.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
+                                                    ]
+                    window_vry_tensor_field_result = sg.Window('Tensor Field', layout_vry_tensor_field_result)
+                    while True:
+                        event, values = window_vry_tensor_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(vry_tensor_field_eqn)
+
+                # Varying type from 'uu' to 'dd'
+                if event == 'Calculate0':
+                    vry_tensor_field_eqn = vry_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, new_type='dd')
+                    preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_20.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_type_image3d('Type (2,0) Tensor Field')
+                    layout_vry_tensor_field_result = [
+                                                        [sg.Image(r'logs/vry_tensor_field_20.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
+                                                    ]
+                    window_vry_tensor_field_result = sg.Window('Tensor Field', layout_vry_tensor_field_result)
+                    while True:
+                        event, values = window_vry_tensor_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(vry_tensor_field_eqn)
+
+                # Calculation of the covariant derivative
+                if event == 'Calculate1':
+                    index_symbol = values[16]
                     cd_tensor_field_eqn = cd_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, index_symbol)
                     preview(cd_tensor_field_eqn, viewer='file', filename=r'logs/cd_tensor_field_20.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -86,8 +130,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                             latex_output_tensor_field(cd_tensor_field_eqn)
 
                 # Calculation of the Lie derivative
-                elif event == 'Calculate0':
-                    X = [sympify(values[i]) for i in range(16, 22, 2)]
+                elif event == 'Calculate2':
+                    X = [sympify(values[i]) for i in range(18, 24, 2)]
                     ld_tensor_field_eqn = ld_tensorfield20_ep(metric_tensor, coord_sys, tensor_field, X)
                     preview(ld_tensor_field_eqn, viewer='file', filename=r'logs/ld_tensor_field_20.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -120,6 +164,14 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
+                                        sg.Image(resPATH + r'/images3D/tensorfield_20.png'),
+                                        sg.Button('Calculate', button_color='purple'),
+                                        sg.Image(resPATH + r'/images3D/tensorfield_02.png')]],
+                                    title='Vary Type', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
+
+                                    [sg.Frame(layout=[
+                                        [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images3D/cov_tensorfield_11.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(resPATH + r'/images3D/e.png'),
@@ -147,9 +199,45 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
             else:
                 tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 13, 4)]   # Obtaining the tensor field
 
-                # Calculation of the covariant derivative
+                # Varying type from 'ud' to 'uu'
                 if event == 'Calculate':
-                    index_symbol = values[14]
+                    vry_tensor_field_eqn = vry_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, new_type='uu')
+                    preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_11.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_type_image3d('Type (1,1) Tensor Field')
+                    layout_vry_tensor_field_result = [
+                                                        [sg.Image(r'logs/vry_tensor_field_11.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
+                                                    ]
+                    window_vry_tensor_field_result = sg.Window('Tensor Field', layout_vry_tensor_field_result)
+                    while True:
+                        event, values = window_vry_tensor_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(vry_tensor_field_eqn)
+
+                # Varying type from 'ud' to 'dd'
+                if event == 'Calculate0':
+                    vry_tensor_field_eqn = vry_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, new_type='dd')
+                    preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_11.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_type_image3d('Type (1,1) Tensor Field')
+                    layout_vry_tensor_field_result = [
+                                                        [sg.Image(r'logs/vry_tensor_field_11.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
+                                                    ]
+                    window_vry_tensor_field_result = sg.Window('Tensor Field', layout_vry_tensor_field_result)
+                    while True:
+                        event, values = window_vry_tensor_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(vry_tensor_field_eqn)
+
+                # Calculation of the covariant derivative
+                if event == 'Calculate1':
+                    index_symbol = values[16]
                     cd_tensor_field_eqn = cd_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, index_symbol)
                     preview(cd_tensor_field_eqn, viewer='file', filename=r'logs/cd_tensor_field_11.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -167,8 +255,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                             latex_output_tensor_field(cd_tensor_field_eqn)
 
                 # Calculation of the Lie derivative
-                elif event == 'Calculate0':
-                    X = [sympify(values[i]) for i in range(16, 22, 2)]
+                elif event == 'Calculate2':
+                    X = [sympify(values[i]) for i in range(18, 24, 2)]
                     ld_tensor_field_eqn = ld_tensorfield11_ep(metric_tensor, coord_sys, tensor_field, X)
                     preview(ld_tensor_field_eqn, viewer='file', filename=r'logs/ld_tensor_field_11.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -201,6 +289,14 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
 
                                     [sg.Frame(layout=[
                                         [sg.Button('Calculate', button_color='purple'),
+                                        sg.Image(resPATH + r'/images3D/tensorfield_11.png'),
+                                        sg.Button('Calculate', button_color='purple'),
+                                        sg.Image(resPATH + r'/images3D/tensorfield_20.png')]],
+                                    title='Vary Type', font=('Verdana', 12), expand_x=True,
+                                    element_justification='center', title_location='n')],
+
+                                    [sg.Frame(layout=[
+                                        [sg.Button('Calculate', button_color='purple'),
                                         sg.Image(resPATH + r'/images3D/cov_tensorfield_02.png'),
                                         sg.Text('for', font=('Verdana', 11)),
                                         sg.Image(resPATH + r'/images3D/e.png'),
@@ -228,9 +324,45 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
             else:
                 tensor_field = [[sympify(values[i+j]) for i in range(3)] for j in range(1, 13, 4)]   # Obtaining the tensor field
 
-                # Calculation of the covariant derivative
+                # Varying type from 'dd' to 'ud'
                 if event == 'Calculate':
-                    index_symbol = values[14]
+                    vry_tensor_field_eqn = vry_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, new_type='ud')
+                    preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_02.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_type_image3d('Type (0,2) Tensor Field')
+                    layout_vry_tensor_field_result = [
+                                                        [sg.Image(r'logs/vry_tensor_field_02.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
+                                                    ]
+                    window_vry_tensor_field_result = sg.Window('Tensor Field', layout_vry_tensor_field_result)
+                    while True:
+                        event, values = window_vry_tensor_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(vry_tensor_field_eqn)
+
+                # Varying type from 'dd' to 'uu'
+                if event == 'Calculate0':
+                    vry_tensor_field_eqn = vry_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, new_type='uu')
+                    preview(vry_tensor_field_eqn, viewer='file', filename=r'logs/vry_tensor_field_02.png', euler=True,
+                            dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
+                    resize_vry_type_image3d('Type (0,2) Tensor Field')
+                    layout_vry_tensor_field_result = [
+                                                        [sg.Image(r'logs/vry_tensor_field_02.png')],
+                                                        [sg.Button('Get LaTeX', button_color='orange')]
+                                                    ]
+                    window_vry_tensor_field_result = sg.Window('Tensor Field', layout_vry_tensor_field_result)
+                    while True:
+                        event, values = window_vry_tensor_field_result.read()
+                        if event == sg.WIN_CLOSED:
+                            break
+                        if event == 'Get LaTeX':
+                            latex_output_tensor_field(vry_tensor_field_eqn)
+
+                # Calculation of the covariant derivative
+                if event == 'Calculate1':
+                    index_symbol = values[16]
                     cd_tensor_field_eqn = cd_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, index_symbol)
                     preview(cd_tensor_field_eqn, viewer='file', filename=r'logs/cd_tensor_field_02.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
@@ -248,8 +380,8 @@ def tensorfield_gui3d(event, metric_tensor, coord_sys):
                             latex_output_tensor_field(cd_tensor_field_eqn)
 
                 # Calculation of the Lie derivative
-                elif event == 'Calculate0':
-                    X = [sympify(values[i]) for i in range(16, 22, 2)]
+                elif event == 'Calculate2':
+                    X = [sympify(values[i]) for i in range(18, 24, 2)]
                     ld_tensor_field_eqn = ld_tensorfield02_ep(metric_tensor, coord_sys, tensor_field, X)
                     preview(ld_tensor_field_eqn, viewer='file', filename=r'logs/ld_tensor_field_02.png', euler=True,
                             dvioptions=['-T', 'tight', '-z', '0', '--truecolor', '-D 1200', '-bg', 'Transparent'])
