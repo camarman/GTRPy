@@ -10,23 +10,35 @@ in the terminal.
 
 ## Welcome Page and Choosing # of Dimensions
 
+After you start the program, the first page will look like this:
+
 ![greetings](https://user-images.githubusercontent.com/45866787/213306039-51dd652a-d99e-41b5-9ca9-6fe6a4f7aa35.png)
 
-Later on choose a suitable dimension from the GUI. If you choose four dimensions, you'll see a page in this form:
+From there, you can choose a suitable dimension. If you choose four dimensions, you'll see a page in this form:
 
 ![4d-main](https://user-images.githubusercontent.com/45866787/215288897-5f1e528d-539e-4237-b200-f126d9618037.png)
 
+and in 3D:
+
+
+
 ## GTRPy in 4D
 
-### Defining Coordinate System
+Let us focus on the 4D case as an example.
 
-In GTRPy, you can define the coordinate system yourself!
+### Defining the Coordinate System
 
-While defining the coordinate system, you can choose from the given coordinate system symbols
+In GTRPy, you can define the coordinate system yourself. While doing so, you can choose from the given coordinate system symbols
 
     t, x, y, z, r, v, r, theta, phi, rho, sigma, psi, eta, tau, xi, T, X
 
-or you can simply choose one of the predefined coordinate systems. Currently predefined coordinates in 4D are:
+or you can simply choose one of the *predefined coordinate systems*. Currently predefined coordinates in 3D are:
+
+1. Cartesian Coordinates
+2. Cylindrical Coordinates
+3. Spherical Coordinates
+
+and in 4D:
 
 1. Cartesian Coordinates
 2. Cylindrical Coordinates
@@ -36,37 +48,23 @@ or you can simply choose one of the predefined coordinate systems. Currently pre
 6. Schwarzschild Coordinates
 7. Eddington-Finkelstein Coordinates
 
-and in 3D:
-
-1. Cartesian Coordinates
-2. Cylindrical Coordinates
-3. Spherical Coordinates
-
-After choosing the coordinate system, just click on the **Change Coordinate System** button, to activate the change.
-
-In this guide, let us study the *Schwarzschild Coordinate System* as an example.
-
-![sch](https://user-images.githubusercontent.com/45866787/213306169-1fa3f7fd-20ee-408f-b840-9ad27f26a495.png)
+After choosing the coordinate system, just click on the **Change Coordinate System** button to activate the transformation.
 
 > See `demos/demo_6.md` to learn how to add more coordinate system symbols
 
 ### Defining the Metric Tensor
 
-As we know the metric tensor is the key element in the General Theory of Relativity. One can calculate many of the important GTR tensors, by only defining the metric tensor.
+To define the metric tensor, you can just fill the empty fields in the Metric Tensor Frame. In this guide, let us study the *Schwarzschild Coordinate System* as an example.
 
-To define the metric tensor, you can just fill the empty fields in the Metric Tensor Frame.
+![sch](https://user-images.githubusercontent.com/45866787/213306169-1fa3f7fd-20ee-408f-b840-9ad27f26a495.png)
 
 > See `demos/demo_1.md` for more information about how to define/type math variables in GTRPy.
 
 ### GTR Tensors
 
-![Screenshot from 2023-01-28 23-40-31](https://user-images.githubusercontent.com/45866787/215290213-0a7d2332-2a45-445d-96e5-b73deaf4929b.png)
+As we can see there are many different defined GTR tensors in GTRPy. Let us study the *Christoffel Symbol* as an example.
 
-As we can see there are many defined GTR tensors in GTRPy. Let us study the *Christoffel Symbol* as an example
-
-## Operations on GTR Tensors
-
-First click on the **Christoffel Symbol** button
+First click on the **Christoffel Symbol** button to start the calculation.
 
 ![chris](https://user-images.githubusercontent.com/45866787/215287954-af722d40-3d3f-44e9-9fcb-8232becabe4c.png)
 
@@ -82,11 +80,7 @@ If you click on the Fields tab you'll see 6 different type of fields.
 
 ![fields-tab](https://user-images.githubusercontent.com/45866787/215289114-da348b6b-2fd3-4c2d-aeea-11ff3d6d648a.png)
 
-From there, you can pick one of them and perform any available operation.
-
-### Operations on Fields
-
-As an example, let us study *Type (1,0) Vector Field*, under the *Schwarzschild Coordinate System*
+From there, you can pick one of them and perform any available operation. As an example, let us study *Type (1,0) Vector Field*, under the *Schwarzschild Coordinate System*.
 
 First, let us create a random vector field:
 
