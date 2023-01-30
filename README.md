@@ -16,16 +16,19 @@ or, you can directly clone the repository
 
 ## Requirements
 
-Install the requirements by running
+Install the `python` requirements by running
 
     python3 -m pip install numpy Pillow pysimplegui sympy
 
-Additionally, you will also need `tkinter` and `LaTeX` to run the GTRPy. In Fedora Linux, these can be easily installed by running
+Additionally, you will also need `tkinter` and `LaTeX` support to run the GTRPy. These can be easily installed by running:
 
-    sudo dnf install python3-tkinter
-    sudo dnf install texlive-scheme-full
+in Fedora
 
-You can look for your distributions package manager and search for an equivalent installation method.
+    sudo dnf install dvipng python3-tkinter texlive-collection-latex texlive-collection-latexextra
+
+in Ubuntu
+
+    sudo apt install dvipng python3-tk texlive-latex-base texlive-latex-extra
 
 ## User Guide
 
