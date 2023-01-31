@@ -62,13 +62,13 @@ The one important point in GTRPy is that the variables defined in the metric ten
 
 and that is totally fine for GTRPy, since `r_s = 2GM/c^2` and that is a constant.
 
-Let us suppose you have another variable called `G(r)` which is a function of `r`. And the metric is given as
+Let us suppose you have another variable called `F(r)` which is a function of `r`. And the metric is given as
 
-    g = diag[-1, G, r^2, r^2sin^2(theta)]
+    g = diag[-1, F, r^2, r^2sin^2(theta)]
 
-Sadly, the GTRPy will interpret this `G` as a constant and not as a function of `r`. So the result will be wrong. On the other hand, if you know what that function is, for instance if `G(r) = r^3`, then you should write `r^2` instead of `G` and use the GTRPy in that way. So you should write the metric as
+Sadly, the GTRPy will interpret this `F` as a constant and not as a function of `r`. So the result will be wrong. On the other hand, if you know what that function is, for instance if `F(r) = r^3`, then you should write `r^2` instead of `F` and use the GTRPy in that way. So you should write the metric as
 
-    g = diag[-1, 2*t*r^3, r^2, r^2sin^2(theta)]
+    g = diag[-1, r^3, r^2, r^2sin^2(theta)]
 
 and now, the GTRPy will work perfectly fine.
 
