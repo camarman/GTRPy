@@ -66,7 +66,7 @@ Let us suppose you have another variable called `F(r)` which is a function of `r
 
     g = diag[-1, F, r^2, r^2sin^2(theta)]
 
-Sadly, the GTRPy will interpret this `F` as a constant and not as a function of `r`. So the result will be wrong. On the other hand, if you know what that function is, for instance if `F(r) = r^3`, then you should write `r^2` instead of `F` and use the GTRPy in that way. So you should write the metric as
+Sadly, the GTRPy will interpret this `F` as a constant and not as a function of `r`. So the result will be wrong. On the other hand, if you know what that function is, for instance if `F(r) = r^3`, then you should write `r^3` instead of `F` and use the GTRPy in that way. So you should write the metric as
 
     g = diag[-1, r^3, r^2, r^2sin^2(theta)]
 
