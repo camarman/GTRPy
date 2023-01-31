@@ -109,7 +109,7 @@ Currently, there are 6 different type of fields that you can carry out operation
 1. Gradient, Divergence, Curl and Laplace operations on fields
 2. Partial and Covariant derivatives of the GTR tensors
 3. Including more coordinate systems
-4. Add functionality such that the variables in the metric tensor can be takes as a function and not as constant.
+4. Add functionality such that the variables in the metric tensor can be taken as a function and not as constant.
 
 ## Contributing
 
