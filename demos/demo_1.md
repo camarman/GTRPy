@@ -14,15 +14,15 @@ you can directly write it as
 
     alpha^2*r_s^3*sin(theta)^2
 
-and the `sympy` will interpret it as it is. In exponential expressions, you can both use `^` and `**`. You can also write `log` as usual, such as `log(10)` etc. For instance, if you want to write
+and the `sympy` will interpret it as it is. In exponential expressions, you can both use `^` and `**`. You can also write `log` as usual, such as `log(10)` etc. Also the exponential expressions ca be written as `exp()`. For instance, if you want to write
 
 $$
-\log(10)r_s^2\psi^{\eta}
+\log(10)r_s^2\psi^{\eta}e^{r}
 $$
 
 you can directly write it as
 
-    log(10)^2*r_s^2*psi^(eta)
+    log(10)^2*r_s^2*psi^(eta)*exp(r)
 
 As you can see most of the greek alphabet will be converted to its corresponding LaTeX form. Here is the list of them and corresponding results in GTRPy.
 
