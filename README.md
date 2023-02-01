@@ -90,7 +90,7 @@ Currently, there are 6 different types of fields that you can carry out operatio
 1. Print out the equations obtained from each operation by clicking a single button
 2. Checking the Killing field condition for a given vector field
 3. Varying the type of a given vector and tensor field
-4. Calculating Covariant and Lie derivatives for scalar, vector and tensor fields
+4. Calculating Covariant and Lie derivatives for scalar, vector, and tensor fields
 
 ## Overview
 
@@ -108,10 +108,10 @@ Currently, there are 6 different types of fields that you can carry out operatio
 
 ## Upcoming Features
 
-1. Print out the equations obtained from each operation by clicking a single button
-2. Checking the Killing field condition for a given vector field
-3. Varying the type of a given vector and tensor field
-4. Calculating Covariant and Lie derivatives for scalar, vector, and tensor fields
+1. Gradient, Divergence, Curl, and Laplace operations on fields
+2. Partial and Covariant derivatives of the GTR tensors
+3. Including more coordinate systems
+4. Adding a user-defined (custom function) support
 
 ## Contributing
 
