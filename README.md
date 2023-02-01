@@ -1,8 +1,8 @@
 # GTRPy
 
-GTRPy is a python package, that allows you to calculate the well-known tensors in General Theory of Relativity without *writing a single line of code*. Furthermore, you can apply many operations to 6 different type of fields, *in both 3D and 4D*.
+GTRPy is a python package that allows you to calculate the well-known tensors in the General Theory of Relativity without *writing a single line of code*. Furthermore, you can apply many operations to 6 different types of fields, *in both 3D and 4D*.
 
-> It's tested for GNU/Linux, however it should also work in macOS. If you ever encounter with a problem, feel free to create an issue.
+> It's tested for GNU/Linux. However, it should also work in macOS. If you ever encounter with a problem, feel free to create an issue.
 
 ## Installation
 
@@ -14,13 +14,15 @@ or, you can directly clone the repository
 
     git clone https://github.com/seVenVo1d/GTRPy.git
 
+to your favourite directory
+
 ## Requirements
 
-Install the `python` requirements by running
+Install the `python3` requirements by running
 
     python3 -m pip install numpy Pillow pysimplegui sympy
 
-Additionally, you will also need `tkinter` and `LaTeX` support to run the GTRPy. These can be easily installed by running:
+Additionally, you will also need `tkinter` and `LaTeX` support to run the GTRPy. These can be installed by running:
 
 in Fedora
 
@@ -36,9 +38,9 @@ To start GTRPy, simply run
 
     python3 -m gtrpy.run
 
-from the terminal (it does not matter what directory you are in, *if* you installed it via `pip`). The program will create the `logs` directory, under your current directory, which will contain the outputs of the performed operations.
+The program will create the `logs` directory under your current directory, which will contain the outputs of the performed operations.
 
-> Please take a look at the `docs/user_guide.md` for a summary of the GTRPy. To see more detailed examples, you can look at the `demos` directory.
+> Please look at the `docs/user_guide.md` for a summary of the GTRPy. You can look at the `demos` directory, to see more detailed examples.
 
 ## Current Features
 
@@ -60,13 +62,13 @@ The one important point in GTRPy is that the variables defined in the metric ten
 
     g = diag[-(1-r_s/r), (1-r_s/r)**(-1), r^2, r^2sin^2(theta)]
 
-and that is totally fine for GTRPy, since `r_s = 2GM/c^2` and that is a constant.
+and that is totally fine for GTRPy, since `r_s = 2GM/c^2` is a constant.
 
 Let us suppose you have another variable called `F(r)` which is a function of `r`. And the metric is given as
 
     g = diag[-1, F, r^2, r^2sin^2(theta)]
 
-Sadly, the GTRPy will interpret this `F` as a constant and not as a function of `r`. So the result will be wrong. On the other hand, if you know what that function is, for instance if `F(r) = r^3`, then you should write `r^3` instead of `F` and use the GTRPy in that way. So you should write the metric as
+Sadly, the GTRPy will interpret this `F` as a constant and not as a function of `r`. So the result will be wrong. On the other hand, if you know what that function is, for instance if `F(r) = r^3`, then you should write `r^3` instead of `F` and use the GTRPy in that way. Thus, you should write the metric as
 
     g = diag[-1, r^3, r^2, r^2sin^2(theta)]
 
@@ -74,7 +76,7 @@ and now, the GTRPy will work perfectly fine.
 
 ### Fields
 
-Currently, there are 6 different type of fields that you can carry out operations. These are:
+Currently, there are 6 different types of fields that you can carry out operations. These are:
 
 1. Scalar Field
 2. Type (1,0) Vector Field
@@ -106,11 +108,11 @@ Currently, there are 6 different type of fields that you can carry out operation
 
 ## Upcoming Features
 
-1. Gradient, Divergence, Curl and Laplace operations on fields
-2. Partial and Covariant derivatives of the GTR tensors
-3. Including more coordinate systems
-4. Add functionality such that the variables in the metric tensor can be taken as a function and not as constant.
+1. Print out the equations obtained from each operation by clicking a single button
+2. Checking the Killing field condition for a given vector field
+3. Varying the type of a given vector and tensor field
+4. Calculating Covariant and Lie derivatives for scalar, vector, and tensor fields
 
 ## Contributing
 
-I am looking for developers who would like to contribute to the project. If you are interested, feel free to create an issue by stating how would you like to contribute. Any help or idea is welcomed. For more information you can also look at the `CONTRIBUTING.md`.
+I am looking for developers who would like to contribute to the project. If you are interested, feel free to create an issue by stating how would you like to contribute. Any help or idea is appreciated. For more information, you can also look at the `CONTRIBUTING.md`.

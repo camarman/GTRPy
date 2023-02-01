@@ -8,7 +8,7 @@ version = "1.7"
 authors = [
   {name="Arman Çam"},
 ]
-description = "GTRPy is a python package that allows you to calculate the well-known tensors in General Theory of Relativity."
+description = "GTRPy is a python package that allows you to calculate the well-known tensors in the General Theory of Relativity."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
