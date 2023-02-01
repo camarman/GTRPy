@@ -111,7 +111,7 @@ Currently, there are 6 different types of fields that you can carry out operatio
 1. Gradient, Divergence, Curl, and Laplace operations on fields
 2. Partial and Covariant derivatives of the GTR tensors
 3. Including more coordinate systems
-4. Adding a user-defined (custom function) support
+4. Adding a user-defined (custom) function support
 
 ## Contributing
 
