@@ -12,7 +12,7 @@ You can easily install the GTRPy via
 
 or, you can directly clone the repository
 
-    git clone https://github.com/seVenVo1d/GTRPy.git
+    git clone https://github.com/camarman/GTRPy.git
 
 to your favourite directory
 

@@ -4,11 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "gtrpy"
-version = "1.8"
+version = "1.9"
 authors = [
   {name="Arman Çam"},
 ]
-description = "GTRPy is a python package that allows you to calculate the well-known tensors in the General Theory of Relativity."
+
+description = "GTRPy is a python package that allows you to calculate the well-known tensors in the General Theory of Relativity without writing a single line of code. Furthermore, you can apply many operations to 6 different types of fields, in both 3D and 4D."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -22,5 +23,5 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/seVenVo1d/GRPy"
-"Bug Tracker" = "https://github.com/seVenVo1d/GRPy/issues"
+"Homepage" = "https://github.com/camarman/GTRPy"
+"Bug Tracker" = "https://github.com/camarman/GTRPy/issues"
